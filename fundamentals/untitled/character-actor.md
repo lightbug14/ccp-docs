@@ -127,5 +127,3 @@ If the character is standing on a valid dynamic ground\footnote{Kinematic rigidb
 
 ![A 2D representation of a character standing on top of a kinematic platform \(dynamic ground\) that moves from point A to point B.](../../.gitbook/assets/dynamic.png)
 
-\begin{figure} \centering \includegraphics\[width=0.7\linewidth\]{Image/dynamic} \caption{} \label{fig:dynamic} \end{figure}
-
