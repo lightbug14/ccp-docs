@@ -28,7 +28,7 @@ This character controller not only gives you good results, but also technical in
 
 The character can climb steps, no matter its height.
 
-### Slope handling \(with max slope angle limit\).
+### Slope handling
 
 It can handle steep slopes without problem. Also a _slopeLimit_ can be set to forbig certain slopes.
 
@@ -36,7 +36,7 @@ It can handle steep slopes without problem. Also a _slopeLimit_ can be set to fo
 
 Change the size of the character without worrying about if it fit or not.
 
-### Moving/Rotating platforms support.
+### Moving/Rotating platforms
 
 The character will follow any _dynamic ground_ \(a.k.a _platform_\) movement and rotation properly. Of course without using object parenting 😱.
 
@@ -44,11 +44,11 @@ The character will follow any _dynamic ground_ \(a.k.a _platform_\) movement and
 
 Use the character collision info to generate your custom behaviour \(ground normal, slope angle, edge detection, wall angle, and more.\)
 
-### Collision events.
+### Collision events
 
 Add listeners to any character event and do whatever you want with it.
 
-### Orientation free.
+### Orientation free
 
 All the features work perfectly regardless the rotation value.
 

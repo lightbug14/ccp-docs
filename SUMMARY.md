@@ -20,7 +20,8 @@
   * [Components](fundamentals/untitled/components.md)
   * [Update process](fundamentals/untitled/update-process.md)
   * [CharacterBody](fundamentals/untitled/characterbody/README.md)
-    * [Unity components](fundamentals/untitled/characterbody/unity-components.md)
+    * [Components](fundamentals/untitled/characterbody/unity-components.md)
+    * [Body properties](fundamentals/untitled/characterbody/body-properties.md)
   * [Untitled](fundamentals/untitled/untitled.md)
 
 ## Tutorials
