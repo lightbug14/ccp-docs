@@ -151,7 +151,7 @@ For example when the _OnHeadHit_ event is called a copy of the _CollisionInfo_ s
 
 The character can push other dynamic rigidbodies by colliding with them. The resulting movement will be determine by the interaction and the rigidbodies parameters \(relative velocity, mass, drag, etc\). This means that the character will push more easily lighter rigidbodies. Since the velocity of the rigidbody is managed by script, in order to increase \(or decrease\) the push force you must increase \(or decrease\) the character rigidbody mass.
 
-It is important to assign the corresponding rigidbodies layers to the \textit{CharacterActor} layer mask in order to produce faithful results. The character must ignore these bodies when detecting collisions, otherwise the interactions will not be correct.
+It is important to assign the corresponding rigidbodies layers to the _CharacterActor_ layer mask in order to produce faithful results. The character must ignore these bodies when detecting collisions, otherwise the interactions will not be correct.
 
 #### Weight
 

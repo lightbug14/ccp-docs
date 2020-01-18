@@ -1,12 +1,11 @@
 # Character graphics
 
-Any character in a real-game scenario can be separated into two parts, a physics component and a graphics component, both working together to produce the result we want. The physics component is referred as the \textit{Character Body} \(or simply the \`\`character''\), and the graphics component as the \textit{Character Graphics}.
+Any character in a real-game scenario can be separated into two parts, a physics component and a graphics component, both working together to produce the result we want. The physics component is referred as the _Character Body_ \(or simply the "character''\), and the graphics component as the _Character Graphics_.
 
-\parbox{0.9\linewidth} { \paragraph{Character body} This is the actual \`\`character'', it does calculate everything in order to detect collisions, set flags, trigger collision events, and so on. This object is the one with the \textit{CharacterBody} component in it. }
-
-\parbox{0.9\linewidth} { \paragraph{Character graphics} It corresponds to what you actually see on the screen. It includes all the extra components that don't relate directly to the collision body, things like renderers, animations, particles effects, etc. This object is the one with the _CharacterGraphics_ component in it \(See \autoref{graphics} for more info\).\
-
-}
+|  |  |
+| :--- | :--- |
+| Character body | This is the actual \`\`character'', it does calculate everything in order to detect collisions, set flags, trigger collision events, and so on. This object is the one with the \textit{CharacterBody} component in it. |
+| Character graphics | It corresponds to what you actually see on the screen. It includes all the extra components that don't relate directly to the collision body, things like renderers, animations, particles effects, etc. This object is the one with the _CharacterGraphics_ component in it \(See \autoref{graphics} for more info\). |
 
 ![](../../.gitbook/assets/graphics_a_b.png)
 
