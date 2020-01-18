@@ -22,6 +22,7 @@
   * [CharacterBody](fundamentals/untitled/characterbody/README.md)
     * [Components](fundamentals/untitled/characterbody/unity-components.md)
     * [Body properties](fundamentals/untitled/characterbody/body-properties.md)
+  * [Character Actor](fundamentals/untitled/character-actor.md)
   * [Untitled](fundamentals/untitled/untitled.md)
 
 ## Tutorials
