@@ -23,7 +23,9 @@
     * [Components](fundamentals/untitled/characterbody/unity-components.md)
     * [Body properties](fundamentals/untitled/characterbody/body-properties.md)
   * [Character Actor](fundamentals/untitled/character-actor.md)
-  * [Untitled](fundamentals/untitled/untitled.md)
+  * [Character graphics](fundamentals/untitled/character-graphics.md)
+  * [Setup](fundamentals/untitled/setup.md)
+  * [Implementing the core](fundamentals/untitled/implementing-the-core.md)
 
 ## Tutorials
 

@@ -127,3 +127,39 @@ If the character is standing on a valid dynamic ground\footnote{Kinematic rigidb
 
 ![A 2D representation of a character standing on top of a kinematic platform \(dynamic ground\) that moves from point A to point B.](../../.gitbook/assets/dynamic.png)
 
+## Collision information
+
+A very import aspect of every character controller is the information this provides to the user. This information is really important to set your basic movement rules, like for example detect if the character is grounded or not, use the ground normal, gather the current ground information, etc.
+
+CCP offers this information in form of public properties. In order to access them you need a reference to the \textit{CharacterActor} component and you are good to go.
+
+For more information about the collision information see the API reference.
+
+## Collision events
+
+A collision event is just a delegate event that is called whenever a particular situation happened \(in this case related exclusively to collisions\). When a specific condition is met, the related event will be called by the \textit{CharacterActor}, therefore calling any method subscribed to it.
+
+The package include a number of collision events \(Core and Implementation as well\), if you want to look at them please refer to the API reference. All the events names start with the word \`\`On''.
+
+If you want to see all these events in action, or simply see a code example please check the \textit{CharacterDebug.cs} script. It contains a few methods subscribed to all of the available events. You will notice that every delegate event has its own signature, this is because they are passing information along when the event is called.
+
+For example when the _OnHeadHit_ event is called a copy of the _CollisionInfo_ structure is passed as an argument, so you can get the information from the collision itself \(for example the _contactNormal_\).
+
+### Rigidbodies interaction
+
+#### Push
+
+The character can push other dynamic rigidbodies by colliding with them. The resulting movement will be determine by the interaction and the rigidbodies parameters \(relative velocity, mass, drag, etc\). This means that the character will push more easily lighter rigidbodies. Since the velocity of the rigidbody is managed by script, in order to increase \(or decrease\) the push force you must increase \(or decrease\) the character rigidbody mass.
+
+It is important to assign the corresponding rigidbodies layers to the \textit{CharacterActor} layer mask in order to produce faithful results. The character must ignore these bodies when detecting collisions, otherwise the interactions will not be correct.
+
+#### Weight
+
+If the character is standing over a dynamic rigidbody this will apply a force to it \(at the contact point\) proportional to the rigidbody mass.
+
+#### Collision response
+
+If another dynamic rigidbody hits the character, this will receive _contact velocity_ due to the collision. Since the velocity is fully scripted, the script involved in the movement will need to know when and how the collision happened in order to react to it. This is handle by an event that is triggered every time a collision happens, passing the _contact velocity_ as an argument.
+
+This allowed rigidbodies to create this type of contact need to be tagged properly. See the _contactRigidbodiesTag_ field.
+
