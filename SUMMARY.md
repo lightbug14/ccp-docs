@@ -1,24 +1,29 @@
 # Table of contents
 
-* [Welcome](README.md)
-* [Features](features.md)
-* [FAQ](faq.md)
-* [Downloads](untitled.md)
-* [Roadmap](roadmap.md)
-* [Contact](contact.md)
+* [Documentation](README.md)
 
-## User manual <a id="manual"></a>
+## Introduction <a id="intro"></a>
 
-* [Introduction](manual/introduction/README.md)
-  * [Description](manual/introduction/untitled-1.md)
-* [Core](manual/core.md)
-* [Implementation](manual/implementation.md)
+* [Description](intro/introduction.md)
+* [Features](intro/features/README.md)
+  * [Core](intro/features/core.md)
+  * [Implementation](intro/features/implementation.md)
+* [Content](intro/content.md)
+* [Compatibility](intro/compatibility/README.md)
+  * [Asset version](intro/compatibility/asset-version.md)
+  * [Unity version](intro/compatibility/unity-version.md)
+* [Setting up the project](intro/setting-up-the-project.md)
 
-## Introduction
+## Fundamentals
 
-* [Untitled](introduction/untitled.md)
+* [Core](fundamentals/untitled/README.md)
+  * [Components](fundamentals/untitled/components.md)
+  * [Update process](fundamentals/untitled/update-process.md)
+  * [CharacterBody](fundamentals/untitled/characterbody/README.md)
+    * [Unity components](fundamentals/untitled/characterbody/unity-components.md)
+  * [Untitled](fundamentals/untitled/untitled.md)
 
-## Core
+## Tutorials
 
-* [Untitled](core/untitled.md)
+* [Untitled](tutorials/untitled.md)
 

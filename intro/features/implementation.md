@@ -1,24 +1,4 @@
----
-description: 1.0.1
----
-
-# Features
-
-### Core
-
-* Rigidbody based.
-* Capsule body \(upright\).
-* 2D & 3D physics.
-* 2D & 3D movement.
-* Step handling \(any height\).
-* Slope handling \(with max slope angle limit\).
-* Size handling
-* Moving/Rotating platforms support.
-* Collision information \(ground normal, slope angle, ledge detection, wall angle, etc.\).
-* Collision events.
-* It works with any orientation. 
-
-### Implementation
+# Implementation
 
 * Chraracter controller implemented as a state machine.
 * Walk and Run.
@@ -41,13 +21,5 @@ description: 1.0.1
 * Animation controller \(support for IK foot placement using curves\).
 * Particles effects.
 
-### Additional
-
-* User manual.
-* API reference.
-* C\# code available
-* Tooltips
-
-  
-
+### 
 
