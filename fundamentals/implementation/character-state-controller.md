@@ -22,17 +22,13 @@ The main loop cycle of the \_CharacterStateController component is shown in the 
 
 The _CharacterStateController_ component include a simple property that can be used by the states to obtain a movement direction vector, based on the current input and a "reference". This direction is called _input movement reference_.
 
-The _input movement reference_ calculation is expressed in the block diagram of figure \ref{fig:movementrefdiagram}.
+The _input movement reference_ calculation is expressed in the next block diagram:
 
 ![Input movement reference calculation.](../../.gitbook/assets/movementrefdiagram.png)
 
-![](../../.gitbook/assets/movementref.png)
+This vector is just the result of super basic algebra between input data and a transform component. All the information needed to create it can be obtained from inside the state. So, it's ok if you don't want to use it for your own state logic, just know that it is there.
 
-\begin{figure} \centering \includegraphics\[width=0.9\linewidth\]{Image/MovementRefDiagram} \caption{} \label{fig:movementrefdiagram} \end{figure}
-
-\textbf{Important:} This vector is just the result of super basic algebra between input data and a transform component. All the information needed to create it can be obtained from inside the state. So, it's ok if you don't want to use it for your own state logic, just know that it is there.
-
-\subsubsection{Input reference}
+### Input reference
 
 The input reference is defined as a vector created exclusively by input actions \(AI or Human\), in this case by the \textit{input axes} information. By default the \textit{input axes} are defined as a \textit{Vector2} that contains the \textit{Horizontal} and \textit{Vertical} axes values.
 
@@ -40,31 +36,33 @@ The input reference is defined as a vector created exclusively by input actions 
 
 Since we are in 3D \(general case\), the z component of the input reference corresponds to the y component of the input axes. This is due to the fact that the vertical component \(character up direction\) is used for jumping, gravity, etc. So, we transformed the y component of the input axes \(\textit{Vertical} axis by default\) into a forward direction. For 2D this component is obviously zero.
 
-\subsubsection{Movement reference}
+### Movement reference
 
-A \textit{movement reference} is defined as a set of orthonormal vectors \(think of the typical \`\`right, up, forward''\).
+A _movement reference_ is defined as a set of orthonormal vectors \(think of the typical _right, up and forward_ set\).
 
 There are three types of references available:
 
-\parbox{0.9\linewidth} { \paragraph{ World } The reference uses the world coordinates, this means that the \textit{right}, \textit{up} and \textit{forward} directions are equals to \textit{Vector3.right}, \textit{Vector3.up} and \textit{Vector3.forward} respectively. }
+|  |  |
+| :--- | :--- |
+| World  | The reference uses the world coordinates, this means that the _right_, _up_ and _forward_ directions are equals to _Vector3.right_, _Vector3.up_ and _Vector3.forward_ respectively. |
+| Character  | The reference uses the own character transform \(right, up and forward\) to update its components. |
+| External  | The reference uses an external transform to update its components. |
 
-\parbox{0.9\linewidth} { \paragraph{ Character } The reference uses the own character transform \(right, up and forward\) to update its components. }
-
-\parbox{0.9\linewidth} { \paragraph{ External } The reference uses an external transform to update its components.\ }
-
-\subsubsection{Input movement reference}
+### Input movement reference
 
 By combining the input reference with the movement reference \(multiplication\) it is possible to create sort of a mix between inputs and movement reference.
 
-\begin{equation} inputMovementReference = \left\( \begin{array}{c} inputAxes.x \times movementReference.x\ 0 \ inputAxes.y \times movementReference.z \end{array} \right\) \end{equation}
+$$ \left\( \begin{array}{c} inputAxes.x \times movementReference.x\ 0 \ inputAxes.y \times movementReference.z \end{array} \right\) $
 
-To better clarify this concept see figure \ref{fig:movementref}. There are three cases \(World, Character and external\), in which the same input axes vector \(in this case the \`\`right'' action\) is applied to each one of them. The figure shows three very different results, depending on the movement reference used.
+To better clarify this concept see the next example figure:
 
-\begin{figure} \centering \includegraphics\[width=\linewidth\]{Image/movementRef} \caption{} \label{fig:movementref} \end{figure}
+![](../../.gitbook/assets/movementref.png)
 
-Once the \textit{InputMovementReference} vector has been defined, it only remains to multiply it by the speed required.
+There are three cases: World, Character and external, in which the same input axes vector \(in this case the ""right'' action\) is applied to each one of them. The figure shows three very different results, depending on the movement reference used.
 
-The \textit{InputMovementReference} vector is updated before the states main loop. All the character states can have access to the \textit{InputMovementReference}, and perform its own calculations to determine the velocity.
+Once the _InputMovementReference_ vector has been defined, it only remains to multiply it by the speed required.
+
+The _InputMovementReference_ vector is updated before the states main loop. All the character states can have access to the \textit{InputMovementReference}, and perform its own calculations to determine the velocity.
 
 \subsection{Materials}
 
@@ -88,27 +86,49 @@ There are parameters that can be configured for both volumes and surfaces. These
 
 Any material without a proper tag on it will be considered as a \`\`default material''.
 
-\section{Character state}
+## Character state
 
 \subsection{State behaviour}
 
 A state is the main piece of code that the state machine executes. Every state presents its own behaviour, and can be implemented through its abstracts and virtual methods. The state controller will call them when they are needed, so don't worry about the execution order \(see the API reference to know what methods are available\):
 
-%\begin{lstlisting} %public virtual void EnterBehaviour\(float dt\){} % %public virtual void PreUpdateBehaviour\( float dt \){} % %public abstract void UpdateBehaviour\( float dt \); % %public virtual void PostUpdateBehaviour\( float dt \){} % %public virtual void ExitBehaviour\(float dt\){} % %public virtual CharacterState CheckExitTransition\(\) %{ % return null; %} % % %public virtual bool CheckEnterTransition\( CharacterState fromState \) %{ % return true; %} %\end{lstlisting}
+```csharp
+public virtual void EnterBehaviour(float dt){} 
+
+public virtual void PreUpdateBehaviour( float dt ){} 
+
+public abstract void UpdateBehaviour( float dt ); 
+
+public virtual void PostUpdateBehaviour( float dt ){} 
+public virtual void ExitBehaviour(float dt){} 
+
+public virtual CharacterState CheckExitTransition() 
+{ 
+    return null;
+} 
+
+public virtual bool CheckEnterTransition( CharacterState fromState )
+{ 
+    return true;
+}
+```
+
+
+
+\end{lstlisting}
 
 You need to override the method you want to define a specific behaviour. For instance, if you want to create your own exit behaviour you can do something like this:
 
 \begin{minipage}{\linewidth} \begin{lstlisting} // YourCustomState.cs ------------------------------
 
-```text
+```csharp
 public override void ExitBehaviour(float dt)
 {
     // Your code ...
 }
-\end{lstlisting}
 ```
 
-\end{minipage}
+
 
 \subsection{State creation}
 
