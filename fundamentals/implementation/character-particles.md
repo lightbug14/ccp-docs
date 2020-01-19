@@ -8,17 +8,31 @@ These particles are triggered in response to events. There are two types of even
 
 ## Footsteps
 
-To show the footsteps particles effects the _CharacterParticles_ component uses animation events. This type of events are defined in the animation import settings. 
+To show the footsteps particles effects the _CharacterParticles_ component uses **Animation events**. This type of events are defined in the animation import settings. The advantage of using Animation events is that the event position can be set exactly where we want \(see the next image\).
 
 ![Footsteps animation events \(import settings\).](../../.gitbook/assets/footsteps.png)
 
-The advantage of using Animation events is that the event can be placed exactly at a certain time along the clip timeline.
+The events requires a F_unction_ field name, this is because the animation system will call this methods for us.
 
-In the script we can add a public method and the animation system will call this methods for us. It's super important that the method name and the field \textit{Function} from the animator settings match exactly. Otherwise the method will not be named at all.
+{% hint style="warning" %}
+It's super important that the method name and the field _Function_ from the animator settings match exactly. Otherwise the method will not be called at all.
+{% endhint %}
 
-\subsection{\textit{OnGroundedStateEnter} particles}
+The _CharacterParticles_ component has a public method called PlayFootstep in it. Inside 
 
-If the character hits the ground it will produces some particles, whose velocity will vary depending on the falling speed at the moment of impact. To make this effect a \textit{CharacterActor} event was used, this event was the \textit{OnGroundedStateEnter}. When this event is called the local vertical velocity is passed along as a parameter, which is great for this.
+```csharp
+public void PlatFootstep()
+{
+        // ...
+        particlesPooler.Instantiate( ... );        
+}
+```
 
-The magnitude obtained from the y component of the local vertical velocity is evaluated using a custom \textit{AnimationCurve} \(horizontal axis\). The output of this curve \(vertical axis\) is used as the \`\`start speed'' of the \textit{ParticleSystem} triggered.
+## _OnGroundedStateEnter_  particles
+
+If the character hits the ground it will produces some particles, whose velocity will vary depending on the falling speed at the moment of impact. 
+
+In order to produce this effect a _**CharacterActor**_ **event** was used, this event was the _OnGroundedStateEnter_. When this event is called the local vertical velocity is passed along as a parameter, which is great for this.
+
+The magnitude obtained from the y component of the local vertical velocity is evaluated using a custom _AnimationCurve_ \(horizontal axis\). The output of this curve \(vertical axis\) is used as the "start speed" of the _ParticleSystem_ triggered.
 
