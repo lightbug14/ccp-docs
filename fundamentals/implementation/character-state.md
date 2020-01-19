@@ -44,56 +44,11 @@ Well, sometimes the information needed to decide if a transition is successful o
 >
 > Let's say you want to implement a transition to a _JetPack_ state.
 >
-> In the _Normal_ state, to activate the jet pack only a specific button press is needed. This state doesn't have any information about the _JetPack_ state whatsoever \(and it shouldn't\). For the _JetPack_ state is another story. 
+> In the _**Normal**_ **state**, to activate the jet pack only a specific button press is needed. This state doesn't have any information about the _JetPack_ state whatsoever \(and it shouldn't\). For the _JetPack_ state is another story. 
 >
-> The _JetPack_ state must check if everything is ok, before allowing the transition to happen. For instance, if the character jet pack doesn't have any fuel, this should not be active. In the transition code, inside the _JetPack_ state we can make sure that the fuel is enough.
+> The _**JetPack**_ state must check if everything is ok, before allowing the transition to happen. For instance, if the character jet pack doesn't have any fuel, this should not be active. In the transition code, inside the _JetPack_ state we can make sure that the fuel is enough.
 
-\section{Character brain}
 
-The character brain is a component responsible to handle all the character actions. These actions can be triggered either from a human player or the AI.
-
-All the available actions are predefined in a structure and updated by the \`\`Brain'' component at runtime. This approach create a level of abstraction between the inputs \(GetKey, GetButton, etc.\) and the character actions themselves \(jump, move forward, etc.\). This is represented in figure \ref{fig:characterbrain}.
-
-\begin{figure} \centering \includegraphics\[width=0.4\linewidth\]{Image/characterBrain} \caption{Representation of the Human, the AI and the brain.} \label{fig:characterbrain} \end{figure}
-
-To select one mode or the other simply click on the buttons in the inspector. It should look like figure \ref{fig:BrainModes}.
-
-\begin{figure} \centering \includegraphics\[width=0.8\linewidth\]{Image/BrainModes} \caption{Brain modes in the inspector.} \label{fig:BrainModes} \end{figure}
-
-\subsection{Action}
-
-An action is a set of data \(usually booleans and vectors\) that simulate buttons and axes actions.
-
-\subsection{Human brain}
-
-Basically in a human brain the actions are updated using input devices \(keyboard, mouse, joystick, UI, etc\). Regardless of the input detection method used, all the actions must be previously defined using an \textit{input data asset} \(a ScriptableObject\).
-
-In order to update these actions an \textit{input handler} is needed. This is a simple abstract component that needs to the implemented. It has the basic input functionalities used, such as \textit{GetButton}, \textit{GetButtonDown}, \textit{GetButtonUp} and \textit{GetAxis}. Each input handler should implement these methods in its own way.
-
-The package contains two default input handler components, one for the classic \textit{Unity's Input Manager} and another for the \textit{Unity's UI} system \(used in mobile\). Additionally it supports a custom input handler mode, useful if you want to create your own handler.
-
-These modes can be selected in the brain using the \textit{Human Input Type} field.
-
-\begin{figure} \centering \includegraphics\[width=0.7\linewidth\]{Image/humanInputType.png} \caption{Available human input types.} \label{fig:humanInputType} \end{figure}
-
-\parbox{0.9\linewidth} { \paragraph{ Unity Input Manager } This input handler reads inputs from the Unity's Input manager. Make sure the actions names \(input data\) and the axes from the input manager match exactly. }
-
-\parbox{0.9\linewidth} { \paragraph{ UI\_Mobile } This input handler reads all the mobile inputs components in the scene. This components are assigned to the UI elements responsible for converting UI Events into input values. }
-
-\parbox{0.9\linewidth} { \paragraph{ Custom } A custom implementation of an input handler. }
-
-\subsection{AI brain}
-
-In an AI brain the actions are determined by a script, based on the current behaviour type. There are two types of AI behaviours:
-
-\parbox{0.9\linewidth} { \subsubsection{ Sequence behaviour } Set of predefined actions stored as a \textit{ScriptableObject}. Basically this behaviour tries to imitate a human player with scripted actions. The AI character will not be \`\`smart'' in any way.
-
-```text
-\subsubsection{ Follow behaviour }
-This behaviour does a path calculation between the character an a target. In order to use this behaviour a \textit{NavMesh} must be generated previously.
-```
-
-}
 
 \section{Character animation}
 

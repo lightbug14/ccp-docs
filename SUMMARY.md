@@ -30,6 +30,8 @@
   * [Untitled](fundamentals/implementation/untitled-1.md)
   * [Character state controller](fundamentals/implementation/character-state-controller.md)
   * [Character state](fundamentals/implementation/character-state.md)
+  * [Character brain](fundamentals/implementation/character-brain.md)
+  * [Untitled](fundamentals/implementation/untitled-2.md)
 
 ## Tutorials
 
