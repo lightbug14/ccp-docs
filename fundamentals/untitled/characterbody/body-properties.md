@@ -1,4 +1,4 @@
-# Body properties
+# Properties
 
 ### Foot position
 

@@ -1,4 +1,4 @@
-# Character Actor
+# Character actor
 
 The _CharacterActor_ component follows a few simple rules that needs to be understood in order to use it. These rules are related to teleportation, size, position and rotation. All the actions required from the _CharacterActor_ have a deferred nature, this means that they are not executed immediately. All the changes are applied when the _CharacterActor_ needs to.
 

@@ -7,7 +7,7 @@
 * [Description](intro/introduction.md)
 * [Features](intro/features/README.md)
   * [Core](intro/features/core.md)
-  * [Implementation](intro/features/implementation.md)
+  * [Implementation](intro/features/feature_imple.md)
 * [Content](intro/content.md)
 * [Compatibility](intro/compatibility/README.md)
   * [Asset version](intro/compatibility/asset-version.md)
@@ -19,13 +19,16 @@
 * [Core](fundamentals/untitled/README.md)
   * [Components](fundamentals/untitled/components.md)
   * [Update process](fundamentals/untitled/update-process.md)
-  * [CharacterBody](fundamentals/untitled/characterbody/README.md)
+  * [Character body](fundamentals/untitled/characterbody/README.md)
     * [Components](fundamentals/untitled/characterbody/unity-components.md)
-    * [Body properties](fundamentals/untitled/characterbody/body-properties.md)
-  * [Character Actor](fundamentals/untitled/character-actor.md)
+    * [Properties](fundamentals/untitled/characterbody/body-properties.md)
+  * [Character actor](fundamentals/untitled/character-actor.md)
   * [Character graphics](fundamentals/untitled/character-graphics.md)
   * [Setup](fundamentals/untitled/setup.md)
   * [Implementing the core](fundamentals/untitled/implementing-the-core.md)
+* [Implementation](fundamentals/implementation/README.md)
+  * [Untitled](fundamentals/implementation/untitled-1.md)
+  * [Character state controller](fundamentals/implementation/character-state-controller.md)
 
 ## Tutorials
 
