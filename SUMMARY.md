@@ -29,6 +29,7 @@
 * [Implementation](fundamentals/implementation/README.md)
   * [Untitled](fundamentals/implementation/untitled-1.md)
   * [Character state controller](fundamentals/implementation/character-state-controller.md)
+  * [Character state](fundamentals/implementation/character-state.md)
 
 ## Tutorials
 
