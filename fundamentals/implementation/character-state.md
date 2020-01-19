@@ -54,69 +54,7 @@ Well, sometimes the information needed to decide if a transition is successful o
 
 
 
-\section{Kinematic actors}
 
-Just like character actors, a kinematic actor is another fundamental part of the scene. These objects can be platforms or cameras.
-
-\section{Kinematic platforms}
-
-The package includes components that allow to script the movement of a platform in a particular way \(depending on the component\).
-
-All the moving/rotating platforms components are child classes from the \textit{KinematicPlatform} class. Currently there are two types of kinematic platforms:
-
-\parbox{0.9\linewidth} { \paragraph{ Node Based } These platforms movement and rotation are purely based on nodes. Use this component to create platforms that moves and rotate precisely following a predefined path. }
-
-\parbox{0.9\linewidth} { \paragraph{ Action Based } These platforms movement and rotation are defined by a single action for movement and rotation. Use this component if you want to create platforms with a pendulous nature, or infinite duration actions \(for instance, if the platform should rotate forever\). }
-
-\parbox{0.9\linewidth} { \paragraph{ Animated } These platforms are completely handled by an external component, for example an animation clip \(using the Animate Physics mode\).\ }
-
-\section{Kinematic cameras}
-
-A kinematic camera is just a classic camera \(using the \textit{Camera} component\) that's being moved and rotated by the physics engine \(\textit{Rigidbody} or \textit{Rigidbody2D} component\).
-
-This implementation comes with two kinematic cameras, a \textit{KinematicCamera2D} and a \textit{KinematicCamera3D}.
-
-\subsection{Kinematic Camera 2D}
-
-This camera behaves like a classic 2D platformer camera. Basically it moves along the XY plane following a character. The camera 2D:
-
-\begin{itemize}
-
-```text
-\item Works fine with any orientation.
-
-\item Can do interpolated movement (position and rotation).
-
-\item Moves based on predefined bounds (AABB\footnote{Axis Aligned Bounding Box.}). If the character goes beyond the bounds the camera will move).
-
-\item Moves based on a single reference point.
-
-\item Look ahead, predicting the horizontal and vertical movement.
-```
-
-\end{itemize}
-
-\subsection{Kinematic Camera 3D}
-
-This camera behaves like a classic third person camera. Basically it orbits around a character. It can:
-
-\begin{itemize} \item Do yaw motion \(it can be disabled\).
-
-```text
-\item Do pitch motion (it can be disabled).
-
-\item Zoom in and out using the mouse scroll wheel.
-
-\item Detect any geometry as an obstacle (via LayerMask).
-
-\item Works fine with any orientation.
-
-\item Do interpolated movement (position and rotation).
-```
-
-\end{itemize}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Example : \textit{NormalMovement} state}
 
