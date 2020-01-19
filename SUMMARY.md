@@ -31,6 +31,8 @@
   * [Character state controller](fundamentals/implementation/character-state-controller.md)
   * [Character state](fundamentals/implementation/character-state.md)
   * [Character brain](fundamentals/implementation/character-brain.md)
+  * [Character animation](fundamentals/implementation/character-animation.md)
+  * [Character particles](fundamentals/implementation/character-particles.md)
   * [Untitled](fundamentals/implementation/untitled-2.md)
 
 ## Tutorials
