@@ -24,15 +24,15 @@ These platforms movement and rotation are defined by a single action. Use this c
 
 The _KinematicPlatform_ component is not an abstract component, this basically means that can be assigned to a gameObject, just like any other component. If you assign
 
-These platforms are completely handled by an external component, the most common case is the animation clip \(using the Animate Physics mode\).\ }
+These platforms are completely handled by an external component, the most common case is the animation clip \(using the Animate Physics mode\).
 
 ![](../../.gitbook/assets/platform-animated.gif)
 
 ## Kinematic cameras
 
-A kinematic camera is just a classic camera \(using the \textit{Camera} component\) that's being moved and rotated by the physics engine \(\textit{Rigidbody} or \textit{Rigidbody2D} component\).
+A kinematic camera is just a classic camera \(using the _Camera_ component\) that's being moved and rotated by the physics engine _Rigidbody_ or _Rigidbody2D_ component\).
 
-This implementation comes with two kinematic cameras, a \textit{KinematicCamera2D} and a \textit{KinematicCamera3D}.
+This implementation comes with two kinematic cameras, a _KinematicCamera2D_ and a _KinematicCamera3D_.
 
 ### Kinematic Camera 2D
 
