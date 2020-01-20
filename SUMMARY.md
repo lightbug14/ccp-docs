@@ -9,7 +9,7 @@
   * [Core](intro/features/core.md)
   * [Implementation](intro/features/feature_imple.md)
 * [Content](intro/content.md)
-* [Compatibility](intro/compatibility/README.md)
+* [Compatibility](intro/compatibility.md)
 * [Setting up the project](intro/setting-up-the-project.md)
 
 ## Fundamentals
@@ -37,6 +37,7 @@
 
 ## Tutorials
 
-* [Untitled](tutorials/untitled.md)
-* [The NormalMovement state](tutorials/the-normalmovement-state.md)
+* [Core](tutorials/core_tuto.md)
+* [Implementation](tutorials/imple_tuto/README.md)
+  * [The NormalMovement state](tutorials/imple_tuto/the-normalmovement-state.md)
 

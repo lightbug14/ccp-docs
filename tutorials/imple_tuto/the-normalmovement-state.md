@@ -2,9 +2,9 @@
 
 
 
-It is not necessary to create many states and transitions between them for creating a good playable character \(the _NormalMovement_ state is a good example of this\). The _NormalMovement_ state was created as a multi purpose state, it is responsible for basic grounded and not movement, gravity, walking and running, crouching, jumping, and so on.
+It is not necessary to create many states and transitions between them in order to create a good playable character \(the _NormalMovement_ state is a good example of this\). 
 
-This section is explained as a mini tutorial, basically justifying why was the _NormalMovement_ state created that way. So you can extend from it, create your own version of it, or simply know more about the process behind.
+The _NormalMovement_ state was created as a multi purpose state, it is responsible for basic grounded and not grounded movement, gravity, walking and running, crouching, jumping, and so on.
 
 If you want to know more in detail about this state please see the _NormalMovement.cs_ script.
 

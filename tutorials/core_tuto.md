@@ -1,4 +1,4 @@
-# Untitled
+# Core
 
 \section{Setup of a basic character}
 

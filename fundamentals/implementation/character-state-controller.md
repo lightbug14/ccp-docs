@@ -1,20 +1,20 @@
 # Character state controller
 
-The _CharacterStateController_ is sort of the main component from the _Implementation_ part. It defines a code structure based on the concept of a "state".
+The _CharacterStateController_ is the main component of the _Implementation_. Basically this is the main interface to the _CharacterActor_ component.
 
-There are a few things that can happen inside a state logic \(depending on the set of rules chosen\), such as action detection \(from a input device or an AI behaviour\), material interaction, movement, rotation, and so on. So, it is important to handle all these aspects in an orderly manner.
+As the name implies, this component is responsible for control all the important aspects of the states. There are a few things that can happen inside a state logic, such as action detection \(from a input device or an AI behaviour\), material interaction, movement, rotation, and so on. So, it is important to handle all these aspects in an orderly manner.
 
 Apart from handling the state logic, this component also hold all the important data the states are going to share between each other.
 
 ## Finite State Machine
 
-This component implements a "finite state machine" \(FSM\). This machine is responsible for managing and executing all the valid states of the character and the transitions between the states.
+This component implements a "Finite State Machine" \(FSM\). This machine is responsible for managing and executing all the valid states of the character and the transitions between them.
 
 A simple and crude representation of the structure of a state machine is shown in the next image:
 
 ![A representation of the state machine.](../../.gitbook/assets/fsm.png)
 
-The main loop cycle of the \_CharacterStateController component is shown in the next figure:
+The main loop cycle of the _CharacterStateController_ component is shown in the next figure:
 
 ![Main loop of the state controller.](../../.gitbook/assets/fsm_loop.png)
 
@@ -32,39 +32,37 @@ This vector is just the result of super basic algebra between input data and a t
 
 ### Input reference
 
-The input reference is defined as a vector created exclusively by input actions \(AI or Human\), in this case by the _input axes_ information. By default the _input axes_ are defined as a _Vector2_ that contains the _Horizontal_ and _Vertical_ axes values.
+The input reference is a vector created exclusively by input actions \(AI or Human\), in this case by the _input axes_ information. By default the _input axes_ are defined as a _Vector2_ that contains the _Horizontal_ and _Vertical_ axes values.
 
 $$ inputReference = < inputAxes.x , 0 , inputAxes.y > $$
 
-Since we are in 3D \(general case\), the z component of the input reference corresponds to the y component of the input axes. This is due to the fact that the vertical component \(character up direction\) is used for jumping, gravity, etc. So, we transformed the y component of the input axes \(_Vertical_ axis by default\) into a forward direction. For 2D this component is obviously zero.
+Basically what this does is to map the input data into 3D space.
 
 ### Movement reference
 
-A _movement reference_ is defined as a set of orthonormal vectors \(think of the typical _right, up and forward_ set\).
+A _movement reference_ is defined as a set of orthonormal vectors \(think of the typical _right, up and forward_ vectors set\).
 
 There are three types of references available:
 
 |  |  |
 | :--- | :--- |
-| World  | The reference uses the world coordinates, this means that the _right_, _up_ and _forward_ directions are equals to _Vector3.right_, _Vector3.up_ and _Vector3.forward_ respectively. |
-| Character  | The reference uses the own character transform \(right, up and forward\) to update its components. |
+| World  | The reference uses the world coordinates, this means that the _right_, _up_ and _forward_ directions are equals to `Vector3.right`, `Vector3.up` and `Vector3.forward` respectively. |
+| Character  | The reference uses the own character transform \(`transform.right`, `transform.up` and `transform.forward`\) to update its components. |
 | External  | The reference uses an external transform to update its components. |
 
 ### Input movement reference
 
-By combining the input reference with the movement reference \(multiplication\) it is possible to create sort of a mix between inputs and movement reference.
-
-$$ < inputAxes.x \times movementReference.x , 0 , inputAxes.y \times movementReference.z> $$
-
-To better clarify this concept see the next example figure:
+By multiplying the **input reference** with the **movement reference** it is possible to create sort of a mix between inputs and movement reference, hence the name. To better clarify this concept see the next example figure:
 
 ![](../../.gitbook/assets/movementref.png)
 
-There are three cases: World, Character and external, in which the same input axes vector \(in this case the ""right'' action\) is applied to each one of them. The figure shows three very different results, depending on the movement reference used.
+There are three cases: World, Character and external, in which the same input axes vector \(in this case the "right" action\) is applied to each one of them. The figure shows three very different results, depending on the movement reference used.
 
 Once the _InputMovementReference_ vector has been defined, it only remains to multiply it by the speed required.
 
-The _InputMovementReference_ vector is updated before the states main loop. All the character states can have access to the \textit{InputMovementReference}, and perform its own calculations to determine the velocity.
+{% hint style="info" %}
+The _InputMovementReference_ vector is updated before the states main loop. All the character states can have access to this vector, and perform its own calculations to determine the velocity.
+{% endhint %}
 
 ## Materials
 
@@ -83,7 +81,21 @@ A material can be a **volume** or a **surface**:
 
 There are parameters that can be configured for both volumes and surfaces. These parameters are related to the amount of grounded control, not grounded control, gravity and speed modifiers.
 
+### Default materials
+
 Any material without a proper tag on it will be considered as a \`\`default material''.
+
+![](../../.gitbook/assets/imagen%20%281%29.png)
+
+### Tagged materials
+
+A material element can be defined by using a _tag_. Then, it can be configured in the scriptable object.
+
+![](../../.gitbook/assets/imagen.png)
+
+
+
+
 
 ## 
 
