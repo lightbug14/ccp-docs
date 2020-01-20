@@ -1,93 +1,12 @@
-# Creating a state
-
-If you want to extend the current implementation, probably the first thing you want to do is to create your own state.
-
-There are two important thing to consider in order to achieve a successful state creation
-
-1. The creation and implementation of the state. In other words, writting the code 🙂 .
-2. The integration with other states \(optional\). This refers to the implementation of the "transition code" for any related state.
-
-{% hint style="warning" %}
-Without the integration with other states it is not possible to transition to the new state \(unless the state controller uses the new state as the starting state\).
-{% endhint %}
-
-## 1 - Creating the state
-
-Since this is a state we must derive from the _CharacterState_ class, implementing its abstract and virtual methods to define the behaviour we want \(the same way you implement Unity's messages, like Start, Update, FixedUpdate, etc\).
-
-## Manually
-
-This can be achieve by creating the state manually:
-
-```csharp
-
-```
-
-## Create menu
-
-You can use the "Create" menu, just as you created C\# scripts. Right mouse click on the project view, _"Create/CharacterControllerPro/Implementation/CharacterState"_.
-
-![](../../.gitbook/assets/imagen%20%283%29.png)
-
-Select the state name:
-
-![](../../.gitbook/assets/imagen.png)
-
-There you have it! By default a new C\# script will be created with something like this inside:
-
-```csharp
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Lightbug.CharacterControllerPro.Implementation;
+# Adding movemement
 
 
-public class BasicState : CharacterState
-{
 
-    // Write the name of your state here (returned string)
-    public override string Name
-    {
-        get
-        {
-            return "BasicState";
-        }
-    }
+It is not necessary to create many states and transitions between them in order to create a good playable character, the _NormalMovement_ state is a good example of this. This state was created as a multi purpose state, responsible for basic grounded and not grounded movement, gravity, walking and running, crouching, jumping, and so on.
 
-    // Write your initialization code here
-    protected override void Awake()
-    {
-        base.Awake();
-    }
+In this tutorial we are going to implement a super basic state that mimics this NormalMovement state.
 
-    // Write your transitions here
-    public override CharacterState CheckExitTransition()
-    {
-        return null;
-    }
-
-    // Write your transitions here
-    public override bool CheckEnterTransition( CharacterState fromState )
-    {
-        return true;
-    }
-
-    // Write your update code here
-    public override void UpdateBehaviour( float dt )
-    {
-        
-    }
-
-    // Describe your state here
-    public override string GetInfo()
-    {
-		    return "Describe your state here!";
-    }
-
-}
-```
-
-
+If you want to know more in detail about this state please see the _NormalMovement.cs_ script.
 
 ## Basic state structure
 
@@ -103,11 +22,14 @@ The more elemental thing to do is to read brain actions from the character \(hum
 
 For example to check if the \textit{Jump} action was initiated \(button pressed down\):
 
-\noindent \begin{minipage}{\linewidth}
+```csharp
+if( characterBrain.CharacterAction.jumpPressed )
+{ 
+    // Define the jump velocity vector ... 
+}
+```
 
-\begin{lstlisting} if\( characterBrain.CharacterAction.jumpPressed \) { // Define the jump velocity vector ... }
 
-\end{lstlisting} \end{minipage}
 
 \subsection{Size handling}
 
