@@ -26,15 +26,17 @@ The _input movement reference_ calculation is expressed in the next block diagra
 
 ![Input movement reference calculation.](../../.gitbook/assets/movementrefdiagram.png)
 
+{% hint style="info" %}
 This vector is just the result of super basic algebra between input data and a transform component. All the information needed to create it can be obtained from inside the state. So, it's ok if you don't want to use it for your own state logic, just know that it is there.
+{% endhint %}
 
 ### Input reference
 
-The input reference is defined as a vector created exclusively by input actions \(AI or Human\), in this case by the \textit{input axes} information. By default the \textit{input axes} are defined as a \textit{Vector2} that contains the \textit{Horizontal} and \textit{Vertical} axes values.
+The input reference is defined as a vector created exclusively by input actions \(AI or Human\), in this case by the _input axes_ information. By default the _input axes_ are defined as a _Vector2_ that contains the _Horizontal_ and _Vertical_ axes values.
 
-\begin{equation} inputReference = \left\( \begin{array}{c} inputAxes.x \ 0 \ inputAxes.y \end{array} \right\) \end{equation}
+$$ inputReference = < inputAxes.x , 0 , inputAxes.y > $$
 
-Since we are in 3D \(general case\), the z component of the input reference corresponds to the y component of the input axes. This is due to the fact that the vertical component \(character up direction\) is used for jumping, gravity, etc. So, we transformed the y component of the input axes \(\textit{Vertical} axis by default\) into a forward direction. For 2D this component is obviously zero.
+Since we are in 3D \(general case\), the z component of the input reference corresponds to the y component of the input axes. This is due to the fact that the vertical component \(character up direction\) is used for jumping, gravity, etc. So, we transformed the y component of the input axes \(_Vertical_ axis by default\) into a forward direction. For 2D this component is obviously zero.
 
 ### Movement reference
 
@@ -52,7 +54,7 @@ There are three types of references available:
 
 By combining the input reference with the movement reference \(multiplication\) it is possible to create sort of a mix between inputs and movement reference.
 
-$$ \left\( \begin{array}{c} inputAxes.x \times movementReference.x\ 0 \ inputAxes.y \times movementReference.z \end{array} \right\) $
+$$ < inputAxes.x \times movementReference.x , 0 , inputAxes.y \times movementReference.z> $$
 
 To better clarify this concept see the next example figure:
 
@@ -64,23 +66,20 @@ Once the _InputMovementReference_ vector has been defined, it only remains to mu
 
 The _InputMovementReference_ vector is updated before the states main loop. All the character states can have access to the \textit{InputMovementReference}, and perform its own calculations to determine the velocity.
 
-\subsection{Materials}
+## Materials
 
-Consist of pure data \(\textit{ScriptableObjects} in this case\) that contains properties for different materials. These materials are defined in the context of the \textit{CharacterStateController}, shareable by all the states.
+A material consists of pure data \(_ScriptableObjects_ in this case\) that contains properties for different materials. These materials are defined in the context of the _CharacterStateController_, shareable by all the states.
 
 These materials can be used to affect the resulting character movement. The type of material affecting the character will depend on the grounded state, the material properties, and finally the movement properties of the character state.
 
-For instance, in the \textit{NormalMovement} state, the material parameters are used to modify the velocity sent to the \textit{CharacterActor}.
+For instance, in the _NormalMovement_ state, the material parameters are used to modify the velocity sent to the _CharacterActor_.
 
-A material can be a \textbf{volume} or a \textbf{surface}:
+A material can be a **volume** or a **surface**:
 
-\parbox{0.9\linewidth} { \paragraph{ Volume } All the space around the character \(not grounded parameters\). This space can be made of air, water, jelly, and so on.
-
-```text
-\paragraph{ Surface } The ground the character is standing on (grounded parameters). A surface can be ice, mud, grass, etc.\\
-```
-
-}
+|  |  |
+| :--- | :--- |
+| Volume | All the space around the character \(not grounded parameters\). This space can be made of air, water, jelly, and so on. |
+| Surface | A solid on which the character can stand on \(grounded parameters\). A surface can be ice, mud, grass, etc. |
 
 There are parameters that can be configured for both volumes and surfaces. These parameters are related to the amount of grounded control, not grounded control, gravity and speed modifiers.
 

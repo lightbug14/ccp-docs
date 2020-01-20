@@ -9,7 +9,7 @@
   * [Core](intro/features/core.md)
   * [Implementation](intro/features/feature_imple.md)
 * [Content](intro/content.md)
-* [Compatibility](intro/compatibility.md)
+* [Compatibility](intro/compatibility/README.md)
 * [Setting up the project](intro/setting-up-the-project.md)
 
 ## Fundamentals
