@@ -9,9 +9,7 @@
   * [Core](intro/features/core.md)
   * [Implementation](intro/features/feature_imple.md)
 * [Content](intro/content.md)
-* [Compatibility](intro/compatibility/README.md)
-  * [Asset version](intro/compatibility/asset-version.md)
-  * [Unity version](intro/compatibility/unity-version.md)
+* [Compatibility](intro/compatibility.md)
 * [Setting up the project](intro/setting-up-the-project.md)
 
 ## Fundamentals

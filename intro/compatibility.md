@@ -1,0 +1,54 @@
+# Compatibility
+
+## Asset version
+
+The versioning scheme used for CCP is the following:
+
+#### Major.Feature.Minor
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left"></th>
+      <th style="text-align:left"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">
+        <p></p>
+        <p>Minor</p>
+      </td>
+      <td style="text-align:left">
+        <p></p>
+        <p>Basically bug fixes, small changes, code improvements, etc. This update
+          is always recommended, no risk at all.</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p></p>
+        <p>Feature</p>
+      </td>
+      <td style="text-align:left">
+        <p></p>
+        <p>New features, small updates, a new fancy component, etc. Beware! It might
+          break some things.</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p></p>
+        <p>Major</p>
+      </td>
+      <td style="text-align:left">
+        <p></p>
+        <p>This update will break almost everything for sure, this means a new fresh
+          start, new systems, new components, an overall change.</p>
+      </td>
+    </tr>
+  </tbody>
+</table>## Unity version
+
+CCP is developed and uploaded using **Unity 2018.3.2**, since this version presents a nice balance between modern features, comfort and usability. The package is compatible with \ul{2018.3.2 or higher}. \textbf{If you notice some incompatibility with a newer version of Unity, please let me know}.
+
