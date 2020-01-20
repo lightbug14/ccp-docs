@@ -40,5 +40,6 @@
 * [Core](tutorials/core_tuto.md)
 * [Implementation](tutorials/imple_tuto/README.md)
   * [Creating a state](tutorials/imple_tuto/the-normalmovement-state.md)
+  * [Getting inputs](tutorials/imple_tuto/getting-inputs.md)
   * [Adding movemement](tutorials/imple_tuto/adding-movemement.md)
 
