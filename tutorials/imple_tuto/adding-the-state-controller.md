@@ -1,6 +1,8 @@
 # Adding the state controller
 
-As it was mentioned before in the "fundamentals" section of this documentation, the **state controller** is the main interface between the character _implementation_ and the _core_ side. The logic thing to do is to add this component to our blank character.
+As it was mentioned before in the "fundamentals" section of this documentation, the **state controller** is the main interface between the character _implementation_ and the _core_ side. 
+
+The logic thing to do is to add this component to our blank character, so let's do it:
 
 ![](../../.gitbook/assets/imagen%20%2810%29.png)
 
@@ -14,7 +16,11 @@ By assigning a state to the _CurrentState_ field you can determine which state w
 
 Of course, this state controller will not be very useful for us without states to work with. For now we can add some of the states that comes with the package \(later on we are going to create our own states\).
 
-For the sake of this tutorial we are going to add the _NormalMovement_ state, and use it as our current state.
+{% hint style="warning" %}
+For the sake of this section we are going to add the _**NormalMovement**_ state, and use it as our current state.
+
+In the next sections we will be using our custom states.
+{% endhint %}
 
 ![](../../.gitbook/assets/imagen%20%281%29.png)
 
@@ -36,9 +42,7 @@ Make sure to check the [Character state controller](../../fundamentals/implement
 
 In this case, we are going to leave it like that, that is, we are going to use "World" as out movement reference.
 
+## Result
 
-
-## Summary
-
-After following this section we have a blank character with a state controller. This is not enough, though. In this case
+if we hit play
 

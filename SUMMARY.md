@@ -35,12 +35,14 @@
 
 ## Tutorials
 
-* [Core](tutorials/core_tuto.md)
+* [Core](tutorials/core_tuto/README.md)
+  * [Untitled](tutorials/core_tuto/untitled.md)
 * [Implementation](tutorials/imple_tuto/README.md)
   * [Adding the state controller](tutorials/imple_tuto/adding-the-state-controller.md)
   * [Creating a state](tutorials/imple_tuto/the-normalmovement-state.md)
   * [Getting actions](tutorials/imple_tuto/getting-inputs.md)
-  * [Adding movemement](tutorials/imple_tuto/adding-movemement.md)
-  * [Untitled](tutorials/imple_tuto/untitled.md)
+  * [Implementing the state](tutorials/imple_tuto/implementing-the-state.md)
+  * [Using collision events](tutorials/imple_tuto/using-collision-events.md)
+  * [Linear velocity](tutorials/imple_tuto/adding-movemement.md)
   * [Untitled](tutorials/imple_tuto/untitled-1.md)
 

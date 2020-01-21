@@ -1,6 +1,6 @@
 # Creating a state
 
-If you want to extend the current implementation, probably the first thing you want to do is to create your own state.
+If you want to extend the current implementation, probably the first thing you want to do is to create your own state. So, let's forget about the _NormalMovement_ state and let's create our own.
 
 There are two important thing to consider in order to achieve a successful state creation
 
