@@ -6,7 +6,7 @@ In order to get actions \(from a Human or the AI\) the character needs to have a
 
 Since we want to play around with the character we are creating, let's choose a **Human brain**, and then assign the default **input data asset**. It should look like this:
 
-![](../../.gitbook/assets/imagen%20%2811%29.png)
+![](../../.gitbook/assets/imagen%20%2812%29.png)
 
 
 

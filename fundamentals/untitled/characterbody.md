@@ -1,4 +1,14 @@
-# Properties
+# Character body
+
+## Components required
+
+The character uses a 2D/3D _Rigidbody_ and a 2D/3D _CapsuleCollider_ in order to detect collision, generate contacts, do movement, etc. Since the 2D and 3D world have their own specific components, a single component has been created in order to encapsulate both the _Rigidbody_ and the _Collider_, thus creating a level of abstraction.
+
+![](../../.gitbook/assets/characterbodytree.png)
+
+
+
+## Properties
 
 ### Foot position
 
@@ -8,13 +18,15 @@ The foot position is considered as the origin, a point of reference for everythi
 
 The character is modeled as an upright capsule. This means that the capsule height vector\footnote{Vector defined from the bottom sphere to the top sphere} and the up vector of the character transform will have always the same direction vector.
 
-![](../../../.gitbook/assets/capsuleupright.png)
+![](../../.gitbook/assets/capsuleupright.png)
 
 This capsule is not visible, any real character will need a graphics element with a renderer to show the mesh or sprite on screen.
 
 ### Size
 
 Since this is a capsule-based character we need only to define the radius and the height to fully describe the size of the character. The \textit{CharacterActor} will consider the character dimensions as:
+
+
 
 $$
 Width = 2 \times Collider.Radius
@@ -24,9 +36,11 @@ $$
 Height = Collider.Height
 $$
 
+
+
 The Width and Height values are represented with the _body size_ \(a _Vector2_\).
 
-![](../../../.gitbook/assets/capsulebodydimensions.png)
+![](../../.gitbook/assets/capsulebodydimensions.png)
 
 {% hint style="info" %}
 In play mode the collider offset will be automatically adjusted.
@@ -52,5 +66,5 @@ The character _localScale_ should always be $$< 1, 1 , 1 >$$.
 
 Even though this is a dynamic character controller, the \textit{CharacterActor} is still doing physics queries to detect collisions. Because of this an effective collision shape was defined \(different from the character body shape\) using the width, height and skin width \(See figure \ref{fig:Tuto\_character\_SW}\).
 
-![The collision shape of the character.](../../../.gitbook/assets/collisionshape.png)
+![The collision shape of the character.](../../.gitbook/assets/collisionshape.png)
 

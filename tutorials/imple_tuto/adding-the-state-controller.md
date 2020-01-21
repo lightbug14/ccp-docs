@@ -4,7 +4,7 @@ As it was mentioned before in the "fundamentals" section of this documentation, 
 
 The logic thing to do is to add this component to our blank character, so let's do it:
 
-![](../../.gitbook/assets/imagen%20%2810%29.png)
+![](../../.gitbook/assets/imagen%20%2811%29.png)
 
 As you probably noticed, a _CharacterBrain_ component was added to the object as well. This is because the state controller requires a "brain" component to work. The states may or may not gather information from this brain for their tasks. Later on \(in the section [Getting actions](getting-inputs.md)\) we are going to see this in action \(ignore it for now\).
 

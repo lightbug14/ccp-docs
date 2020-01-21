@@ -1,12 +1,18 @@
-# Implementing the state
+# Implementing the NormalMovement state
 
 
 
-Ok, now that we know how to create a state and read the input actions we are ready to do our own stuff inside the update behaviour methods. 
+Ok, now that we know how to create a state and read the input actions from the brain, we are ready to do our own stuff 😀. 
 
-The _CharacterActor_ component has some public properties and methods we will want to modify. The most common is the _linear velocity_. By assigning this field we can say "move "
+It is not necessary to create many states and transitions between them in order to create a good playable character. The _NormalMovement_ state is a good example of this. 
 
+This state was created as a multi purpose state, responsible for basic grounded and not grounded movement, gravity, walking and running, crouching, jumping, and so on.
 
+In this section we are going to implement a super basic state that mimics some of the cool things of this state.
+
+{% hint style="info" %}
+If you want to know more in detail about this state please see the _NormalMovement.cs_ script.
+{% endhint %}
 
 ## Basic state structure
 
@@ -21,21 +27,6 @@ public override void UpdateBehaviour( float dt )
 ```
 
  _HandleSize_ and _HandleMovement_ will handle the size and movement respectively. The parameter _dt_ is equals to _Time.deltaTime_.
-
-## Input handling
-
-The more elemental thing to do is to read brain actions from the character \(human or AI\). This is accomplished by reading the \textit{CharacterAction} struct directly.
-
-For example to check if the \textit{Jump} action was initiated \(button pressed down\):
-
-```csharp
-if( characterBrain.CharacterAction.jumpPressed )
-{ 
-    // Define the jump velocity vector ... 
-}
-```
-
-
 
 ## Size handling
 
@@ -70,6 +61,8 @@ void HandleMovement( float dt )
 }
 ```
 
+### Velocity
+
 Now, we have reached an interesting point. What velocity scheme we are going to use for this purpose. In the NormalMovement state, t**he final velocity is the sum of three separated velocities**. These are:
 
 |  |  |
@@ -95,11 +88,15 @@ void HandleMovement( float dt )
 If you need to dig into the code please check the _NormalMovement.cs_ script.
 {% endhint %}
 
-## Entering the state
+### Velocity continuity
 
 By only implementing the _UpdateBehaviour_ method we are reading a bunch of custom velocities \(from the _NormalMovement_ state exclusively\) and combining them to obtain a final velocity vector. 
 
-Since the linear velocity is define within the state we can ask ourself: **What happens if a previous state had modified its value?**. If suddenly we are leaving another state and entering the _NormalMovement_ state the result will be inconsistent.
+Since the linear velocity is define within the state we can ask ourself:
+
+#### What happens if a previous state had modified the linear velocity value?
+
+Well, the most obvious thing is that the character will change instantly its velocity, resulting in a not so pleasant result 😕. We must ensure velocity continuity between the states \(if we want it, of course\).
 
 To fix this we can override the _EnterBehaviour_ method, use it to read the current linear velocity vector and update our custom velocities properly.
 
@@ -113,7 +110,46 @@ public override void EnterBehaviour(float dt)
 }
 ```
 
-So, everytime we came
+So, everytime we come from another state to the NormalMovement state the velocity is assigned to our own velocities \(controlled, vertical and external\).
+
+## Collision events
+
+We can take advantage of the character events to modify whatever parameter we want. In this case we need to convert the collision response into the _externalVelocity_ vector.
+
+Another thing we need to do is to make zero our vertical velocity when the character hits something with its head \(typical scenario\). We achieve this by "listening" to the _OnHeadHit_ and _OnContactHit_ events, using the _OnHeadHit_ and _OnContactHit_ methods respectively:
+
+```csharp
+void OnEnable()
+{
+    CharacterActor.OnHeadHit += OnHeadHit; 
+    CharacterActor.OnContactHit += OnContactHit;
+}
+
+void OnDisable()
+{
+    CharacterActor.OnHeadHit -= OnHeadHit;
+    CharacterActor.OnContactHit -= OnContactHit;
+}
+```
+
+And implementing those methods:
+
+```csharp
+void OnHeadHit( CollisionInfo collisionInfo )
+{
+    verticalVelocity = Vector3.zero;
+}
+
+void OnContactHit( Vector3 impulse )
+{
+    if( !rigidbodyResponseParameters.reactToRigidbodies )
+        return;
+
+    externalVelocity = impulse * rigidbodyResponseParameters.impulseMultiplier;
+}
+```
+
+
 
 ## 
 
