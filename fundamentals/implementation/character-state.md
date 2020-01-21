@@ -16,7 +16,7 @@ public override void ExitBehaviour(float dt)
 
 ## State creation
 
-If you want to create your own states you can do so manually by creating your own class. It's mandatory that it derives from the \textit{CharacterState} class.
+If you want to create your own states you can do so manually by creating your own class. It's mandatory that it derives from the _CharacterState_ class.
 
 Another way is by simply right clicking on the project view \(choose the path of your choice\), then go to \textit{\`\`Create/Character Controller Pro/Implementation/Character State''}. This will create a template with the basics already included.
 

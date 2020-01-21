@@ -23,7 +23,6 @@
   * [Setup](fundamentals/untitled/setup.md)
   * [Implementing the core](fundamentals/untitled/implementing-the-core.md)
 * [Implementation](fundamentals/implementation/README.md)
-  * [Untitled](fundamentals/implementation/untitled-1.md)
   * [Character state controller](fundamentals/implementation/character-state-controller.md)
   * [Character state](fundamentals/implementation/character-state.md)
   * [Character brain](fundamentals/implementation/character-brain.md)
@@ -39,7 +38,7 @@
   * [Adding the state controller](tutorials/imple_tuto/adding-the-state-controller.md)
   * [Creating a state](tutorials/imple_tuto/the-normalmovement-state.md)
   * [Transitions](tutorials/imple_tuto/transitions.md)
-  * [Getting actions](tutorials/imple_tuto/getting-inputs.md)
+  * [Reading actions](tutorials/imple_tuto/getting-inputs.md)
   * [Implementing the NormalMovement state](tutorials/imple_tuto/implementing-the-state.md)
   * [Untitled](tutorials/imple_tuto/untitled-1.md)
 

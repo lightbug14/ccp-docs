@@ -1,4 +1,4 @@
-# Getting actions
+# Reading actions
 
 ## Requirements
 
