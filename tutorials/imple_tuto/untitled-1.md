@@ -1,8 +1,6 @@
-# Adding movemement
+# Untitled
 
 
-
-Ok, now that we know how to create a state and read 
 
 It is not necessary to create many states and transitions between them in order to create a good playable character, the _NormalMovement_ state is a good example of this. This state was created as a multi purpose state, responsible for basic grounded and not grounded movement, gravity, walking and running, crouching, jumping, and so on.
 

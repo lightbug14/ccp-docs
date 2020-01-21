@@ -32,14 +32,15 @@
   * [Character animation](fundamentals/implementation/character-animation.md)
   * [Character particles](fundamentals/implementation/character-particles.md)
   * [Kinematic actors](fundamentals/implementation/untitled-2.md)
-  * [Untitled](fundamentals/implementation/untitled.md)
-  * [Untitled](fundamentals/implementation/untitled-3.md)
 
 ## Tutorials
 
 * [Core](tutorials/core_tuto.md)
 * [Implementation](tutorials/imple_tuto/README.md)
+  * [Adding the state controller](tutorials/imple_tuto/adding-the-state-controller.md)
   * [Creating a state](tutorials/imple_tuto/the-normalmovement-state.md)
-  * [Getting inputs](tutorials/imple_tuto/getting-inputs.md)
+  * [Getting actions](tutorials/imple_tuto/getting-inputs.md)
   * [Adding movemement](tutorials/imple_tuto/adding-movemement.md)
+  * [Untitled](tutorials/imple_tuto/untitled.md)
+  * [Untitled](tutorials/imple_tuto/untitled-1.md)
 
