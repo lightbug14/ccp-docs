@@ -1,10 +1,12 @@
 # Implementation
 
-In this section we are going to add and configure all the basic components that come with the Implementation. By starting with a "Blank" character...
+In this section we are going to do the following:
 
+1. Create a simple character with a BasicState.
+2. 
 ![](../../.gitbook/assets/imagen%20%287%29.png)
 
-... we are going to endup with the Demo character that comes with CCP.
+
 
 
 

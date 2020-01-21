@@ -1,12 +1,10 @@
-# Implementing the NormalMovement state
+# Implementing the state
 
 
 
 Ok, now that we know how to create a state and read the input actions from the brain, we are ready to do our own stuff 😀. 
 
-It is not necessary to create many states and transitions between them in order to create a good playable character. The _NormalMovement_ state is a good example of this. 
-
-This state was created as a multi purpose state, responsible for basic grounded and not grounded movement, gravity, walking and running, crouching, jumping, and so on.
+It is not necessary to create many states and transitions between them in order to create a good playable character. The _NormalMovement_ state is a good example of this. This state was created as a multi purpose state, responsible for basic grounded and not grounded movement, gravity, walking and running, crouching, jumping, and so on.
 
 In this section we are going to implement a super basic state that mimics some of the cool things of this state.
 

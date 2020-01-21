@@ -39,6 +39,5 @@
   * [Creating a state](tutorials/imple_tuto/the-normalmovement-state.md)
   * [Transitions](tutorials/imple_tuto/transitions.md)
   * [Reading actions](tutorials/imple_tuto/getting-inputs.md)
-  * [Implementing the NormalMovement state](tutorials/imple_tuto/implementing-the-state.md)
-  * [Untitled](tutorials/imple_tuto/untitled-1.md)
+  * [Implementing the state](tutorials/imple_tuto/implementing-the-state.md)
 
