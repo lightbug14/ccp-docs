@@ -41,7 +41,5 @@
   * [Transitions](tutorials/imple_tuto/transitions.md)
   * [Getting actions](tutorials/imple_tuto/getting-inputs.md)
   * [Implementing the NormalMovement state](tutorials/imple_tuto/implementing-the-state.md)
-  * [Using collision events](tutorials/imple_tuto/using-collision-events.md)
-  * [Linear velocity](tutorials/imple_tuto/adding-movemement.md)
   * [Untitled](tutorials/imple_tuto/untitled-1.md)
 

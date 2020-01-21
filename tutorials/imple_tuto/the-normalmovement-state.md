@@ -59,6 +59,8 @@ public class BasicState : CharacterState
 }
 ```
 
+The `Name`property is needed to register this state inside the state controller. This is useful when we need to get a particular state, especially when implementing the transitions.
+
 Now you can start to write your own state logic.
 
 Although this code is super simple to write, there is an easier way to create a state by using the "Create" menu.
