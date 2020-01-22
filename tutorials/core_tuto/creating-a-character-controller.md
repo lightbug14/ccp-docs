@@ -1,8 +1,10 @@
-# Creating a Character Controller
+# Creating a Character Controller script
 
-We are going to create a simple script where we are going to put all our code. This script is usually called a controller. What is that this script control? Movement? Rotation? well, as a general term, this controls some.
+We are going to create and configure a really simple script where we are going to put all our code \(next sections\). This script is usually called a character controller \(or whatever you want to call it\).
 
-First of all let's create our script, we are going to call it "TutorialController":
+## 1. The script
+
+First of all let's create our script, we are going to call it "TutorialController". This 
 
 ```csharp
 using System.Collections;
@@ -14,9 +16,11 @@ public class TutorialController : MonoBehaviour
 }
 ```
 
-We need to include some of the CCP basic stuff in there.
+## 2. Namespace and components
 
-1. The namespace
+We need to include do some basic things first. These are:
+
+1. Using the Core namespace
 2. It would be nice to add a RequireComponent attribute, since we need a CharacterActor component to work with.
 3. Add a CharacterActor field
 4. Get the CharacterActor component in Awake
@@ -40,11 +44,11 @@ public class TutorialController : MonoBehaviour
 }
 ```
 
+## 3. The update methods
 
+We will need to update the character actor one way or another. The question is, What update method you should use? Update? FixedUpdate? Another method? 
 
-
-
-
+The answer is not clear, because again it depends. It's recommended to handle inputs in the Update method and modify the character properties in the FixedUpdate method. So, for this tutorial we are going to use both.
 
 ```csharp
 using System.Collections; 
@@ -54,10 +58,7 @@ using Lightbug.CharacterControllerPro.Core;
 
 [RequireComponent( typeof( CharacterActor ) )] 
 public class TutorialController : MonoBehaviour
-{
-    [SerializeField]
-    float speed = 5f;
-    
+{        
     CharacterActor characterActor = null;
     
     void Awake()
@@ -65,27 +66,30 @@ public class TutorialController : MonoBehaviour
         characterActor = GetComponent<CharacterActor>();
     } 
     
+    void Update()
+    {
+        GetInputs();
+    }
+    
     void FixedUpdate()
     {
-        // Build an input vector
-        Vector3 input = new Vector3( 
-            Input.GetAxisRaw( "Horizontal" ) , 
-            Input.GetAxisRaw( "QE" ) , 
-            Input.GetAxisRaw( "Vertical" ) 
-        );
-    
-        // Normalize it!
-        input.Normalize();
-    
-        // Create a velocity based on the input and the speed
-        Vector3 velocity = speed * input;
-    
-        characterActor.SetLinearVelocity( velocity );
+        UpdateCharacter();
     }
+    
+    void GetInputs()
+    {        
+    }
+    
+    void UpdateCharacter()
+    {        
+    }
+    
     
     
 }
 ```
+
+
 
 
 

@@ -34,7 +34,8 @@
 
 * [Core](tutorials/core_tuto/README.md)
   * [Creating a basic character](tutorials/core_tuto/untitled.md)
-  * [Creating a Character Controller](tutorials/core_tuto/creating-a-character-controller.md)
+  * [Creating a Character Controller script](tutorials/core_tuto/creating-a-character-controller.md)
+  * [Getting inputs](tutorials/core_tuto/getting-inputs.md)
   * [Moving the character](tutorials/core_tuto/moving-the-character.md)
 * [Implementation](tutorials/imple_tuto/README.md)
   * [Adding the state controller](tutorials/imple_tuto/adding-the-state-controller.md)
