@@ -40,6 +40,5 @@
 * [Implementation](tutorials/imple_tuto/README.md)
   * [Adding the state controller](tutorials/imple_tuto/adding-the-state-controller.md)
   * [Creating a state](tutorials/imple_tuto/the-normalmovement-state.md)
-  * [Reading actions](tutorials/imple_tuto/getting-inputs.md)
   * [Implementing the state](tutorials/imple_tuto/implementing-the-state.md)
 

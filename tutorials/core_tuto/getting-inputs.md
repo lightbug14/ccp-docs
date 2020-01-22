@@ -1,10 +1,12 @@
 # Getting inputs
 
+## 1. Defining our inputs
+
 We want to move around, jump and crouch. So, we need three types of input variables:
 
 |  |  |
 | :--- | :--- |
-| inputAxes | To move using the Horizontal and Vertical Axis defined in the InputManager |
+| inputAxes | To move using the Horizontal, Vertical and QE\(q and e keys\) Axis defined in the InputManager. We are going to read "raw" axes. |
 | jumpPressed | To detect if the jump button is pressed. |
 | crouchHeld | To detect if the crouch key is being held |
 
@@ -15,59 +17,31 @@ To fix this we are going to use an OR operation for the bools.
 {% endhint %}
 
 ```csharp
-using System.Collections; 
-using System.Collections.Generic; 
-using UnityEngine; 
-using Lightbug.CharacterControllerPro.Core;
+Vector3 inputAxes = default( Vector3 );
+bool jumpPressed = false;
+bool crouchHeld = false;
+```
 
-[RequireComponent( typeof( CharacterActor ) )] 
-public class TutorialController : MonoBehaviour
-{        
-    CharacterActor characterActor = null;    
+## 2. Getting the inputs
+
+```csharp
+void GetInputs()
+{
+    inputAxes = new Vector3( 
+        Input.GetAxisRaw("Horizontal") ,
+        Input.GetAxisRaw("QE") ,
+        Input.GetAxisRaw("Vertical")
+    ).normalized;  //<- Normalized!
     
-    Vector2 inputAxes = default( Vector2 );
-    bool jumpPressed = false;
-    bool crouchHeld = false;
+    jumpPressed |= Input.GetButtonDown( "Jump" );
+    crouchHeld |= Input.GetButtonDown( "Crouch" );
+}  
     
-    void Awake()
-    {
-        characterActor = GetComponent<CharacterActor>();
-    } 
-    
-    void Update()
-    {
-        GetInputs();
-    }
-    
-    void FixedUpdate()
-    {
-        UpdateCharacter();        
-        ResetInputs();        
-    }
-    
-    void GetInputs()
-    {
-        inputAxes = new Vector2( 
-            Input.GetAxisRaw("Horizontal") ,
-            Input.GetAxisRaw("Vertical")
-        );
-        
-        jumpPressed |= Input.GetButtonDown( "Jump" );
-        crouchHeld |= Input.GetButtonDown( "Crouch" );
-    }
-    
-    void UpdateCharacter()
-    {        
-    }
-    
-    void ResetInputs()
-    {
-        inputAxes = Vector2.zero;        
-        jumpPressed = false;
-        crouchHeld  = false;
-    }
-    
-    
+void ResetInputs()
+{
+    inputAxes = Vector3.zero;        
+    jumpPressed = false;
+    crouchHeld  = false;
 }
 ```
 
