@@ -14,15 +14,9 @@ public override void ExitBehaviour(float dt)
 }
 ```
 
-## State creation
+## Transitions
 
-If you want to create your own states you can do so manually by creating your own class. It's mandatory that it derives from the _CharacterState_ class.
-
-Another way is by simply right clicking on the project view \(choose the path of your choice\), then go to \textit{\`\`Create/Character Controller Pro/Implementation/Character State''}. This will create a template with the basics already included.
-
-### Transitions
-
-This is an important concept to understand. A transition is evaluated in two places, in the "from state" and the "to state":
+This is an important concept to understand. A transition is evaluated in two places: the "from state" and the "to state":
 
 |  |  |
 | :--- | :--- |
@@ -50,8 +44,6 @@ Well, sometimes the information needed to decide if a transition is successful o
 
 
 
-## Transitions
-
 The best way to understand transitions is by looking at the _CharacterStateController_ script. Specifically at the _CheckForTransitions_ method:
 
 ```csharp
@@ -73,8 +65,6 @@ bool CheckForTransitions()
 ```
 
 Something to notice about this is that the _CheckExitTransition_ is evaluated in the current state, and the _CheckEnterTransition_ is evaluated in the next state. 
-
-## From StateA to StateB
 
 So, in order to allow a transition from a _state A_ to a _state B_ we need to implement the _CheckExitTransition_ in _State A_ and the _CheckEnterTransition_ methods in _State B_.
 
@@ -134,40 +124,4 @@ public override bool CheckEnterTransition( CharacterState fromState )
         return conditionStateB;
 }
 ```
-
-## Multiple transitions per state
-
-The principle is exactly the same as before:
-
-```csharp
-
-public override CharacterState CheckExitTransition()
-{ 
-    CharacterState state = null;
-    if( conditionStateA_B )
-    {
-        state = CharacterStateController.GetState( "StateB" );
-    }
-    else if( conditionStateA_C )
-    {
-        state = CharacterStateController.GetState( "StateC" );
-
-    }   
-    else if( conditionStateA_D )
-    {
-        state = CharacterStateController.GetState( "StateD" );
-    }    
-    // etc...     
-
-    return state;
-}
-```
-
-
-
-
-
-
-
-
 

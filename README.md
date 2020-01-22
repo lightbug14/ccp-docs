@@ -6,7 +6,7 @@ Hi! I'm Lightbug, welcome to the **Character Controller Pro** Documentation. Her
 
 ## How to read this?
 
-It depends on how far you want to go with this package. If you got CCP only to use as it is, you can ignore the fundamentals and a good part of the tutorials. Just make sure to read the Introduction section.
+Well it depends on how far you want to go with this package. If you got CCP only to use as it is, you can ignore the fundamentals and the tutorials. Just make sure to read the Introduction section.
 
 On the other hand, if you want to take full advange of the package please read the whole documentation.
 
