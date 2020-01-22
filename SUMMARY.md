@@ -34,10 +34,11 @@
 
 * [Core](tutorials/core_tuto/README.md)
   * [Creating a basic character](tutorials/core_tuto/untitled.md)
+  * [Creating a Character Controller](tutorials/core_tuto/creating-a-character-controller.md)
+  * [Moving the character](tutorials/core_tuto/moving-the-character.md)
 * [Implementation](tutorials/imple_tuto/README.md)
   * [Adding the state controller](tutorials/imple_tuto/adding-the-state-controller.md)
   * [Creating a state](tutorials/imple_tuto/the-normalmovement-state.md)
-  * [Transitions](tutorials/imple_tuto/transitions.md)
   * [Reading actions](tutorials/imple_tuto/getting-inputs.md)
   * [Implementing the state](tutorials/imple_tuto/implementing-the-state.md)
 

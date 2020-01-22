@@ -45,11 +45,25 @@ public struct CharacterActionsInfo
 if you need to add or remove actions please make a backup.
 {% endhint %}
 
-The character brain component contains a copy of this struct. All the actions will be updated in the Update cycle. 
+The character brain component contains a copy of this struct:
 
 ```csharp
 CharacterActionsInfo characterActions = new CharacterActionsInfo();
 ```
+
+All the actions will be updated in the Update cycle. The process will vary depending on the brain type selected. 
+
+```csharp
+void Update()
+{
+    if( isAI )
+        UpdateAIBrain();
+    else
+        UpdateHumanBrain();	
+}
+```
+
+ 
 
 ### Reading the character actions
 
@@ -81,7 +95,9 @@ Basically in a human brain the actions are updated using input devices \(keyboar
 
 In order to update these actions an _input handler_ is needed. This is a simple abstract component that needs to the implemented in order to process inputs. It has the most common input functionalities, such as _GetButton_, _GetButtonDown_, _GetButtonUp_ and _GetAxis_. Each input handler should implement these methods in its own way.
 
-The package contains two default input handler components, one for the classic _Unity's Input Manager_ and another for the _Unity's UI_ system \(used in mobile\). Additionally it supports a custom input handler mode, useful if you want to create your own handler.
+The package contains two default input handler components, one for the classic _Unity's Input Manager_ and another for the _Unity's UI_ system \(used in mobile games\). 
+
+Additionally there is support for a custom input handler \("Custom"\). This useful if you want to create your own handler.
 
 These modes can be selected in the brain using the _Human Input Type_ field.
 

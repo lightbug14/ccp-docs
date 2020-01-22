@@ -85,7 +85,7 @@ There are parameters that can be configured for both volumes and surfaces. These
 
 Any material without a proper tag on it will be considered as a \`\`default material''.
 
-![](../../.gitbook/assets/imagen%20%288%29.png)
+![](../../.gitbook/assets/imagen%20%289%29.png)
 
 ### Tagged materials
 

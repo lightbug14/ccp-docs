@@ -1,6 +1,6 @@
 # Core
 
-\section{Setup of a basic character}
+This section is intended to
 
 ## Manually 
 
