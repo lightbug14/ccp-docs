@@ -2,5 +2,7 @@
 
 The 
 
+![](../../.gitbook/assets/tutorial-core-gif.gif)
+
 
 

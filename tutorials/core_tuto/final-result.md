@@ -1,6 +1,6 @@
 # Final result
 
-Finally we are here! this is how the _TutorialController_ script should look:
+Finally we are here! this is how the _TutorialController_ script should look \(copy paste the code if you want to test it by yourself\):
 
 ```csharp
 using System.Collections; 
@@ -184,4 +184,16 @@ public class TutorialController : MonoBehaviour
 {% hint style="warning" %}
 Remember to register the "Teleport" input in the Input Manager! otherwise you will get an error on the console.
 {% endhint %}
+
+There are still a some important things we can do to improve this super basic character:
+
+* smooth planar velocity \(not instant\).
+* grounded and not grounded control.
+* variable jump height.
+* velocity projection.
+* slide down from a steep slope \(unstable ground\).
+* movement states \(very important as well\).
+* etc.
+
+The list goes on and on, the sky is the limit, really. The implementation included in the package does all these tasks and much much more! 😀 So you don't have to go crazy.
 
