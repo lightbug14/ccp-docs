@@ -6,10 +6,14 @@ In order to crouch we need to change the character size. So, let's look at the `
 The size we are going to set is the **target size**. We are not setting the height directly, that job is done by the character actor internally. You can modify the transition speed.
 {% endhint %}
 
-First thing we need to do is to save the initial size. The size property is from the _CharacterBody_ component. Although we don't have a reference to that component, but we can get it from the character actor.
+First thing we need to do is to save the initial size. The size property is from the _CharacterBody_ component:
 
 ```csharp
-characterActor.CharacterBody.BodySize;
+void Awake()
+{
+    characterActor = GetComponent<CharacterActor>();
+    characterBody = GetComponent<CharacterBody>();
+} 
 ```
 
  We can do this in awake:
@@ -21,7 +25,7 @@ void Awake()
 {
     characterActor = GetComponent<CharacterActor>();
 
-    initialBodySize = characterActor.CharacterBody.BodySize;
+    initialBodySize = characterBody.BodySize;
 }
 ```
 

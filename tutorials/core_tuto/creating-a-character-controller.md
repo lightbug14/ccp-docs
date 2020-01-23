@@ -92,7 +92,7 @@ Now we need to implement those methods. Now it would be good to define our visio
 
 Let's say that we want our character to:
 
-* Move in the right and forward direction axes \(positve and negative movement\).
+* Move forwards and backwards.
 * Rotate left and right.
 * Be affected by gravity.
 * Jump.
