@@ -18,16 +18,6 @@ Vector3 planarVelocity = default( Vector3 );
 Then we are going to combine this speed field with the input axes to create a velocity vector.
 
 ```csharp
-void UpdateCharacter()
-{        
-    PlanarMovement();    
-    
-    Vector3 velocity = planarVelocity;  // for now
-    
-    // Set the linear velocity
-    characterActor.SetLinearVelocity( velocity );
-}
-
 void PlanarMovement()
 {
     // Create a 3D vector based on the forward and right axes.
@@ -46,13 +36,32 @@ void PlanarMovement()
 }
 ```
 
+FInally we need to set the linear velocity:
+
+```csharp
+void UpdateCharacter()
+{        
+    PlanarMovement();    
+    
+    Vector3 velocity = planarVelocity;
+    
+    characterActor.SetLinearVelocity( velocity );
+}
+
+
+```
+
 {% hint style="warning" %}
 The linear velocity is global, this means we could transform the coordinates before sending them to the character actor.
 {% endhint %}
 
+{% hint style="success" %}
+After doing this the character should be able to move forwards and backwards, leftwards and rightwards. 
+{% endhint %}
+
 ## 2. Not grounded movement
 
-As you can see, we have a character that can move forwards and backwards, leftwards and rightwards. Still, the character is always "not grounded". This is because internally the grounded state is activated only if the character has a negative vertical velocity \(along the local up axis or `transform.up`\). In this case the velocity is perpendicular to this direction, or in other words, this direction is the normal of the character "movement plane".
+Still, the character is always "not grounded". This is because internally the grounded state is activated only if the character has a negative vertical velocity \(along the local up axis or `transform.up`\). In this case the velocity is perpendicular to this direction, or in other words, this direction is the normal of the character "movement plane".
 
 In any case, we can't go to the grounded state. In the next section we are going to overcome this by implement gravity.
 

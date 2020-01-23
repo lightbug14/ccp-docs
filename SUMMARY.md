@@ -36,6 +36,7 @@
   * [Moving the character](tutorials/core_tuto/moving-the-character.md)
   * [Gravity](tutorials/core_tuto/gravity.md)
   * [Jump](tutorials/core_tuto/jump.md)
+  * [Rotation](tutorials/core_tuto/rotation.md)
   * [Crouch](tutorials/core_tuto/crouch.md)
   * [Teleport](tutorials/core_tuto/teleport.md)
 * [Implementation](tutorials/imple_tuto/README.md)

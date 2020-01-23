@@ -12,13 +12,16 @@ Vector3 verticalVelocity = default( Vector3 );
 To implement gravity we need apply \(or not\) vertical velocity to the character. This can be done by reading the grounded state.
 
 ```csharp
-if( characterActor.isGrounded )
+void VerticalMovement()
 {
-    verticalVelocity = Vector3.zero;
-}
-else
-{
-    verticalVelocity += - transform.up * gravity  * Time.deltaTime;
+    if( characterActor.isGrounded )
+    {
+        verticalVelocity = Vector3.zero;
+    }
+    else
+    {
+        verticalVelocity += - transform.up * gravity  * Time.deltaTime;
+    }
 }
 ```
 
@@ -35,27 +38,13 @@ void UpdateCharacter()
     // Set the linear velocity
     characterActor.SetLinearVelocity( velocity );
 }
-
-void VerticalMovement()
-{
-    if( characterActor.isGrounded )
-    {
-        verticalVelocity = Vector3.zero;
-    }
-    else
-    {
-        verticalVelocity += - transform.up * gravity  * Time.deltaTime;
-    }
-}
 ```
 
+{% hint style="success" %}
+You should see how the character falls until it hits the ground, thus entering the grounded state.
+{% endhint %}
 
-
-
-
-Something very important to notice is that the character is able to move around freely, until it hits the ground. Once this happens it is impossible for the character to move upwards! This is because it has entered the _grounded_ state \(internally things work differenty, no matter the linear velocity value you are using\).
-
+{% hint style="info" %}
 One cool thing you can do is to completely ignore this _grounded_ state by setting the _alwaysNotGrounded_ toggle in the _CharacterActor_ inspector.
-
-In the next section we are going to overcome this by implement gravity and jump.
+{% endhint %}
 
