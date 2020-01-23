@@ -89,6 +89,19 @@ public class TutorialController : MonoBehaviour
 }
 ```
 
+Now we need to implement those methods. Now it would be good to define our vision. 
+
+Let's say that we want our character to:
+
+* Move in the right and forward direction axes \(positve and negative movement\).
+* Rotate left and right.
+* Be affected by gravity.
+* Jump.
+* Crouch.
+* Teleport 10 meters \(high some key is pressed\).
+
+The following sections will explain every item on this list one by one. But first, we need to get some inputs!
+
 
 
 

@@ -2,7 +2,18 @@
 
 ## 1. Defining our inputs
 
-We want to move around, jump and crouch. So, we need three types of input variables:
+Based on our vision for the character, we can define:
+
+|  |  |
+| :--- | :--- |
+| Forward direction | WS |
+| Right direction | AD |
+| Rotate Left/Right | QE |
+| Jump | Space |
+| Crouch | C |
+| Teleport | T |
+
+. So, we need three types of input variables:
 
 |  |  |
 | :--- | :--- |

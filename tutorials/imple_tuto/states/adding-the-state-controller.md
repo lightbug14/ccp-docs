@@ -4,7 +4,7 @@ As it was mentioned before in the "fundamentals" section of this documentation, 
 
 The logic thing to do is to add this component to our blank character, so let's do it:
 
-![](../../.gitbook/assets/imagen%20%2813%29.png)
+![](../../../.gitbook/assets/imagen%20%2814%29.png)
 
 As you probably noticed, a _CharacterBrain_ component was added too. This is because the state controller requires a "brain" component to work. Later on we are going to see this in action \(ignore it for now\).
 
@@ -22,7 +22,7 @@ For the sake of this section we are going to add the _**NormalMovement**_ state,
 In the next sections we will be using our custom states.
 {% endhint %}
 
-![](../../.gitbook/assets/imagen%20%281%29.png)
+![](../../../.gitbook/assets/imagen%20%281%29.png)
 
 ### Materials
 
@@ -34,11 +34,11 @@ You can define your own materials if you want.
 
 In this case, let's use the default materials:
 
-![](../../.gitbook/assets/imagen%20%282%29.png)
+![](../../../.gitbook/assets/imagen%20%282%29.png)
 
 ### Movement reference
 
-Make sure to check the [Character state controller](../../fundamentals/implementation/character-state-controller.md#movement-reference) section to know more about the movement reference.
+Make sure to check the [Character state controller](../../../fundamentals/implementation/character-state-controller.md#movement-reference) section to know more about the movement reference.
 
 In this case, we are going to leave it like that, that is, we are going to use "World" as out movement reference.
 

@@ -1,16 +1,14 @@
 # Table of contents
 
-* [Documentation](README.md)
+* [Introduction](README.md)
 
-## Introduction <a id="intro"></a>
+## The package <a id="package"></a>
 
-* [Description](intro/introduction.md)
-* [Features](intro/features/README.md)
-  * [Core](intro/features/core.md)
-  * [Implementation](intro/features/feature_imple.md)
-* [Content](intro/content.md)
-* [Compatibility](intro/compatibility.md)
-* [Setting up the project](intro/setting-up-the-project.md)
+* [Content](package/content.md)
+* [Versioning](package/versioning.md)
+* [Setting up the project](package/setting-up-the-project.md)
+* [Using the package](package/using-the-package.md)
+* [Updates](package/updates.md)
 
 ## Fundamentals
 
@@ -20,7 +18,6 @@
   * [Character body](fundamentals/untitled/characterbody.md)
   * [Character actor](fundamentals/untitled/character-actor.md)
   * [Character graphics](fundamentals/untitled/character-graphics.md)
-  * [Setup](fundamentals/untitled/setup.md)
   * [Implementing the core](fundamentals/untitled/implementing-the-core.md)
 * [Implementation](fundamentals/implementation/README.md)
   * [Character state controller](fundamentals/implementation/character-state-controller.md)
@@ -38,7 +35,9 @@
   * [Getting inputs](tutorials/core_tuto/getting-inputs.md)
   * [Moving the character](tutorials/core_tuto/moving-the-character.md)
 * [Implementation](tutorials/imple_tuto/README.md)
-  * [Adding the state controller](tutorials/imple_tuto/adding-the-state-controller.md)
-  * [Creating a state](tutorials/imple_tuto/the-normalmovement-state.md)
-  * [Implementing the state](tutorials/imple_tuto/implementing-the-state.md)
+  * [States](tutorials/imple_tuto/states/README.md)
+    * [Adding the state controller](tutorials/imple_tuto/states/adding-the-state-controller.md)
+    * [Creating a state](tutorials/imple_tuto/states/the-normalmovement-state.md)
+    * [Implementing the state](tutorials/imple_tuto/states/implementing-the-state.md)
+  * [Graphics](tutorials/imple_tuto/graphics.md)
 
