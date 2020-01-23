@@ -5,7 +5,7 @@
 Based on our vision for the character, we can define:
 
 |  |  |
-| :--- | :--- |
+| :--- | :---: |
 | Forward direction | WS |
 | Right direction | AD |
 | Rotate Left/Right | QE |
@@ -13,7 +13,24 @@ Based on our vision for the character, we can define:
 | Crouch | C |
 | Teleport | T |
 
-. So, we need three types of input variables:
+The next thing to do will be register all these inputs in the Unity's Input manager \(I will asume you already know how to do that\).
+
+Still, we don't care about a button, what matters is the action that button has triggered. For example a ButtonDown, a ButtonUp, etc.
+
+So let's redefine the inputs again as:
+
+| Action | Input | Input action |
+| :--- | :---: | :--- |
+| Forward direction | WS | -1, 0 or 1 \(Axis Raw\) |
+| Right direction | AD | -1, 0 or 1 \(Axis Raw\) |
+| Rotate Left/Right | QE | -1, 0 or 1 \(Axis Raw\) |
+| Jump | Space | Jump when the button is pressed \(GetButtonDown\) |
+| Crouch | C | Crouch while the button is held down \(GetButton\) |
+| Teleport | T | Teleport when the button is pressed \(GetButtonDown\) |
+
+
+
+
 
 |  |  |
 | :--- | :--- |
