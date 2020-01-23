@@ -14,7 +14,7 @@ To implement gravity we need apply \(or not\) vertical velocity to the character
 ```csharp
 void VerticalMovement()
 {
-    if( characterActor.isGrounded )
+    if( characterActor.IsGrounded )
     {
         verticalVelocity = Vector3.zero;
     }

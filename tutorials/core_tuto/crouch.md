@@ -19,11 +19,13 @@ Vector2 initialBodySize = default( Vector2 );
 
 void Awake()
 {
+    characterActor = GetComponent<CharacterActor>();
+
     initialBodySize = characterActor.CharacterBody.BodySize;
 }
 ```
 
-Good, we now have the initial size. Now it's time to implement the crouch action. Let's say we are going to reduce the height to the half of the initial height.
+Good, we now have the initial size. Now it's time to implement the crouch action. Let's say we are going to reduce the height to the half of the initial height. We want this only if we held the crouch button and the character is grounded.
 
 ```csharp
 void Crouch()

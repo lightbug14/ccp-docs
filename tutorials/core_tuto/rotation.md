@@ -33,7 +33,7 @@ void Rotate()
     float rotationAngle = rotationSpeed * Time.deltaTime;
     Quaternion rotation = Quaternion.AngleAxis( rotationAngle , transform.up );
 
-    Vector3 forwardDirection = quaternion * characterActor.ForwardDirection;
+    Vector3 forwardDirection = rotation * characterActor.ForwardDirection;
     characterActor.SetForwardDirection( forwardDirection );
 
 }

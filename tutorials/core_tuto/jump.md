@@ -18,7 +18,7 @@ The jumping code is as follows:
 ```csharp
 void VerticalMovement()
 {
-    if( characterActor.isGrounded )
+    if( characterActor.IsGrounded )
     {
         verticalVelocity = Vector3.zero;
         
@@ -45,7 +45,7 @@ We must use the ForceNotGrounded method from the _CharacterActor_ component.
 ```csharp
 void VerticalMovement()
 {
-    if( characterActor.isGrounded )
+    if( characterActor.IsGrounded )
     {
         verticalVelocity = Vector3.zero;
         

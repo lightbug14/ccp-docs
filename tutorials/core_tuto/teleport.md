@@ -46,7 +46,11 @@ void UpdateCharacter()
 }
 ```
 
-{% hint style="success" %}
-Now the character should crouch when we press the Crouch button. Notice that the character is not returning to its original height if it doesn't fit in that space.
-{% endhint %}
+Notice that the teleport method takes a rotation as well. 
+
+So, what happens if we pass another value.
+
+The answer is: nothing is going to happen. Rotation is determined by the character actor. If we need to change the rotation we need to modify its gravity modes first.
+
+
 

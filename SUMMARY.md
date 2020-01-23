@@ -40,6 +40,7 @@
   * [Rotation](tutorials/core_tuto/rotation.md)
   * [Crouch](tutorials/core_tuto/crouch.md)
   * [Teleport](tutorials/core_tuto/teleport.md)
+  * [Final result](tutorials/core_tuto/final-result.md)
 
 ## Tutorials - Implementation
 

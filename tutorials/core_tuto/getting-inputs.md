@@ -67,6 +67,12 @@ void ResetInputs()
     crouchHeld  = false;
     teleportPressed = false;
 }
+
+void FixedUpdate()
+{
+    UpdateCharacter();
+    ResetInputs();
+}
 ```
 
 Finally, now we are ready to use these inputs variables and implement the _UpdateCharacter_ method.
