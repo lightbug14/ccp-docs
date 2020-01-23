@@ -27,9 +27,10 @@
   * [Character particles](fundamentals/implementation/character-particles.md)
   * [Kinematic actors](fundamentals/implementation/untitled-2.md)
 
-## Tutorials
+## Tutorials - Core <a id="tutorials"></a>
 
-* [Core](tutorials/core_tuto/README.md)
+* [Introduction](tutorials/introduction.md)
+* [Basic character](tutorials/core_tuto/README.md)
   * [Creating a basic character](tutorials/core_tuto/untitled.md)
   * [Creating a Character Controller script](tutorials/core_tuto/creating-a-character-controller.md)
   * [Getting inputs](tutorials/core_tuto/getting-inputs.md)
@@ -39,10 +40,13 @@
   * [Rotation](tutorials/core_tuto/rotation.md)
   * [Crouch](tutorials/core_tuto/crouch.md)
   * [Teleport](tutorials/core_tuto/teleport.md)
-* [Implementation](tutorials/imple_tuto/README.md)
-  * [States](tutorials/imple_tuto/states/README.md)
-    * [Adding the state controller](tutorials/imple_tuto/states/adding-the-state-controller.md)
-    * [Creating a state](tutorials/imple_tuto/states/the-normalmovement-state.md)
-    * [Implementing the state](tutorials/imple_tuto/states/implementing-the-state.md)
-  * [Graphics](tutorials/imple_tuto/graphics.md)
+
+## Tutorials - Implementation
+
+* [States](tutorials-implementation/states/README.md)
+  * [Adding the state controller](tutorials-implementation/states/adding-the-state-controller.md)
+  * [Creating a state](tutorials-implementation/states/the-normalmovement-state.md)
+  * [Implementing the state](tutorials-implementation/states/implementing-the-state.md)
+* [Graphics](tutorials-implementation/graphics.md)
+* [Untitled](tutorials-implementation/untitled.md)
 

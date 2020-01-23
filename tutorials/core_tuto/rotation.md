@@ -13,12 +13,48 @@ characterActor.SetForwardDirection( forwardDirection );
 Just as a remainder, to rotate a vector you need to do the following:
 
 ```csharp
-Vector3 rotatedVector = rotation * inputVector;
+Vector3 rotatedVector = quaternion * inputVector;
 ```
 
 |  |  |
 | :--- | :--- |
-| inputVector | the current _forwardDirection_ vector |
-| rotation |  |
-|  |  |
+| inputVector | the current _forwardDirection_ vector. |
+| quaternion | a quaternion representing the rotation we want \(based on the rotationAxis input\). |
+| rotatedVector | the desired _forwardDirection_ vector. |
+
+So, we can write:
+
+```csharp
+[SerializeField]
+float rotationSpeed = 50f;
+
+void Rotate()
+{
+    float rotationAngle = rotationSpeed * Time.deltaTime;
+    Quaternion rotation = Quaternion.AngleAxis( rotationAngle , transform.up );
+
+    Vector3 forwardDirection = quaternion * characterActor.ForwardDirection;
+    characterActor.SetForwardDirection( forwardDirection );
+
+}
+```
+
+And finally:
+
+```csharp
+void UpdateCharacter()
+{
+    Rotate();
+    
+    VerticalMovement();
+    PlanarMovement();    
+    
+    Vector3 velocity = planarVelocity + verticalVelocity;  // for now
+    
+    // Set the linear velocity
+    characterActor.SetLinearVelocity( velocity );
+}
+```
+
+
 
