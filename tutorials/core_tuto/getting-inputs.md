@@ -60,11 +60,14 @@ void GetInputs()
     
 void ResetInputs()
 {
-    inputAxes = Vector3.zero;        
+    rightAxis = 0f;   
+    forwardAxis = 0f;       
+    rotationAxis = 0f;            
     jumpPressed = false;
     crouchHeld  = false;
+    teleportPressed = false;
 }
 ```
 
-Finally, now we are ready to use the inputs variables to modify the properties of the actor.
+Finally, now we are ready to use these inputs variables and implement the _UpdateCharacter_ method.
 

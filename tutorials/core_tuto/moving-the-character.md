@@ -2,11 +2,17 @@
 
 ## 1. Defining the velocity
 
-In order to move the character we need to set the _linear velocity_ field \(CharacterActor\). First we need to create a speed serialized field.
+In order to move the character we need to set the _linear velocity_ field \(CharacterActor\). One cool trick I always do is to separate "the" velocity into multiple velocities \(this will give much more control\).
+
+Let's begin with the _planarVelocity_. Basically this velocity will be projected onto the plane formed by the local up direction \(normal\).
+
+So, let's define a speed field and a private velocity vector.
 
 ```csharp
 [SerializeField]
 float speed = 5f;
+
+Vector3 planarVelocity = default( Vector3 );
 ```
 
 Then we are going to combine this speed field with the input axes to create a velocity vector.
@@ -14,19 +20,29 @@ Then we are going to combine this speed field with the input axes to create a ve
 ```csharp
 void UpdateCharacter()
 {        
-    Vector3 velocity = speed * inputAxes;
-}
-```
-
-## 2. Setting the linear velocity
-
-And finally we set the linear velocity by using the `SetLinearVelocity` method.
-
-```csharp
-void UpdateCharacter()
-{        
-    Vector3 velocity = speed * inputAxes;
+    PlanarMovement();    
+    
+    Vector3 velocity = planarVelocity;  // for now
+    
+    // Set the linear velocity
     characterActor.SetLinearVelocity( velocity );
+}
+
+void PlanarMovement()
+{
+    // Create a 3D vector based on the forward and right axes.
+    Vector3 inputAxes = new Vector3(
+        rightAxis ,
+        0f ,
+        forwardAxis
+    );
+    
+    // Normalize the vector!
+    inputAxes.Normalize();
+        
+    // Set the velocity
+    planarVelocity = speed * inputAxes;    
+    
 }
 ```
 
@@ -34,11 +50,9 @@ void UpdateCharacter()
 The linear velocity is global, this means we could transform the coordinates before sending them to the character actor.
 {% endhint %}
 
-## 3. Not grounded movement
+## 2. Not grounded movement
 
-As you can see, we have a character that can move forwards and backwards, left and right, up and down. Something very important to notice is that the character is able to move around freely, until it hits the ground. Once this happens it is impossible for the character to move upwards! This is because it has entered the _grounded_ state \(internally things work differenty, no matter the linear velocity value you are using\).
+As you can see, we have a character that can move forwards and backwards, leftwards and rightwards. Still, the character is always "not grounded". This is because internally the grounded state is activated only if the character has a negative vertical velocity \(along the local up axis or `transform.up`\). In this case the velocity is perpendicular to this direction, or in other words, this direction is the normal of the character "movement plane".
 
-One cool thing you can do is to completely ignore this _grounded_ state by setting the _alwaysNotGrounded_ toggle in the _CharacterActor_ inspector.
-
-In the next section we are going to overcome this by implement gravity and jump.
+In any case, we can't go to the grounded state. In the next section we are going to overcome this by implement gravity.
 
