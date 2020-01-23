@@ -34,7 +34,7 @@ Make sure to add a _TagsAndLayers_ profile to the character. Otherwise nothing i
 
 ![](../../.gitbook/assets/imagen%20%2813%29.png)
 
-Done! 😃 This is the more boring basic character you can create. It does absolutely nothing. In order to give it life go we need to create a "controller" on top \(it's just a script with a cool name\).
+Done! 😃 This is the more boring basic character you can create, It does absolutely nothing. In order to give it some life we need to create a "controller" on top \(it's just a script with a cool name\).
 
 
 

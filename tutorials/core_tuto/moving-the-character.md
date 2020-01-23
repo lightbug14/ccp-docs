@@ -20,12 +20,8 @@ Then we are going to combine this speed field with the input axes to create a ve
 ```csharp
 void PlanarMovement()
 {
-    // Create a 3D vector based on the forward and right axes.
-    Vector3 inputAxes = new Vector3(
-        rightAxis ,
-        0f ,
-        forwardAxis
-    );
+    // Create a 3D vector based on the world forward direction.
+    Vector3 inputAxes = forwardAxis * Vector3.forward;
     
     // Normalize the vector!
     inputAxes.Normalize();
@@ -56,7 +52,7 @@ The linear velocity is global, this means we could transform the coordinates bef
 {% endhint %}
 
 {% hint style="success" %}
-After doing this the character should be able to move forwards and backwards, leftwards and rightwards. 
+After doing this the character should be able to move forwards and backwards.
 {% endhint %}
 
 ## 2. Not grounded movement
