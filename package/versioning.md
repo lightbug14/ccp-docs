@@ -1,4 +1,4 @@
-# Versioning
+# Version
 
 The versioning scheme used for CCP is the following:
 
