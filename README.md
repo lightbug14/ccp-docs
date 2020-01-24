@@ -16,5 +16,5 @@ Not at all, this is the official latest version of the docs. This means that it 
 
 ## I have an older version of CCP, Am I doomed?
 
-As always I would recommend to **get the latest version of Character Controller Pro.** That said, don't worry about this "problem", in general most of the concepts, projects settings and tutorials will remain the almost the same.
+As always I would recommend to **get the latest version of Character Controller Pro.** That said, don't worry about this "problem", in general most of the concepts, projects settings and tutorials are similar and probably will remain almost the same.
 
