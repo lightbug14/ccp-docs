@@ -145,21 +145,41 @@ If you want to see all these events in action, or simply see a code example plea
 
 For example when the _OnHeadHit_ event is called a copy of the _CollisionInfo_ structure is passed as an argument, so you can get the information from the collision itself \(for example the _contactNormal_\).
 
-### Rigidbodies interaction
+## Rigidbodies interaction
 
-#### Push
+### Push
 
-The character can push other dynamic rigidbodies by colliding with them. The resulting movement will be determine by the interaction and the rigidbodies parameters \(relative velocity, mass, drag, etc\). This means that the character will push more easily lighter rigidbodies. Since the velocity of the rigidbody is managed by script, in order to increase \(or decrease\) the push force you must increase \(or decrease\) the character rigidbody mass.
+The character can push other dynamic rigidbodies by colliding with them. The resulting movement will be determine by the interaction and the rigidbodies parameters \(relative velocity, mass, drag, etc\). 
 
-It is important to assign the corresponding rigidbodies layers to the _CharacterActor_ layer mask in order to produce faithful results. The character must ignore these bodies when detecting collisions, otherwise the interactions will not be correct.
+{% hint style="info" %}
+The character will push more easily lighter rigidbodies than heavier ones. 
+{% endhint %}
 
-#### Weight
+Since the velocity of the rigidbody is managed by scripts, in order to increase \(or decrease\) the push force you need to increase \(or decrease\) the character **rigidbody mass**. Just like in real life, when you collide with some object it will be moved depending on both its mass and your own mass.
 
-If the character is standing over a dynamic rigidbody this will apply a force to it \(at the contact point\) proportional to the rigidbody mass.
+{% hint style="warning" %}
+It is important to assign the corresponding rigidbodies layers to the Dynamic LayerMask \(tags and layers asset\) in order to allow proper interactions.
+{% endhint %}
 
-#### Collision response
+### Weight
 
-If another dynamic rigidbody hits the character, this will receive _contact velocity_ due to the collision. Since the velocity is fully scripted, the script involved in the movement will need to know when and how the collision happened in order to react to it. This is handle by an event that is triggered every time a collision happens, passing the _contact velocity_ as an argument.
+If the character is standing over a dynamic rigidbody this will automatically apply a force to it \(at the contact point\) proportional to the rigidbody mass.
 
-This allowed rigidbodies to create this type of contact need to be tagged properly. See the _contactRigidbodiesTag_ field.
+### Collision response
+
+If another dynamic rigidbody hits the character, this will receive a _contact velocity_ due to the collision. Since the velocity is fully scripted, the script involved in the movement will need to know when and how the collision happened in order to react to it. 
+
+{% hint style="info" %}
+The character actor has an internal event that's called every time a collision happens, passing the _contact velocity_ as an argument.
+{% endhint %}
+
+The character will receive impacs only from rigidbodies with a special tag, the _contact rigidbodies tag_. This tag can be set in the _tag and layers_ profile. 
+
+![The default contact rigidbody tag \(&quot;Main Profile&quot; asset\).](../../.gitbook/assets/imagen%20%2818%29.png)
+
+Make sure to have this tag registered in your project:
+
+![](../../.gitbook/assets/imagen%20%2816%29.png)
+
+
 

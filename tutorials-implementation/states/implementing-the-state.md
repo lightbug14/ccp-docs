@@ -94,7 +94,7 @@ Since the linear velocity is define within the state we can ask ourself:
 
 #### What happens if a previous state had modified the linear velocity value?
 
-Well, the most obvious thing is that the character will change instantly its velocity, resulting in a not so pleasant result 😕. We must ensure velocity continuity between the states \(if we want it, of course\).
+Well, it is most probable that the character will change instantly its velocity, resulting in a not so pleasant result 😕. In some cases we must ensure velocity continuity between the states.
 
 To fix this we can override the _EnterBehaviour_ method, use it to read the current linear velocity vector and update our custom velocities properly.
 
@@ -108,7 +108,7 @@ public override void EnterBehaviour(float dt)
 }
 ```
 
-So, everytime we come from another state to the NormalMovement state the velocity is assigned to our own velocities \(controlled, vertical and external\).
+So, everytime we come from another state to the NormalMovement state, the velocity will be assigned to our own velocities \(controlled, vertical and external\).
 
 ## Collision events
 

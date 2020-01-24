@@ -22,7 +22,7 @@ For example, for the Input settings, go to the InputManager:
 
 Then select the preset, double click it:
 
-![](../.gitbook/assets/imagen%20%2816%29.png)
+![](../.gitbook/assets/imagen%20%2817%29.png)
 
  That's it!
 

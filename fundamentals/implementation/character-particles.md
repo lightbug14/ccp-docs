@@ -12,7 +12,7 @@ To show the footsteps particles effects the _CharacterParticles_ component uses 
 
 ![Footsteps animation events \(import settings\).](../../.gitbook/assets/footsteps.png)
 
-The events requires a F_unction_ field name, this is because the animation system will call this methods for us.
+The events requires a _Function_ field name, this is because the animation system will call this methods for us.
 
 {% hint style="warning" %}
 It's super important that the method name and the field _Function_ from the animator settings match exactly. Otherwise the method will not be called at all.

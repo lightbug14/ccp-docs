@@ -2,7 +2,9 @@
 
 ## State behaviour
 
-A state is the main piece of code that the state machine executes. Every state presents its own behaviour, and can be implemented through its abstracts and virtual methods. The state controller will call them when they are needed, so don't worry about the execution order \(see the API reference to know what methods are available\).
+A state is the main piece of code that the state machine executes. Every state presents its own behaviour, and can be implemented through its abstracts and virtual methods. The state controller will call them when they are needed, so don't worry about the execution order.
+
+
 
 You need to override the method you want to define a specific behaviour. For instance, if you want to create your own exit behaviour you can do something like this:
 
