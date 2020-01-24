@@ -20,7 +20,7 @@ As mentioned in the fundamentals section, we **must** use a local scale = $$<1,1
 
 Add a character body component to the character:
 
-![](../../.gitbook/assets/imagen%20%287%29.png)
+![](../../.gitbook/assets/imagen%20%288%29.png)
 
 Set the parameters you want, really simple.
 
@@ -38,7 +38,7 @@ By adding a _CharacterActor_ component a _CharacterBody_ component will be added
 Make sure to add a _TagsAndLayers_ profile to the character. Otherwise nothing is going t work
 {% endhint %}
 
-![](../../.gitbook/assets/imagen%20%2813%29.png)
+![](../../.gitbook/assets/imagen%20%2814%29.png)
 
 {% hint style="success" %}
 Done! 😃 This is the more boring basic character you can create, It does absolutely nothing. In order to give it some life we need to create a "controller" on top \(it's just a script with a cool name\).

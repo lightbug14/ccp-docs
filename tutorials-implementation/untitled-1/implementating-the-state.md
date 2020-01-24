@@ -68,7 +68,7 @@ public class TutorialState : CharacterState
     {
         get
         {
-            return "TutorialState ";
+            return "TutorialState";
         }
     }
     
@@ -168,7 +168,7 @@ public class TutorialState : CharacterState
     {
         get
         {
-            return "TutorialState ";
+            return "TutorialState";
         }
     }
     

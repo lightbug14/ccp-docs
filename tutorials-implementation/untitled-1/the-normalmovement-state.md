@@ -24,7 +24,7 @@ using UnityEngine;
 using Lightbug.CharacterControllerPro.Implementation;
 
 
-public class BasicState : CharacterState
+public class TutorialState : CharacterState
 {
 
 }
@@ -41,13 +41,13 @@ using UnityEngine;
 using Lightbug.CharacterControllerPro.Implementation;
 
 
-public class BasicState : CharacterState
+public class TutorialState : CharacterState
 {
     public override string Name
     {
         get
         {
-            return "BasicState";
+            return "TutorialState ";
         }
     }
     
@@ -69,11 +69,11 @@ Although this code is super simple to write, there is an easier way to create a 
 
 You can use the "Create" menu, just as you created C\# scripts. Right mouse click on the project view, _"Create/CharacterControllerPro/Implementation/CharacterState"_.
 
-![](../../.gitbook/assets/imagen%20%288%29.png)
+![](../../.gitbook/assets/imagen%20%289%29.png)
 
 A small window will pop up. Write the state name and click "Create":
 
-![](../../.gitbook/assets/imagen.png)
+![](../../.gitbook/assets/imagen%20%285%29.png)
 
 There you have it! By default a new C\# script will be created with something like this inside:
 
@@ -84,7 +84,7 @@ using UnityEngine;
 using Lightbug.CharacterControllerPro.Implementation;
 
 
-public class BasicState : CharacterState
+public class TutorialState : CharacterState
 {
 
     // Write the name of your state here (returned string)
@@ -92,7 +92,7 @@ public class BasicState : CharacterState
     {
         get
         {
-            return "BasicState";
+            return "TutorialState";
         }
     }
 
@@ -124,6 +124,39 @@ public class BasicState : CharacterState
     public override string GetInfo()
     {
 		    return "Describe your state here!";
+    }
+
+}
+```
+
+For now we are going to focus only in the `UpdateBehaviour` method and the `Awake` method \(always useful to initialize stuff\):
+
+```csharp
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using Lightbug.CharacterControllerPro.Implementation;
+
+
+public class TutorialState : CharacterState
+{
+
+    public override string Name
+    {
+        get
+        {
+            return "TutorialState";
+        }
+    }
+
+    protected override void Awake()
+    {
+        base.Awake();
+    }
+
+    public override void UpdateBehaviour( float dt )
+    {
+        
     }
 
 }

@@ -4,7 +4,7 @@ As it was mentioned before in the "fundamentals" section of this documentation, 
 
 The logic thing to do is to add this component to our blank character, so let's do it:
 
-![](../../.gitbook/assets/imagen%20%2814%29.png)
+![](../../.gitbook/assets/imagen%20%2815%29.png)
 
 As you probably noticed, a _CharacterBrain_ component was added too. This is because the state controller requires a "brain" component to work. Later on we are going to see this in action \(ignore it for now\).
 
@@ -17,7 +17,7 @@ By assigning a state to the _CurrentState_ field you can determine which state w
 Of course, this state controller will not be very useful for us without states to work with. For now we can add some of the states that comes with the package \(later on we are going to create our own states\).
 
 {% hint style="warning" %}
-For the sake of this section we are going to add the _**NormalMovement**_ state, and use it as our current state.
+**For the sake of this section** we are going to add the _**NormalMovement**_ state, and use it as our current state.
 
 In the next sections we will be using our custom states.
 {% endhint %}
@@ -44,5 +44,7 @@ In this case, we are going to leave it like that, that is, we are going to use "
 
 ## Result
 
-if we hit play
+if we hit the play button the character should move using the NormalMovement state behaviour.
+
+Ok, let's remove that component and create our own! Go to the next section.
 
