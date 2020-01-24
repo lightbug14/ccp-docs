@@ -1,2 +1,2 @@
-# Graphics \(WIP\)
+# Graphics \(soon\)
 

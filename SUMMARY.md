@@ -47,5 +47,5 @@
   * [Adding the state controller](tutorials-implementation/untitled-1/adding-the-state-controller.md)
   * [Creating a state](tutorials-implementation/untitled-1/the-normalmovement-state.md)
   * [Implementating the state](tutorials-implementation/untitled-1/implementating-the-state.md)
-* [Graphics \(WIP\)](tutorials-implementation/graphics.md)
+* [Graphics \(soon\)](tutorials-implementation/graphics.md)
 
