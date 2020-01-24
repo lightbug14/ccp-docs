@@ -28,7 +28,7 @@
 
 ## Tutorials - Core <a id="tutorials"></a>
 
-* [Introduction](tutorials/introduction.md)
+* [Description](tutorials/introduction.md)
 * [Basic character](tutorials/core_tuto/README.md)
   * [Creating a basic character](tutorials/core_tuto/untitled.md)
   * [Creating a Character Controller script](tutorials/core_tuto/creating-a-character-controller.md)
