@@ -1,4 +1,4 @@
-# Untitled
+# Improving the Tutorial controller
 
 ## Identifying old problems
 
@@ -153,7 +153,7 @@ For example, the rotation axis is represented by the x component of the _inputAx
 float rotationAngle = CharacterActions.inputAxes.axesValue.x * rotationSpeed * Time.deltaTime;
 ```
 
-
+## Final script
 
 ```csharp
 using System.Collections; 
@@ -277,9 +277,11 @@ public class TutorialState : CharacterState
 }
 ```
 
+{% hint style="success" %}
+We ended up bringing our old TutorialController from the core world into the the implementation world. 
 
-
-
+By making this simple conversion from one world to another you gained some cool features 😀.
+{% endhint %}
 
 ## 
 
