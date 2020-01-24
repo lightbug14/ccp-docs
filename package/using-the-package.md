@@ -8,7 +8,7 @@ The recommended way to use this package \(and every package out there, really\) 
 
 This is useful if you need to use and/or extend the asset in any way.
 
-## Namespace
+## Namespaces
 
 Every part of this package is separated into namespaces. This is to prevent collision between names.
 

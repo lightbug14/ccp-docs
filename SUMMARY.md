@@ -5,10 +5,9 @@
 ## The package <a id="package"></a>
 
 * [Content](package/content.md)
-* [Version](package/versioning.md)
+* [Versions and updates](package/versioning.md)
 * [Setting up the project](package/setting-up-the-project.md)
 * [Using the package](package/using-the-package.md)
-* [Updates](package/updates.md)
 
 ## Fundamentals
 
