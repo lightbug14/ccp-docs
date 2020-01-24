@@ -9,7 +9,6 @@ So, by using the implementation we can:
 * Reduce the size of the initial script, since now we are focus only on the behaviour of the character \(the previous`UpdateCharacter` method mostly\)
 * Use the a state machine, so we can separate out focus into smaller scripts if needed.
 * Use actions rather than inputs from a device.
-* Use external assets to modify the movement properties, this is possible thanks to the "materials".
 
 ## Solving those problems
 
@@ -197,7 +196,7 @@ public class TutorialState : CharacterState
     protected override void Awake()
     { 
         base.Awake();       
-        initialBodySize = characterBody.BodySize;
+        initialBodySize = CharacterActor.CharacterBody.BodySize;
     }     
     
     public override void UpdateBehaviour( float dt )
@@ -210,7 +209,7 @@ public class TutorialState : CharacterState
         
         Vector3 velocity = planarVelocity + verticalVelocity;
 
-        characterActor.SetLinearVelocity( velocity );
+        CharacterActor.SetLinearVelocity( velocity );
     } 
     
     
@@ -218,7 +217,7 @@ public class TutorialState : CharacterState
     {
         float targetHeight = 0f;
         
-        if( characterActor.IsGrounded )
+        if( CharacterActor.IsGrounded )
         {
             targetHeight = CharacterActions.crouch.isHeldDown ? initialBodySize.y / 2f : initialBodySize.y;
         }
@@ -232,7 +231,7 @@ public class TutorialState : CharacterState
             targetHeight 
         );
         
-        characterActor.SetTargetBodySize( targetBodySize );
+        CharacterActor.SetTargetBodySize( targetBodySize );
     }
     
     void Rotate()
@@ -240,20 +239,20 @@ public class TutorialState : CharacterState
         float rotationAngle = CharacterActions.inputAxes.axesValue.x * rotationSpeed * Time.deltaTime;
         Quaternion rotation = Quaternion.AngleAxis( rotationAngle , transform.up );
     
-        Vector3 forwardDirection = rotation * characterActor.ForwardDirection;
-        characterActor.SetForwardDirection( forwardDirection );
+        Vector3 forwardDirection = rotation * CharacterActor.ForwardDirection;
+        CharacterActor.SetForwardDirection( forwardDirection );
     
     }
     
     void VerticalMovement()
     {
-        if( characterActor.IsGrounded )
+        if( CharacterActor.IsGrounded )
         {
             verticalVelocity = Vector3.zero;
             
             if( CharacterActions.jump.isPressed )
             {
-                characterActor.ForceNotGrounded();
+                CharacterActor.ForceNotGrounded();
                 verticalVelocity = transform.up * jumpSpeed;
             }
         }
@@ -271,18 +270,11 @@ public class TutorialState : CharacterState
             
         planarVelocity = speed * inputAxes;   
     
-        Quaternion rotation = Quaternion.FromToRotation( Vector3.forward , characterActor.ForwardDirection );
+        Quaternion rotation = Quaternion.FromToRotation( Vector3.forward , CharacterActor.ForwardDirection );
         planarVelocity = rotation * planarVelocity; 
         
-    }
-
-    
-    
-    
+    }   
 }
-
-
-
 ```
 
 
