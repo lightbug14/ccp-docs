@@ -43,11 +43,9 @@
 
 ## Tutorials - Implementation
 
-* [States](tutorials-implementation/states/README.md)
-  * [Adding the state controller](tutorials-implementation/states/adding-the-state-controller.md)
-  * [Creating a state](tutorials-implementation/states/the-normalmovement-state.md)
-  * [Backup](tutorials-implementation/states/implementing-the-state.md)
-* [Improving the Tutorial controller](tutorials-implementation/untitled-1.md)
-* [Graphics](tutorials-implementation/graphics.md)
-* [Untitled](tutorials-implementation/untitled.md)
+* [Basic character 2.0](tutorials-implementation/untitled-1/README.md)
+  * [Adding the state controller](tutorials-implementation/untitled-1/adding-the-state-controller.md)
+  * [Creating a state](tutorials-implementation/untitled-1/the-normalmovement-state.md)
+  * [Implementating the state](tutorials-implementation/untitled-1/implementating-the-state.md)
+* [Graphics \(WIP\)](tutorials-implementation/graphics.md)
 
