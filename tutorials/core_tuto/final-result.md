@@ -33,8 +33,7 @@ public class TutorialController : MonoBehaviour
     float rotationAxis = 0f;
     bool jumpPressed = false;
     bool crouchHeld = false;
-    bool teleportPressed = false;
-
+    
     // Velocities
     Vector3 planarVelocity = default( Vector3 );
     Vector3 verticalVelocity = default( Vector3 );
@@ -69,7 +68,6 @@ public class TutorialController : MonoBehaviour
         rotationAxis = Input.GetAxisRaw("Horizontal");
         jumpPressed |= Input.GetButtonDown( "Jump" );
         crouchHeld |= Input.GetButton( "Crouch" );
-        teleportPressed |= Input.GetButtonDown( "Teleport" );
     }  
     
     void ResetInputs()
@@ -78,29 +76,11 @@ public class TutorialController : MonoBehaviour
         rotationAxis = 0f;            
         jumpPressed = false;
         crouchHeld  = false;
-        teleportPressed = false;
     }
-    
-
-    void Teleport()
-    {
-        if( !characterActor.IsGrounded )
-            return;
         
-        if( teleportPressed )
-        {
-            characterActor.Teleport( 
-                transform.position + transform.up * 10f , 
-                transform.rotation
-            );
-        }
-    }
-
-    
 
     void UpdateCharacter()
     {
-        Teleport();
         Crouch();
         Rotate();
         
@@ -180,10 +160,6 @@ public class TutorialController : MonoBehaviour
     
 }
 ```
-
-{% hint style="warning" %}
-Remember to register the "Teleport" input in the Input Manager! otherwise you will get an error on the console.
-{% endhint %}
 
 There are still a some important things we can do to improve this super basic character:
 

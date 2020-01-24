@@ -39,7 +39,6 @@
   * [Jump](tutorials/core_tuto/jump.md)
   * [Rotation](tutorials/core_tuto/rotation.md)
   * [Crouch](tutorials/core_tuto/crouch.md)
-  * [Teleport](tutorials/core_tuto/teleport.md)
   * [Final result](tutorials/core_tuto/final-result.md)
 
 ## Tutorials - Implementation
@@ -48,6 +47,7 @@
   * [Adding the state controller](tutorials-implementation/states/adding-the-state-controller.md)
   * [Creating a state](tutorials-implementation/states/the-normalmovement-state.md)
   * [Implementing the state](tutorials-implementation/states/implementing-the-state.md)
+* [Untitled](tutorials-implementation/untitled-1.md)
 * [Graphics](tutorials-implementation/graphics.md)
 * [Untitled](tutorials-implementation/untitled.md)
 

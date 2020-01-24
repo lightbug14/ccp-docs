@@ -97,7 +97,6 @@ Let's say that we want our character to:
 * Be affected by gravity.
 * Jump.
 * Crouch.
-* Teleport 10 meters \(high some key is pressed\).
 
 The following sections will explain every item on this list one by one. But first, we need to get some inputs!
 
