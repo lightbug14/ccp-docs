@@ -4,6 +4,10 @@ Hi! I'm Lightbug, welcome to the **Character Controller Pro** Documentation. Her
 
 ![](.gitbook/assets/keyimage_cover.png)
 
+{% hint style="info" %}
+_**Note:**_ This document explains the basics of _Character Controller Pro_ the best way possible. It was written as a guide/manual with descriptions, definitions, images and side notes. If after reading this manual you feel confused somehow or have questions about the package, please send me an email and i will gladly answer to everyone of them. Also really important to mention, **English is not my primary language, so bear with me**, **I’m doing my best**.
+{% endhint %}
+
 ## How to read this?
 
 It depends on how far you want to go with this package. If you got CCP only to use as it is, you can ignore the fundamentals and a good part of the tutorials. Just make sure to read the Introduction section.
