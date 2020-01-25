@@ -24,7 +24,7 @@ This capsule is not visible, any real character will need a graphics element wit
 
 ### Size
 
-Since this is a capsule-based character we need only to define the radius and the height to fully describe the size of the character. The \textit{CharacterActor} will consider the character dimensions as:
+Since this is a capsule-based character we need only to define the radius and the height to fully describe the size of the character. The _CharacterActor_ will consider the character dimensions as:
 
 
 
@@ -48,7 +48,7 @@ In play mode the collider offset will be automatically adjusted.
 
 ### Scale
 
-This is an important topic, the \textit{CharacterBody} component defines the character size using an absolute value based on a _Vector2_ field. The _CharacterActor_ component reads this value in order to perform all the necessary physics queries \(mainly for collision detection\).
+This is an important topic, the _CharacterBody_ component defines the character size using an absolute value based on a _Vector2_ field. The _CharacterActor_ component reads this value in order to perform all the necessary physics queries \(mainly for collision detection\).
 
 #### So, What happens if the _localScale_ is not _Vector3.one_? 
 
@@ -64,7 +64,7 @@ The character _localScale_ should always be $$< 1, 1 , 1 >$$.
 
 ### Collision shape
 
-Even though this is a dynamic character controller, the \textit{CharacterActor} is still doing physics queries to detect collisions. Because of this an effective collision shape was defined \(different from the character body shape\) using the width, height and skin width \(See figure \ref{fig:Tuto\_character\_SW}\).
+Even though this is a dynamic character controller, the _CharacterActor_ is still doing physics queries to detect collisions. Because of this an effective collision shape was defined \(different from the character body shape\) using the width, height and skin width \(See figure \ref{fig:Tuto\_character\_SW}\).
 
 ![The collision shape of the character.](../../.gitbook/assets/collisionshape.png)
 

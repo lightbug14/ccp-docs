@@ -4,8 +4,8 @@ Any character in a real-game scenario can be separated into two parts, a physics
 
 |  |  |
 | :--- | :--- |
-| Character body | This is the actual \`\`character'', it does calculate everything in order to detect collisions, set flags, trigger collision events, and so on. This object is the one with the \textit{CharacterBody} component in it. |
-| Character graphics | It corresponds to what you actually see on the screen. It includes all the extra components that don't relate directly to the collision body, things like renderers, animations, particles effects, etc. This object is the one with the _CharacterGraphics_ component in it \(See \autoref{graphics} for more info\). |
+| Character body | This is the actual \`\`character'', it does calculate everything in order to detect collisions, set flags, trigger collision events, and so on. This object is the one with the _CharacterBody_ component in it. |
+| Character graphics | It corresponds to what you actually see on the screen. It includes all the extra components that don't relate directly to the collision body, things like renderers, animations, particles effects, etc. This object is the one with the _CharacterGraphics_ component in it. |
 
 ![](../../.gitbook/assets/graphics_a_b.png)
 

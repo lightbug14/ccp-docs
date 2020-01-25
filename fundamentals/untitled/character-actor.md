@@ -29,7 +29,7 @@ The orientation is completely managed by the _CharacterActor_ component. Any ext
 | Gravity  | The current gravity direction will define the character up vector as its opposite. |
 | Yaw  | This is the rotation motion around the local _up_ axis |
 
-The character is capable of changing its rotation values by using the gravity information. This is possible by using the gravity direction and graviy modes from the CharacterActor component. For example, in figure \ref{fig:gravity} the character is align itself using the gravity vector.
+The character is capable of changing its rotation values by using the gravity information. This is possible by using the gravity direction and graviy modes from the CharacterActor component. For example, in the next figure the character is align itself using the gravity vector.
 
 ![](../../.gitbook/assets/gravity.png)
 
@@ -71,7 +71,7 @@ The concept of stability is used internally by the _CharacterActor_ to detect st
 
 The _LinearVelocity_ vector provides the information needed to move the character from point A to point B. However, this vector is not used directly to calculate the actual displacement, since it may not follow the _CharacterActor_ internal movement rules. This can be a problem only when the character is grounded.
 
-In order to use a valid displacement vector, the linear velocity must be projected onto the current slope plane. The _CharacterActor_ will take the linear velocity field and do the projection \ul{maintaining its magnitude}. This can be seen much more clearly in figure \ref{fig:velocityproj}.
+In order to use a valid displacement vector, the linear velocity must be projected onto the current slope plane. The _CharacterActor_ will take the linear velocity field and do the projection **maintaining its magnitude**.
 
 ![](../../.gitbook/assets/velocityproj.png)
 
@@ -123,7 +123,7 @@ The _edge compensation_ feature brings the advantages of the box for edgesand th
 
 ### Dynamic Ground
 
-If the character is standing on a valid dynamic ground\footnote{Kinematic rigidbody moved and/or rotated using kinematic motion, either by script or via animation \(with \`\`Animate Physics'' enabled\).} and this object is moved or rotated, the character will act properly to move/rotate along with it, always following its own orientation rules. This is shown in figure \ref{fig:dynamic}, see how the character maintains its rotation while it moves accordingly with the platform.
+If the character is standing on a valid dynamic ground and this object is moved or rotated, the character will move/rotate along with it, always following its own orientation rules. This is shown in next figure \(see how the character maintains its rotation while it moves with the platform\).
 
 ![A 2D representation of a character standing on top of a kinematic platform \(dynamic ground\) that moves from point A to point B.](../../.gitbook/assets/dynamic.png)
 
