@@ -16,13 +16,13 @@ If the character needs to change instantly its position and/or rotation \(ignori
 
 ## Size
 
-Internally the size of the character is stored in a Vector2 variable called \texttt{bodySize}. The x component represents the width and the y component represents the height. The initial size will be assigned based on the capsule collider parameters and some internal constants.
+Internally the size of the character is stored in a Vector2 variable called _bodySize_. The x component represents the width and the y component represents the height. The initial size will be assigned based on the capsule collider parameters and some internal constants.
 
 The size can be set externally by a script, by passing any possible value as the desired size. Since the character may or may not fit in a given space, the size must be internally checked beforehand by the _CharacterActor_, thus defining the final character size.
 
 ## Orientation
 
-The orientation is completely managed by the \textit{CharacterActor} component. Any external change to the character rotation will be overwritten. There are two ways to describe a normal character rotation:
+The orientation is completely managed by the _CharacterActor_ component. Any external change to the character rotation will be overwritten. There are two ways to describe a normal character rotation:
 
 |  |  |
 | :--- | :--- |
@@ -41,13 +41,13 @@ It is important to mention that **the forward direction vector will always be pr
 
 ## Position
 
-The change in position related to a \textit{LinearVelocity} field. The necessary displacement is calculated based on the current linear velocity value. This movement will take into account collision detection. The \textit{LinearVelocity} vector needs to be set externally by a script.
+The change in position related to a _LinearVelocity_ field. The necessary displacement is calculated based on the current linear velocity value. This movement will take into account collision detection. The _LinearVelocity_ vector needs to be set externally by a script.
 
 The movement algorithm is based on the classic _Collide & Slide_ algorithm. Although is not necessary to do a bunch of collision test in order to prevent the character to pass through other colliders \(since this is a rigidbody based character controller\), these test are still performed anyway. This is because the character gathers information from the environment and also can predict its movement before hand, which is really useful.
 
 ### Grounded state
 
-The movement can be classified in \textit{Grounded} and \textit{Not Grounded}, depending on the current grounded state. Both type of motion have its differences, the not grounded movement only performs the basic collide and slide action, while the grounded movement does the same but also includes all the available features \(step detection, edge detection, edge compensation, etc\).
+The movement can be classified in _Grounded_ and _Not Grounded_, depending on the current grounded state. Both type of motion have its differences, the not grounded movement only performs the basic collide and slide action, while the grounded movement does the same but also includes all the available features \(step detection, edge detection, edge compensation, etc\).
 
 _**Grounded**_ **to** _**Not Grounded**_ ****To make the transition you must force the not grounded state externally. If you are using gravity in your script remember to apply a positive vertical velocity \(towards the character up vector\), otherwise the character will return to the grounded state the next frame.
 
@@ -99,7 +99,7 @@ To determine the stability of the new potential surface an edge detector is used
 
 #### Step Down
 
-The step down algorithm \(also known as ground clamping or ground snapping\) will force the character to the ground if the ground probing distance is less than the \texttt{StepDownDistance}. This is useful to prevent the character to be launched off a slope or step.
+The step down algorithm \(also known as ground clamping or ground snapping\) will force the character to the ground if the ground probing distance is less than the _StepDownDistance_. This is useful to prevent the character to be launched off a slope or step.
 
 The **ground probing distance** is distance between the character foot position and the closest ground point measured.
 
@@ -131,17 +131,17 @@ If the character is standing on a valid dynamic ground\footnote{Kinematic rigidb
 
 A very import aspect of every character controller is the information this provides to the user. This information is really important to set your basic movement rules, like for example detect if the character is grounded or not, use the ground normal, gather the current ground information, etc.
 
-CCP offers this information in form of public properties. In order to access them you need a reference to the \textit{CharacterActor} component and you are good to go.
+CCP offers this information in form of public properties. In order to access them you need a reference to the _CharacterActor_ component and you are good to go.
 
 For more information about the collision information see the API reference.
 
 ## Collision events
 
-A collision event is just a delegate event that is called whenever a particular situation happened \(in this case related exclusively to collisions\). When a specific condition is met, the related event will be called by the \textit{CharacterActor}, therefore calling any method subscribed to it.
+A collision event is just a delegate event that is called whenever a particular situation happened \(in this case related exclusively to collisions\). When a specific condition is met, the related event will be called by the _CharacterActor_, therefore calling any method subscribed to it.
 
-The package include a number of collision events \(Core and Implementation as well\), if you want to look at them please refer to the API reference. All the events names start with the word \`\`On''.
+The package include a number of collision events \(Core and Implementation as well\), if you want to look at them please refer to the API reference. All the events names start with the word "On".
 
-If you want to see all these events in action, or simply see a code example please check the \textit{CharacterDebug.cs} script. It contains a few methods subscribed to all of the available events. You will notice that every delegate event has its own signature, this is because they are passing information along when the event is called.
+If you want to see all these events in action, or simply see a code example please check the `CharacterDebug.cs`script. It contains a few methods subscribed to all of the available events. You will notice that every delegate event has its own signature, this is because they are passing information along when the event is called.
 
 For example when the _OnHeadHit_ event is called a copy of the _CollisionInfo_ structure is passed as an argument, so you can get the information from the collision itself \(for example the _contactNormal_\).
 
