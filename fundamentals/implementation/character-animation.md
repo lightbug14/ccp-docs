@@ -16,9 +16,11 @@ _NotGrounded_ and _Grounded_ are blend trees, the rest are simple _Animator_ sta
 
 A blend tree reads a specific variable to decide which clip of the tree it should play. This variable is fed to the blend tree by the _CharacterAnimation_ component. Its name can be modified in the inspector.
 
-For instance, in the _Grounded_ blend tree the variable passed through is the current velocity magnitude. In figure \ref{fig:blendTree} the blend tree structure is shown. We can see there are three clips in it: _Idle_, _Walk_ and _Run_. The result will depend on the variable value, and the chosen threshold values as well.
+For instance, in the _Grounded_ blend tree the variable passed through is the current velocity magnitude. 
 
 ![Grounded Animator state blend tree.](../../.gitbook/assets/blendtree.PNG)
+
+We can see there are three clips in it: _Idle_, _Walk_ and _Run_. The result will depend on the variable value, and the chosen threshold values as well.
 
 ## IK foot placement
 

@@ -12,7 +12,7 @@ The main character component. It takes care of all the important actions \(movem
 
 ### Character graphics
 
-This component is responsible for controlling the transform properties used by the character \textit{graphics}.
+This component is responsible for controlling the transform properties used by the character _graphics_.
 
 ### Character debug
 

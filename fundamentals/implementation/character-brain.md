@@ -115,7 +115,7 @@ In an AI brain the actions are determined by a script, based on the current beha
 
 |  |  |
 | :--- | :--- |
-| Sequence behaviour | Set of predefined actions stored as a \textit{ScriptableObject}. Basically this behaviour tries to imitate a human player with scripted actions. The AI character will not be \`\`smart'' in any way. |
+| Sequence behaviour | Set of predefined actions stored as a _ScriptableObject_. Basically this behaviour tries to imitate a human player with scripted actions. The AI character will not be \`\`smart'' in any way. |
 | Follow behaviour | This behaviour does a path calculation between the character an a target. **In order to use this behaviour a** _**NavMesh**_ **must be generated previously**. |
 
 ## 

@@ -8,7 +8,7 @@ The main part of the package, it does the heavy lifting regarding collision dete
 
 ### Implementation
 
-Consist of a bunch of components that implement the functionality of the \textit{Core}. These components cover many aspects and intend to create a \`\`character ecosystem'' around the \textit{Core}. This part of the package can be customize and/or extended if needed.
+Consist of a bunch of components that implement the functionality of the _Core_. These components cover many aspects and intend to create a "character ecosystem" around the _Core_. This part of the package can be customize and/or extended if needed.
 
 ### Demo
 
