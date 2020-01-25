@@ -165,9 +165,13 @@ It is important to assign the corresponding rigidbodies layers to the Dynamic La
 
 If the character is standing over a dynamic rigidbody this will automatically apply a force to it \(at the contact point\) proportional to the rigidbody mass.
 
+![](../../.gitbook/assets/rb-weight.gif)
+
 ### Collision response
 
 If another dynamic rigidbody hits the character, this will receive a _contact velocity_ due to the collision. Since the velocity is fully scripted, the script involved in the movement will need to know when and how the collision happened in order to react to it. 
+
+![](../../.gitbook/assets/rb-collision.gif)
 
 {% hint style="info" %}
 The character actor has an internal event that's called every time a collision happens, passing the _contact velocity_ as an argument.
