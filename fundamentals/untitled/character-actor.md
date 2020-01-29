@@ -177,7 +177,7 @@ If another dynamic rigidbody hits the character, this will receive a _contact ve
 The character actor has an internal event that's called every time a collision happens, passing the _contact velocity_ as an argument.
 {% endhint %}
 
-The character will receive impacs only from rigidbodies with a special tag, the _contact rigidbodies tag_. This tag can be set in the _tag and layers_ profile. 
+The character will receive impacts only from rigidbodies with a special tag, the _contact rigidbodies tag_. This tag can be set in the _tag and layers_ profile. 
 
 ![The default contact rigidbody tag \(&quot;Main Profile&quot; asset\).](../../.gitbook/assets/imagen%20%2823%29.png)
 
