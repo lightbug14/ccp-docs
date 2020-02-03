@@ -17,5 +17,7 @@ The _CharacterGraphics_ component is assigned to a _graphics object_ \(hence its
 Think of the _graphics object_ as the root of every graphics related object of your character.
 {% endhint %}
 
+![](../../.gitbook/assets/character_hierarchy.png)
+
 The _graphics object_ is treated as a separated object from the character. Once the game is running \(play mode\), the graphics object and the character object will be separated from each other.
 

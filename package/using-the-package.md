@@ -4,7 +4,7 @@
 
 The recommended way to use this package \(and every package out there, really\) is by working on a separated path \(outside the _Character Controller Pro_ folder\). 
 
-![](../.gitbook/assets/imagen%20%2822%29.png)
+![](../.gitbook/assets/imagen%20%2842%29.png)
 
 This is useful if you need to use and/or extend the asset in any way.
 
@@ -58,19 +58,7 @@ Luckly for you there is an API reference in the package. Go to _CharacterControl
 
 The API reference is an **html reference** \(made with DoxyGen\). In order to open this documentation you need to open the `index.html` file.
 
-![](../.gitbook/assets/imagen%20%2817%29.png)
-
-#### 
-
-```text
-namespace YourCompany.YourCoolGame
-{
-    public class YourCoolScript : Monobehaviour
-    {
-        
-    }
-}
-```
+![](../.gitbook/assets/imagen%20%2832%29.png)
 
 ### 
 

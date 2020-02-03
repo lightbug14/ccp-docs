@@ -42,9 +42,16 @@
 
 ## Tutorials - Implementation
 
-* [Basic character 2.0](tutorials-implementation/untitled-1/README.md)
-  * [Adding the state controller](tutorials-implementation/untitled-1/adding-the-state-controller.md)
-  * [Creating a state](tutorials-implementation/untitled-1/the-normalmovement-state.md)
-  * [Implementating the state](tutorials-implementation/untitled-1/implementating-the-state.md)
-* [Graphics \(soon\)](tutorials-implementation/graphics.md)
+* [Character](tutorials-implementation/character/README.md)
+  * [Basic character 2.0](tutorials-implementation/character/untitled-1/README.md)
+    * [Adding the state controller](tutorials-implementation/character/untitled-1/adding-the-state-controller.md)
+    * [Creating a state](tutorials-implementation/character/untitled-1/the-normalmovement-state.md)
+    * [Implementating the state](tutorials-implementation/character/untitled-1/implementating-the-state.md)
+* [Graphics](tutorials-implementation/graphics-1/README.md)
+  * [Mesh-based character](tutorials-implementation/graphics-1/graphics/README.md)
+    * [Hierarchy](tutorials-implementation/graphics-1/graphics/hierarchy.md)
+    * [Rig and Animation settings](tutorials-implementation/graphics-1/graphics/rig-and-animation-settings.md)
+    * [Animator](tutorials-implementation/graphics-1/graphics/animator.md)
+    * [CharacterAnimation](tutorials-implementation/graphics-1/graphics/characteranimation.md)
+  * [Sprite-based character \(soon\)](tutorials-implementation/graphics-1/sprite-based-character-soon.md)
 

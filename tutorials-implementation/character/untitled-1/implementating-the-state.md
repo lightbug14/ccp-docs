@@ -14,7 +14,7 @@ So, by using the implementation we can:
 
 ### Getting rid of the unnecessary code
 
-So, we don't need the components references:
+We don't need the components references:
 
 ```csharp
     // Components

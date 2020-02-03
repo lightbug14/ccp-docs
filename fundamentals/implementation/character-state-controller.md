@@ -85,13 +85,13 @@ There are parameters that can be configured for both volumes and surfaces. These
 
 Any material without a proper tag on it will be considered as a \`\`default material''.
 
-![](../../.gitbook/assets/imagen%20%2811%29.png)
+![](../../.gitbook/assets/imagen%20%2821%29.png)
 
 ### Tagged materials
 
 A material element can be defined by using a _tag_. Then, it can be configured in the scriptable object.
 
-![](../../.gitbook/assets/imagen%20%286%29.png)
+![](../../.gitbook/assets/imagen%20%2811%29.png)
 
 
 
