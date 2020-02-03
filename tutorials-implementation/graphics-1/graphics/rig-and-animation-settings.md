@@ -12,7 +12,7 @@ These are the basics import sections:
 
 ![](../../../.gitbook/assets/imagen%20%2847%29.png)
 
-We are going to focus at the Rig and the Animation settings.
+We are going to focus at the Rig and the Animation settings. For the rest you can set them to your liking.
 
 ## Rig settings
 
@@ -38,7 +38,7 @@ An _Animator_ state contains a clip, basically, however these are not automagica
 ![](../../../.gitbook/assets/animator_canimation_solo-model.png)
 
 {% hint style="info" %}
-As you can see, the model can have many takes and/or animation clips, it really doesn't matter at all. **What matters is the assignment of those clips with the right state. This is done within the Animator controller environment.**
+As you can see, the model can have many takes and/or animation clips, it really doesn't matter at all. **What matters is the assignment of those clips with the right state.**
 {% endhint %}
 
 The _Demo Character_ model was created 100% in Blender \(3D model + all the animations\). Let's take a look at its animation setting, these are all the available "clips":

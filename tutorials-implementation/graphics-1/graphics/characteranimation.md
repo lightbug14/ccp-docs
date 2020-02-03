@@ -8,7 +8,7 @@ Add the _CharacterAnimation_ component to the object that contains the Animator,
 
 ![](../../../.gitbook/assets/imagen%20%282%29.png)
 
- The next thing to do is to set the variable and states names. Remember, these must match with the names used by the _Animator_ controller.
+ The next thing to do is to set the variable and states names. Remember, these must match with the specified names in the _Animator_ controller.
 
 ![](../../../.gitbook/assets/imagen%20%2824%29.png)
 
