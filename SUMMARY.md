@@ -50,6 +50,7 @@
 * [Graphics](tutorials-implementation/graphics-1/README.md)
   * [Mesh-based character](tutorials-implementation/graphics-1/graphics/README.md)
     * [Hierarchy](tutorials-implementation/graphics-1/graphics/hierarchy.md)
+    * [Body properties](tutorials-implementation/graphics-1/graphics/body-properties.md)
     * [Rig and Animation settings](tutorials-implementation/graphics-1/graphics/rig-and-animation-settings.md)
     * [Animator](tutorials-implementation/graphics-1/graphics/animator.md)
     * [CharacterAnimation](tutorials-implementation/graphics-1/graphics/characteranimation.md)
