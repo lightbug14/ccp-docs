@@ -1,4 +1,0 @@
-# Body properties
-
-In order
-
