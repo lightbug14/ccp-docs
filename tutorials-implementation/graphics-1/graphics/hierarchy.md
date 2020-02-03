@@ -23,6 +23,6 @@ The hierarchy part is done. Notice that the Animator component has been added to
 ![](../../../.gitbook/assets/imagen%20%2845%29.png)
 
 {% hint style="info" %}
-This may sound a little obvious, remember to modify the body size \(_CharacterBody_\) until it the mesh fits exactly like you want. You can do this at any time.
+This may sound a little obvious, remember to modify the body size \(_CharacterBody_\) until the mesh fits exactly like you want. You can do this at any time.
 {% endhint %}
 
