@@ -12,7 +12,7 @@ These are the basics import sections:
 
 ![](../../../.gitbook/assets/imagen%20%2847%29.png)
 
-We are going to focus at the Rig and the Animation settings. For the rest you can set them to your liking.
+We are going to focus at the Rig and the Animation settings.
 
 ## Rig settings
 
