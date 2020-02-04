@@ -69,11 +69,11 @@ Although this code is super simple to write, there is an easier way to create a 
 
 You can use the "Create" menu, just as you created C\# scripts. Right mouse click on the project view, _"Create/CharacterControllerPro/Implementation/CharacterState"_.
 
-![](../../../.gitbook/assets/imagen%20%2815%29.png)
+![](../../../.gitbook/assets/imagen%20%2816%29.png)
 
 A small window will pop up. Write the state name and click "Create":
 
-![](../../../.gitbook/assets/imagen%20%289%29.png)
+![](../../../.gitbook/assets/imagen%20%2810%29.png)
 
 There you have it! By default a new C\# script will be created with something like this inside:
 

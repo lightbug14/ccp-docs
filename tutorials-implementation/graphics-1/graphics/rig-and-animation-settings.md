@@ -10,9 +10,9 @@ The state of the model you are going to use is very important, make sure everyth
 
 These are the basics import sections:
 
-![](../../../.gitbook/assets/imagen%20%2847%29.png)
+![](../../../.gitbook/assets/imagen%20%2849%29.png)
 
-We are going to focus at the Rig and the Animation settings. For the rest you can set them to your liking.
+We are going to focus at the Rig and the Animation settings.
 
 ## Rig settings
 
@@ -38,16 +38,16 @@ An _Animator_ state contains a clip, basically, however these are not automagica
 ![](../../../.gitbook/assets/animator_canimation_solo-model.png)
 
 {% hint style="info" %}
-As you can see, the model can have many takes and/or animation clips, it really doesn't matter at all. **What matters is the assignment of those clips with the right state.**
+As you can see, the model can have many takes and/or animation clips, it really doesn't matter at all. **What matters is the assignment of those clips with the right state. This is done within the Animator controller environment.**
 {% endhint %}
 
 The _Demo Character_ model was created 100% in Blender \(3D model + all the animations\). Let's take a look at its animation setting, these are all the available "clips":
 
-![](../../../.gitbook/assets/imagen%20%288%29.png)
+![](../../../.gitbook/assets/imagen%20%289%29.png)
 
 Each one of these contains a particular "source take". For example:
 
-![](../../../.gitbook/assets/imagen%20%285%29.png)
+![](../../../.gitbook/assets/imagen%20%286%29.png)
 
 ## 
 
