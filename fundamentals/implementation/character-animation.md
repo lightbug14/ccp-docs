@@ -8,7 +8,7 @@ This component is probably the one that you will want to fully customize, since 
 
 The _Demo character_ animator controller included in the package represents sort of a template to work with. This is how it looks:
 
-![](../../.gitbook/assets/imagen%20%2836%29.png)
+![](../../.gitbook/assets/imagen%20%2841%29.png)
 
 There are a few things to consider in order to "communicate" properly with the animator, these are variables, transitions and blend trees.
 
@@ -16,15 +16,15 @@ There are a few things to consider in order to "communicate" properly with the a
 
 The _Animator_ variables serve as the main interface between the scripts and the _Animator_ functionalities \(blends, transitions, etc.\). These are the variables defined by default:
 
-![](../../.gitbook/assets/imagen%20%2815%29.png)
+![](../../.gitbook/assets/imagen%20%2818%29.png)
 
 These variables are floats and triggers, the reason for this is because the script uses three particular features of the _Animator_ component: _**transitions**_, _**blend trees**_, and _**animation curves**_.
 
-![Triggers variables.](../../.gitbook/assets/imagen%20%2811%29.png)
+![Triggers variables.](../../.gitbook/assets/imagen%20%2814%29.png)
 
-![Blend trees variables.](../../.gitbook/assets/imagen%20%2832%29.png)
+![Blend trees variables.](../../.gitbook/assets/imagen%20%2836%29.png)
 
-![Curves variables.](../../.gitbook/assets/imagen%20%2819%29.png)
+![Curves variables.](../../.gitbook/assets/imagen%20%2822%29.png)
 
 ## Transitions
 
@@ -67,7 +67,7 @@ In order to switch between these two modes **the transitions and the states name
 
 Blend trees allow us to blend between animation clips, simple as that. These blend trees are used to define a mode detailed animation state. For more information check [this](https://docs.unity3d.com/Manual/class-BlendTree.html) link.
 
-![](../../.gitbook/assets/imagen%20%2839%29.png)
+![](../../.gitbook/assets/imagen%20%2844%29.png)
 
 _NotGrounded_ and _Grounded_ and _Dash_ are blend trees. _Slide_ is a simple state with a clip \(for now\).
 
@@ -81,7 +81,7 @@ We can see there are three clips in it: _Idle_, _Walk_ and _Run_. The result wil
 
 he chosen threshold values as well.The variables names can be defined in the inspector:
 
-![](../../.gitbook/assets/imagen%20%2818%29.png)
+![](../../.gitbook/assets/imagen%20%2821%29.png)
 
 ## Curves \(IK\)
 

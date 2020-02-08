@@ -18,11 +18,11 @@ Luckly for you there are presets included in the package that will help you to c
 
 For example, for the Input settings, go to the InputManager:
 
-![](../.gitbook/assets/imagen%20%287%29.png)
+![](../.gitbook/assets/imagen%20%2810%29.png)
 
 Then select the preset, double click it:
 
-![](../.gitbook/assets/imagen%20%2841%29.png)
+![](../.gitbook/assets/imagen%20%2846%29.png)
 
  That's it!
 

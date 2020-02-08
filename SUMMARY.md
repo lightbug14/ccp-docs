@@ -26,6 +26,10 @@
   * [Character particles](fundamentals/implementation/character-particles.md)
   * [Kinematic actors](fundamentals/implementation/untitled-2.md)
 
+## Get started
+
+* [Get started \(really quickly\)](get-started/get-started-really-quickly.md)
+
 ## Tutorials - Core <a id="tutorials"></a>
 
 * [Description](tutorials/introduction.md)
