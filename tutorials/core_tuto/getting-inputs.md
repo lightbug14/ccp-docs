@@ -11,7 +11,7 @@ Based on our vision for the character, we can define:
 | Jump | Space | Jump |
 | Crouch | C | Crouch |
 
-The next thing to do will be register all these inputs in the Unity's Input manager \(I will asume you already know how to do that\).
+The next thing to do will be register all these inputs in the Unity's Input manager \(I will assume you already know how to do that\).
 
 Still, we don't care about a button, what matters is the action that button has triggered. For example a ButtonDown, a ButtonUp, etc.
 

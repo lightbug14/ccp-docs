@@ -2,7 +2,7 @@
 
 This section is not intended as an "official" tutorial. For more detailed information please read the fundamentals \(just to grasp how everything works\) and then the tutorials \(to implement some of those concepts\).
 
-I will asume you have already set the project properly. If not, please go to the [setting up the project](../package/setting-up-the-project.md) section.
+I will assume you have already set the project properly. If not, please go to the [setting up the project](../package/setting-up-the-project.md) section.
 
 Without further ado, let's get started.
 
