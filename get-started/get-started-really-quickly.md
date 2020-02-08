@@ -10,16 +10,17 @@ Without further ado, let's get started.
 
 First and foremost, in order to follow the next steps, it's recommended to start fresh. Open the **"Minimal Scene \(Get Started\)"** scene.
 
-This is a summary:
+Summary:
 
 1. Add the **character prefab.**
 2. Choose the **"tags and layers"** profile.
 3. Add the **"CharacterStateController".**
 4. Add the **"NormalMovement"** state**.**
 5. Choose a **"materials properties"** asset.
-6. Add the **camera**.
-7. Select the **camera target**.
-8. Set the **movement reference**.
+6. Add the **input data** asset.
+7. Add the **camera**.
+8. Select the **camera target**.
+9. Set the **movement reference**.
 
 
 
