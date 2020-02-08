@@ -22,7 +22,7 @@ Not at all, this is the official latest version of the docs. This means that it 
 
 As always I would recommend to **get the latest version of Character Controller Pro.** That said, don't worry about this "problem", in general most of the concepts, projects settings and tutorials are similar and probably will remain almost the same.
 
-## I want to get started quickly!
+## I want to get started!
 
 Go to the [get started](get-started/get-started-really-quickly.md) section.
 
