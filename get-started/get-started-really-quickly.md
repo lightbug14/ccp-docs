@@ -8,7 +8,7 @@ Without further ado, let's get started.
 
 ## Setting up a basic character
 
-First and foremost, in order to follow the following steps it's recommended to start fresh. Open the **"Minimal Scene \(Get Started\)"** scene.
+First and foremost, in order to follow the next steps, it's recommended to start fresh. Open the **"Minimal Scene \(Get Started\)"** scene.
 
 This is a summary:
 
