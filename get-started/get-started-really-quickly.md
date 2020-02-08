@@ -6,7 +6,7 @@ I will asume you have already set the project properly. If not, please go to the
 
 Without further ado, let's get started.
 
-## 1. Setting up a basic character
+## Setting up a basic character
 
 First and foremost, in order to follow the following steps it's recommended to start fresh. Open the **"Minimal Scene \(Get Started\)"** scene.
 
