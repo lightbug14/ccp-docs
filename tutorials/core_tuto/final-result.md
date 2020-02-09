@@ -171,5 +171,5 @@ There are still a some important things we can do to improve this super basic ch
 * movement states \(very important as well\).
 * etc.
 
-The list goes on and on, the sky is the limit, really. The implementation included in the package does all these tasks and much much more! 😀 So you don't have to go crazy.
+The list goes on and on, the sky is the limit, really. The implementation included in the package does all these tasks and much much more! 😀.
 
