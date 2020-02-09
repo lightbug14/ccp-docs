@@ -8,7 +8,7 @@ This component is probably the one that you will want to fully customize, since 
 
 The _Demo character_ animator controller included in the package represents sort of a template to work with. This is how it looks:
 
-![](../../.gitbook/assets/imagen%20%2841%29.png)
+![](../../.gitbook/assets/imagen%20%2842%29.png)
 
 There are a few things to consider in order to "communicate" properly with the animator, these are variables, transitions and blend trees.
 
@@ -22,7 +22,7 @@ These variables are floats and triggers, the reason for this is because the scri
 
 ![Triggers variables.](../../.gitbook/assets/imagen%20%2814%29.png)
 
-![Blend trees variables.](../../.gitbook/assets/imagen%20%2836%29.png)
+![Blend trees variables.](../../.gitbook/assets/imagen%20%2837%29.png)
 
 ![Curves variables.](../../.gitbook/assets/imagen%20%2822%29.png)
 
@@ -67,7 +67,7 @@ In order to switch between these two modes **the transitions and the states name
 
 Blend trees allow us to blend between animation clips, simple as that. These blend trees are used to define a mode detailed animation state. For more information check [this](https://docs.unity3d.com/Manual/class-BlendTree.html) link.
 
-![](../../.gitbook/assets/imagen%20%2844%29.png)
+![](../../.gitbook/assets/imagen%20%2845%29.png)
 
 _NotGrounded_ and _Grounded_ and _Dash_ are blend trees. _Slide_ is a simple state with a clip \(for now\).
 

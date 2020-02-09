@@ -10,7 +10,7 @@ The state of the model you are going to use is very important, make sure everyth
 
 These are the basics import sections:
 
-![](../../../.gitbook/assets/imagen%20%2854%29.png)
+![](../../../.gitbook/assets/imagen%20%2855%29.png)
 
 We are going to focus at the Rig and the Animation settings.
 

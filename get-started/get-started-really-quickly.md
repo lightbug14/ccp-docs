@@ -6,7 +6,7 @@ I will assume you have already set the project properly. If not, please go to th
 
 Without further ado, let's get started.
 
-## Setting up a basic character
+## Setting up a 3D character
 
 First and foremost, in order to follow the next steps, it's recommended to start fresh. Open the **"Minimal Scene \(Get Started\)"** scene.
 
@@ -26,9 +26,9 @@ Summary:
 
 ### 1. Add the character
 
-Drag and drop the prefab **"Capsule Blank Character"** \(_Character Controller Pro/Core/Prefabs_\) into the scene. This is the same as the Blank Character, but with graphics \(a capsule + an arrow above of the "head"\). 
+Drag and drop the prefab **"Capsule Blank Character"** \(_Character Controller Pro/Core/Prefabs_\) into the scene. This is the same as the Blank Character, but with graphics \(a capsule + an arrow above of the "head"\). It also includes the most basic components, such as _CharacterBody_ and _CharacterActor_.
 
-![](../.gitbook/assets/imagen%20%2837%29.png)
+![](../.gitbook/assets/imagen%20%2838%29.png)
 
 ![](../.gitbook/assets/imagen%20%2825%29.png)
 
@@ -64,7 +64,7 @@ In the _CharacterStateController_ component, select the default _material proper
 
 Without inputs actions nothing is going to happen. Go to the CharacterBrain component and add the default input data asset available in the project.
 
-![](../.gitbook/assets/imagen%20%2835%29.png)
+![](../.gitbook/assets/imagen%20%2836%29.png)
 
 Now you should be able to move the character around. Nothing is configured in detail yet, you will need to do that in your own time.
 
@@ -90,7 +90,20 @@ The camera is doing its work, but still, the player is not moving using the came
 
 ![](../.gitbook/assets/imagen%20%287%29.png)
 
+## Setting up a 2D character
 
+Let's make a parallel version of the previous instructions, but this time for 2D. In the following list are some of the changes you will have to take care of, in order to bring to life a fully functional 2D character.
+
+* Go to the _CharacterBody_ component and select "2D":
+
+![](../.gitbook/assets/imagen%20%2835%29.png)
+
+* Do the same from instruction 1 to 6.
+* For the camera, drag and drop the "Camera 2D" prefab into the scene and select the character as its target.
+
+That's it! 😅
+
+Please note that even though this is really easy, i'm not considering the graphics and animation of the character at all. Please refer to the tutorials sections for those subjects.
 
 
 
