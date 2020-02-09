@@ -12,7 +12,7 @@ The first thing to do is to open the folder _OPEN ME_. In there you will find al
 The demo scenes work with some predefined project settings. It's important to configure your project with these **exact** settings.
 {% endhint %}
 
-Luckly for you there are presets included in the package that will help you to configure your project. These settings are related to _Layers_ , _Tags_ and _Inputs_. 
+Luckily for you there are presets included in the package that will help you to configure your project. These settings are related to _Layers_ , _Tags_ and _Inputs_. 
 
 
 
