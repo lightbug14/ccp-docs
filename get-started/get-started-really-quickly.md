@@ -72,7 +72,7 @@ Next, we need to add the camera.
 
 ### 7. Adding the camera
 
-Drag and drop the "Camera3D" prefab into the scene. It doesn't matter where exactly, the position and rotaiton will be handled by the camera.
+Drag and drop the "Camera3D" prefab into the scene. It doesn't matter where exactly, the position and rotation will be handled by the camera.
 
 \(Another quick way is to just add the "Camera3D" component to a new Camera game object\)
 
@@ -86,7 +86,7 @@ Now you should be able to move the camera around the player, detecting collision
 
 ### 9. Set the movement reference
 
-The camera is doing its work, but still, the player is not moving using the camera as the movement reference \(as shown in the 3D demo scene\). In order to fix this go to the _CharacterStateController_ component, select the "movement reference" mode to External. Then choose the camera as the external forward reference.
+The camera is doing its work, but still, the player is not moving using the camera as the movement reference \(as shown in the 3D demo scene\). In order to fix this, go to the _CharacterStateController_ component, select the "movement reference" mode to External. Then choose the camera as the external forward reference.
 
 ![](../.gitbook/assets/imagen%20%287%29.png)
 
