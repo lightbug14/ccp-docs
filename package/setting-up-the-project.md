@@ -6,7 +6,7 @@ Hit the import button! Once the package has been imported your project view shou
 
 ![Project hierarchy right after importing the asset.](../.gitbook/assets/project_hierarchy.png)
 
-The first thing to do is to open the folder _\`"OPEN ME"_ . In there you will find all the necessary material to put this package to work.
+The first thing to do is to open the folder _OPEN ME_. In there you will find all the necessary material to put this package to work.
 
 {% hint style="warning" %}
 The demo scenes work with some predefined project settings. It's important to configure your project with these **exact** settings.
