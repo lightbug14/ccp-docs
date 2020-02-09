@@ -14,8 +14,6 @@ The demo scenes work with some predefined project settings. It's important to co
 
 Luckily for you there are presets included in the package that will help you to configure your project. These settings are related to _Layers_ , _Tags_ and _Inputs_. 
 
-
-
 For example, for the Input settings, go to the InputManager:
 
 ![](../.gitbook/assets/imagen%20%2810%29.png)
@@ -27,8 +25,6 @@ Then select the preset, double click it:
  That's it!
 
 {% hint style="info" %}
-Even though these are necessary project settings to configure in order to play the demo scenes, most of these settings are not mandatory for the normal operation of this package.
-
-They were built based on the demo assets.
+Even though these settings are necessary to configure in order to play the demo scenes, most of these settings are not mandatory for the normal operation of this package. They were built based on the demo assets.
 {% endhint %}
 
