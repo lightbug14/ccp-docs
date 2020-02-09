@@ -26,7 +26,7 @@ Summary:
 
 ### 1. Add the character
 
-Drag and drop the prefab **"Capsule Blank Character"** \(_Character ControllerPro Core/Prefabs_\) into the scene. This is the same as the Blank Character, but with graphics \(a capsule + an arrow above of the "head"\). 
+Drag and drop the prefab **"Capsule Blank Character"** \(_Character Controller Pro/Core/Prefabs_\) into the scene. This is the same as the Blank Character, but with graphics \(a capsule + an arrow above of the "head"\). 
 
 ![](../.gitbook/assets/imagen%20%2837%29.png)
 
