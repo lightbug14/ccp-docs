@@ -68,7 +68,7 @@ Without inputs actions nothing is going to happen. Go to the CharacterBrain comp
 
 Now you should be able to move the character around. Nothing is configured in detail yet, you will need to do that in your own time.
 
-Next we need to add the camera.
+Next, we need to add the camera.
 
 ### 7. Adding the camera
 
