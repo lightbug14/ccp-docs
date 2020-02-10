@@ -1,4 +1,4 @@
-# Get started \(really quickly\)
+# Quick start guide
 
 This section is not intended as an "official" tutorial. For more detailed information please read the fundamentals \(just to grasp how everything works\) and then the tutorials \(to implement some of those concepts\).
 

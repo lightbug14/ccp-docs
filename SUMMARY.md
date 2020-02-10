@@ -28,7 +28,7 @@
 
 ## Get started
 
-* [Get started \(really quickly\)](get-started/get-started-really-quickly.md)
+* [Quick start guide](get-started/get-started-really-quickly.md)
 
 ## Tutorials - Core <a id="tutorials"></a>
 
