@@ -101,7 +101,7 @@ Let's make a parallel version of the previous instructions, but this time for 2D
 * Do the same from instruction 1 to 6.
 * For the camera, drag and drop the "Camera 2D" prefab into the scene and select the character as its target.
 
-That's it! 😅
+That's it!
 
 Please note that even though this is really easy, i'm not considering the graphics and animation of the character at all. Please refer to the tutorials sections for those subjects.
 
