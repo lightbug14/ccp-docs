@@ -22,9 +22,11 @@ Summary:
 8. Select the **camera target**.
 9. Set the **movement reference**.
 
+### 1. Add the scene controller
 
+The firts task is adding the scene controller component to the scene. You can add the _SceneController_ component to an empty object, or just simply drag & drop the "Scene Controller" prefab into the scene.
 
-### 1. Add the character
+### 2. Add the character
 
 Drag and drop the prefab **"Capsule Blank Character"** \(_Character Controller Pro/Core/Prefabs_\) into the scene. This is the same as the Blank Character, but with graphics \(a capsule + an arrow above of the "head"\). It also includes the most basic components, such as _CharacterBody_ and _CharacterActor_.
 
@@ -32,7 +34,7 @@ Drag and drop the prefab **"Capsule Blank Character"** \(_Character Controller P
 
 ![](../.gitbook/assets/imagen%20%2825%29.png)
 
-### 2. Choose the "tags and layers" profile
+### 3. Choose the "tags and layers" profile
 
 Go to the root object \(the _character_\), _CharacterActor_ component, and choose an asset for the field **"tags and layers profile"**:
 
@@ -40,7 +42,7 @@ Go to the root object \(the _character_\), _CharacterActor_ component, and choos
 
 Select the default one that comes with the package \(it's fine\).
 
-### 3. Add the "CharacterStateController"
+### 4. Add the "CharacterStateController"
 
 Add this component to the root object \(_character_\). This will also add a _CharacterBrain_ component.
 
@@ -48,7 +50,7 @@ Add this component to the root object \(_character_\). This will also add a _Cha
 
 \(Now you are in "Implementation" territory\)
 
-### 4. Add the "NormalMovement" **state**
+### 5. Add the "NormalMovement" **state**
 
 The _CharacterStateController_ component requires a "current state". Add the _NormalMovement_ state component to the character \(all states need to be added in a similar way\). 
 
@@ -56,11 +58,11 @@ Then drag the new component to the "current state" field.
 
 ![](../.gitbook/assets/imagen%20%2832%29.png)
 
-### 5. Choose a "materials properties" asset
+### 6. Choose a "materials properties" asset
 
 In the _CharacterStateController_ component, select the default _material properties_ asset.
 
-### 6. Add the input data asset
+### 7. Add the input data asset
 
 Without inputs actions nothing is going to happen. Go to the CharacterBrain component and add the default input data asset available in the project.
 
@@ -70,13 +72,13 @@ Now you should be able to move the character around. Nothing is configured in de
 
 Next, we need to add the camera.
 
-### 7. Adding the camera
+### 8. Adding the camera
 
 Drag and drop the "Camera3D" prefab into the scene. It doesn't matter where exactly, the position and rotation will be handled by the camera.
 
 \(Another quick way is to just add the "Camera3D" component to a new Camera game object\)
 
-### 8. Select the camera target
+### 9. Select the camera target
 
 Go to the Camera3D component and assign the character actor field with the CharacterActor component from the character.
 
@@ -84,7 +86,7 @@ Go to the Camera3D component and assign the character actor field with the Chara
 
 Now you should be able to move the camera around the player, detecting collisions with the environment. 
 
-### 9. Set the movement reference
+### 10. Set the movement reference
 
 The camera is doing its work, but still, the player is not moving using the camera as the movement reference \(as shown in the 3D demo scene\). In order to fix this, go to the _CharacterStateController_ component, select the "movement reference" mode to External. Then choose the camera as the external forward reference.
 
@@ -94,12 +96,11 @@ The camera is doing its work, but still, the player is not moving using the came
 
 Let's make a parallel version of the previous instructions, but this time for 2D. In the following list are some of the changes you will have to take care of, in order to bring to life a fully functional 2D character.
 
-* Go to the _CharacterBody_ component and select "2D":
+* Select "2D" in the _CharacterBody_ component:
 
 ![](../.gitbook/assets/imagen%20%2835%29.png)
 
-* Do the same from instruction 1 to 6.
-* For the camera, drag and drop the "Camera 2D" prefab into the scene and select the character as its target.
+* Instead of using the Camera 3D prefab, this time replace it for the 2D version. Just drag & drop the "Camera 2D" prefab into the scene and select the character as its target.
 
 That's it!
 

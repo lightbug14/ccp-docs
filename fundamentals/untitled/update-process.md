@@ -24,7 +24,7 @@ A way to control the interpolation process is required because of the way that _
 {% hint style="warning" %}
 It is mandatory for the SceneController to be present in the scene, otherwise the characters and the kinematic actors won't update. 
 
-You don't need to add manually this component to the scene. If there is at least one character actor in the scene, this component will be instantiated automatically.
+**You do need to add manually this component to the scene \(1.0.4 onwards\).**
 {% endhint %}
 
 
