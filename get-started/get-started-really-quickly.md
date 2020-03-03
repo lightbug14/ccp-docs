@@ -12,19 +12,20 @@ First and foremost, in order to follow the next steps, it's recommended to start
 
 Summary:
 
-1. Add the **character prefab.**
-2. Choose the **"tags and layers"** profile.
-3. Add the **"CharacterStateController".**
-4. Add the **"NormalMovement"** state**.**
-5. Choose a **"materials properties"** asset.
-6. Add the **input data** asset.
-7. Add the **camera**.
-8. Select the **camera target**.
-9. Set the **movement reference**.
+1. Add the **scene controller**.
+2. Add the **character prefab**.
+3. Choose the **"tags and layers"** profile.
+4. Add the **"CharacterStateController"**.
+5. Add the **"NormalMovement"** state**.**
+6. Choose a **"materials properties"** asset.
+7. Add the **input data** asset.
+8. Add the **camera**.
+9. Select the **camera target**.
+10. Set the **movement reference**.
 
 ### 1. Add the scene controller
 
-The firts task is adding the scene controller component to the scene. You can add the _SceneController_ component to an empty object, or just simply drag & drop the "Scene Controller" prefab into the scene.
+The first thing to do is adding the scene controller \(sort of like a master component\). You can add the _SceneController_ component to an empty object, or just simply drag & drop the "Scene Controller" prefab into the scene.
 
 ### 2. Add the character
 
