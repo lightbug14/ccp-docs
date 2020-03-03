@@ -1,11 +1,13 @@
 # Introduction
 
-Hi! I'm Lightbug, welcome to the **Character Controller Pro** Documentation. Here you will find all the material related to this asset.
+Hi! I'm Lightbug, welcome to the **Character Controller Pro** Documentation. This document contains \(hopefully\) all the material you need to understand the basics of this asset.
 
 ![](.gitbook/assets/keyimage_cover.png)
 
 {% hint style="info" %}
-_**Note:**_ This document explains the basics of _Character Controller Pro_ the best way possible. It was written as a guide/manual with descriptions, definitions, images and side notes. If after reading this manual you feel confused somehow or have questions about the package, please send me an email and i will gladly answer to everyone of them. Also really important to mention, **English is not my primary language, so bear with me**, **I’m doing my best**.
+_**Note:**_ This document explains the basics of _Character Controller Pro_ the best way possible. It was written as a guide/manual with descriptions, definitions, images and side notes. If after reading this manual you feel confused somehow or have questions about the package, please send me an email. 
+
+Also really important to mention, **English is not my primary language, so bear with me**, **I’m doing my best** 🙂 .
 {% endhint %}
 
 ## How to read this?
@@ -22,7 +24,7 @@ Not at all, this is the official latest version of the docs. This means that it 
 
 As always I would recommend to **get the latest version of Character Controller Pro.** That said, don't worry about this "problem", in general most of the concepts, projects settings and tutorials are similar and probably will remain almost the same.
 
-## I want to get started!
+## Is there an easy way to get started?
 
-Go to the [get started](get-started/get-started-really-quickly.md) section.
+There is a [quick guide](get-started/get-started-really-quickly.md) section available.
 
