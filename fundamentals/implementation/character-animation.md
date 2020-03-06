@@ -73,13 +73,11 @@ _NotGrounded_ and _Grounded_ and _Dash_ are blend trees. _Slide_ is a simple sta
 
 A blend tree needs to read a specific variable to decide which clip of the tree it should play. This variable is fed to the blend tree by the _CharacterAnimation_ component. 
 
-For instance, in the _Grounded_ blend tree the variable passed through is the current linear velocity magnitude. 
+For instance, in the _Grounded_ blend tree the variable passed through is the current input velocity magnitude. 
 
 ![](../../.gitbook/assets/animator-blend.gif)
 
-We can see there are three clips in it: _Idle_, _Walk_ and _Run_. The result will depend on the variable value, and t
-
-he chosen threshold values as well.The variables names can be defined in the inspector:
+We can see there are four clips in it: _Idle_, _Walk, Jog_ and _Run_. The result will depend on the variable value, and the chosen threshold values as well.The variables names can be defined in the inspector:
 
 ![](../../.gitbook/assets/imagen%20%2821%29.png)
 
