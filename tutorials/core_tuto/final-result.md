@@ -88,8 +88,8 @@ public class TutorialController : MonoBehaviour
         PlanarMovement();    
         
         Vector3 velocity = planarVelocity + verticalVelocity;
-
-        characterActor.SetLinearVelocity( velocity );
+        
+        characterActor.SetInputVelocity( velocity );
     }
 
 

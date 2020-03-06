@@ -32,7 +32,7 @@ void PlanarMovement()
 }
 ```
 
-FInally we need to set the linear velocity:
+FInally we need to set the input velocity:
 
 ```csharp
 void UpdateCharacter()
@@ -41,7 +41,7 @@ void UpdateCharacter()
     
     Vector3 velocity = planarVelocity;
     
-    characterActor.SetLinearVelocity( velocity );
+    characterActor.SetInputVelocity( velocity );
 }
 
 
