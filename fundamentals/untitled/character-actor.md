@@ -41,7 +41,7 @@ It is important to mention that **the forward direction vector will always be pr
 
 ## Position
 
-The change in position related to a _LinearVelocity_ field. The necessary displacement is calculated based on the current linear velocity value. This movement will take into account collision detection. The _LinearVelocity_ vector needs to be set externally by a script.
+The change in position related to a _InputVelocity_ field. The necessary displacement is calculated based on the current input velocity value. This movement will take into account collision detection. The _InputVelocity_ vector needs to be set externally by a script.
 
 The movement algorithm is based on the classic _Collide & Slide_ algorithm. Although is not necessary to do a bunch of collision test in order to prevent the character to pass through other colliders \(since this is a rigidbody based character controller\), these test are still performed anyway. This is because the character gathers information from the environment and also can predict its movement before hand, which is really useful.
 
@@ -69,9 +69,9 @@ The concept of stability is used internally by the _CharacterActor_ to detect st
 
 ### Velocity Projection
 
-The _LinearVelocity_ vector provides the information needed to move the character from point A to point B. However, this vector is not used directly to calculate the actual displacement, since it may not follow the _CharacterActor_ internal movement rules. This can be a problem only when the character is grounded.
+The _InputVelocity_ vector provides the information needed to move the character from point A to point B. However, this vector is not used directly to calculate the actual displacement, since it may not follow the _CharacterActor_ internal movement rules. This can be a problem only when the character is grounded.
 
-In order to use a valid displacement vector, the linear velocity must be projected onto the current slope plane. The _CharacterActor_ will take the linear velocity field and do the projection **maintaining its magnitude**.
+In order to use a valid displacement vector, the input velocity must be projected onto the current slope plane. The _CharacterActor_ will project the input velocity vector, **maintaining its magnitude**.
 
 ![](../../.gitbook/assets/velocityproj.png)
 
@@ -81,7 +81,7 @@ In order to use a valid displacement vector, the linear velocity must be project
 
 ### Slopes handling
 
-The character can walk onto any stable slope. Prior to the movement calculation a displacement vector is created \(based on the linear velocity\) and subsequently modified in the process. The collide and slide algorithm will iterate over and over until the displacement magnitude is less that the minimum movement amount constant, or the number of iterations performed exceeds the maximum number of slide iterations.
+The character can walk onto any stable slope. Prior to the movement calculation a displacement vector is created \(based on the input velocity\) and subsequently modified in the process. The collide and slide algorithm will iterate over and over until the displacement magnitude is less that the minimum movement amount constant, or the number of iterations performed exceeds the maximum number of slide iterations.
 
 If the encountered slope is allowed the character will walk onto it, modifying the displacement vector. if not the slope will be considered as an invisible wall.
 

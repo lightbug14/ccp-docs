@@ -36,7 +36,7 @@ Great! to the next se~~ction~~ ... Not so fast! If you try to jump by pressing t
 
 #### Why is that? 
 
-Once the character has hit the ground it will be impossible for it to move upwards. This is because it has entered the _grounded_ state, and in this state things work differenty. So, it doesn't matter the linear velocity value you passed to the character actor.
+Once the character has hit the ground it will be impossible for it to move upwards. This is because it has entered the _grounded_ state, and in this state things work differenty \(due to the grounding technique\).
 
 #### What can we do?
 

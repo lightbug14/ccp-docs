@@ -36,7 +36,7 @@ void UpdateCharacter()
     Vector3 velocity = planarVelocity + verticalVelocity;  // for now
     
     // Set the linear velocity
-    characterActor.SetLinearVelocity( velocity );
+    characterActor.SetInputVelocity( velocity );
 }
 ```
 

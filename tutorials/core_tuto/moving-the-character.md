@@ -2,7 +2,7 @@
 
 ## 1. Defining the velocity
 
-In order to move the character we need to set the _linear velocity_ field \(CharacterActor\). One cool trick I always do is to separate "the" velocity into multiple velocities \(this will give much more control\).
+In order to move the character we need to set the _input velocity_ field \(CharacterActor\). One cool trick I always do is to separate "the" velocity into multiple velocities \(this will give much more control\).
 
 Let's begin with the _planarVelocity_. Basically this velocity will be projected onto the plane formed by the local up direction \(normal\).
 
