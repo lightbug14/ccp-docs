@@ -48,7 +48,7 @@ void UpdateCharacter()
 ```
 
 {% hint style="warning" %}
-The linear velocity is global, this means we could transform the coordinates before sending them to the character actor.
+The input velocity is global \(world coordinates\), this means we could transform the coordinates before sending them to the character actor.
 {% endhint %}
 
 {% hint style="success" %}
