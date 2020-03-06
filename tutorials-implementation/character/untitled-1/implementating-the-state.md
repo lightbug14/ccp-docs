@@ -109,11 +109,11 @@ public class TutorialState : CharacterState
         
         Vector3 velocity = planarVelocity + verticalVelocity;
 
-        characterActor.SetLinearVelocity( velocity );
+        characterActor.SetInputVelocity( velocity );
     } 
     
     
-    // The following methods need to be upgraded (inputs).
+    // The following methods need to be re-implemented (inputs).
     void Crouch()
     {
         //...
@@ -209,7 +209,7 @@ public class TutorialState : CharacterState
         
         Vector3 velocity = planarVelocity + verticalVelocity;
 
-        CharacterActor.SetLinearVelocity( velocity );
+        CharacterActor.SetInputVelocity( velocity );
     } 
     
     
