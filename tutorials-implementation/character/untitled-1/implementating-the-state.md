@@ -161,7 +161,6 @@ using System.Collections.Generic;
 using UnityEngine; 
 using Lightbug.CharacterControllerPro.Implementation;
 
-// Now it is a state, not a simple MonoBehaviour
 public class TutorialState : CharacterState
 {        
     public override string Name
@@ -219,7 +218,7 @@ public class TutorialState : CharacterState
         
         if( CharacterActor.IsGrounded )
         {
-            targetHeight = CharacterActions.crouch.isHeldDown ? initialBodySize.y / 2f : initialBodySize.y;
+            targetHeight = CharacterActions.shrink.isHeldDown ? initialBodySize.y / 2f : initialBodySize.y;
         }
         else
         {
