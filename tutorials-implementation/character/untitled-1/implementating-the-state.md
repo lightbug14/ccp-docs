@@ -43,7 +43,7 @@ void ResetInputs()
 
 ### Using the state machine
 
-The update need to be change. Now it is not up to the state to handle the update process. This must override the _UpdateBehaviour_ method in order to update:
+The update need to be change. Now it is not up to the state to handle the update process. This must override the _UpdateBehaviour_ method in order to receive the update callback:
 
 ```csharp
 void FixedUpdate()
@@ -53,7 +53,7 @@ void FixedUpdate()
 }
 ```
 
-
+So, this is the resulting code:
 
 ```csharp
 using System.Collections; 
@@ -277,9 +277,7 @@ public class TutorialState : CharacterState
 ```
 
 {% hint style="success" %}
-We ended up bringing our old TutorialController from the core world into the the implementation world. 
-
-By making this simple conversion from one world to another you gained some cool features 😀.
+We ended up bringing our old TutorialController from the core world into the the implementation world😀.
 {% endhint %}
 
 ## 
