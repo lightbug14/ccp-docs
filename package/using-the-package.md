@@ -54,9 +54,9 @@ namespace YourCompany.YourCoolGame
 
 In simpler words, the API is the only interface between CCP and you. Think of CCP as a black box with many buttons that don't mean anything at first. You need to press those buttons but you don't have any idea what they do. 😰 
 
-Luckily for you there is an API reference in the package. Go to _CharacterControllerPro/Documentation and you will find it there._ 
+Luckily for you there is an API reference included in the package \(go to _CharacterControllerPro/Documentation_\)
 
-The API reference is an **html reference** \(made with DoxyGen\). In order to open this documentation you need to open the `index.html` file.
+The API reference is an **html reference** \(made with DoxyGen\). In order to open this documentation, you need to open the `index.html` file.
 
 ![](../.gitbook/assets/imagen%20%2817%29%20%281%29.png)
 
