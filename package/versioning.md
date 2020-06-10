@@ -1,6 +1,6 @@
 # Versions and updates
 
-If you have been using Unity over the last years you probably know that updating a software is risky. Sometimes decisions must be made for the benefit of the software \(even when the users are not so happy about it 🤬\). New features are born, old features are deprecated, and suddenly your project now its filled with red little messages in the console. You press play and the editor now says: "Fix your problems pal, or you will not enter play mode again!" \(well, with other words\).
+If you have been using Unity over the last years you probably know that updating a software is risky. Sometimes decisions must be made for the benefit of the asset \(even when the users are not so happy about it 🤬\).
 
 Of course there are certain levels of risk, that's why you should pay attention to the **version** you are updating to.
 
@@ -50,7 +50,9 @@ The versioning scheme used for CCP is the following:
       </td>
     </tr>
   </tbody>
-</table>## Support
+</table>
+
+## Support
 
 Let me make this clear: **I will always put all my effort in the latest version of the package**. In my own eyes that's the best this package can get, and i will always recommend you to get that version.  
 

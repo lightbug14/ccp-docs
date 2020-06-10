@@ -10,7 +10,7 @@ The state of the model you are going to use is very important, make sure everyth
 
 These are the basics import sections:
 
-![](../../../.gitbook/assets/imagen%20%2855%29.png)
+![](../../../.gitbook/assets/imagen%20%2847%29%20%281%29.png)
 
 We are going to focus at the Rig and the Animation settings.
 
@@ -43,11 +43,11 @@ As you can see, the model can have many takes and/or animation clips, it really 
 
 The _Demo Character_ model was created 100% in Blender \(3D model + all the animations\). Let's take a look at its animation setting, these are all the available "clips":
 
-![](../../../.gitbook/assets/imagen%20%2812%29.png)
+![](../../../.gitbook/assets/imagen%20%288%29.png)
 
 Each one of these contains a particular "source take". For example:
 
-![](../../../.gitbook/assets/imagen%20%289%29.png)
+![](../../../.gitbook/assets/imagen%20%285%29.png)
 
 ## 
 

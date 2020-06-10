@@ -4,7 +4,7 @@ As it was mentioned before in the "fundamentals" section of this documentation, 
 
 The logic thing to do is to add this component to our blank character, so let's do it:
 
-![](../../../.gitbook/assets/imagen%20%2834%29.png)
+![](../../../.gitbook/assets/imagen%20%2811%29.png)
 
 As you probably noticed, a _CharacterBrain_ component was added too. This is because the state controller requires a "brain" component to work. Later on we are going to see this in action \(ignore it for now\).
 
@@ -22,7 +22,7 @@ Of course, this state controller will not be very useful for us without states t
 In the next sections we will be using our custom states.
 {% endhint %}
 
-![](../../../.gitbook/assets/imagen%20%284%29.png)
+![](../../../.gitbook/assets/imagen%20%281%29%20%281%29.png)
 
 ### Materials
 
@@ -34,7 +34,7 @@ You can define your own materials if you want.
 
 In this case, let's use the default materials:
 
-![](../../../.gitbook/assets/imagen%20%286%29.png)
+![](../../../.gitbook/assets/imagen%20%282%29%20%282%29.png)
 
 ### Movement reference
 

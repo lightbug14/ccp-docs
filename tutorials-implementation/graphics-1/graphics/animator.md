@@ -10,7 +10,7 @@ By getting the Animator controller into the mix we can expect a scenario like th
 
 By default the _CharacterAnimation_ component is going to "expect" a layout pretty similar to the _Demo Character Animator Controller_ layout \(with or without transitions, depending on the chosen _animator play mode_\):
 
-![](../../../.gitbook/assets/imagen%20%2842%29.png)
+![](../../../.gitbook/assets/imagen%20%2835%29%20%281%29.png)
 
 Now, we could create a new Animator controller a imitate all of its properties by creating all the states, transitions, variables, etc. However, **it would be very convenient for us to just duplicate the** _**Demo Character Animator Controller**_ 😉_**.**_ 
 
@@ -26,9 +26,9 @@ Now it is a good time to assign your own clips if you want \(don't worry, you ca
 
 One very important thing to note is the clips speed. By default every clip of _Demo Character_ have its own speed.
 
-![](../../../.gitbook/assets/imagen%20%283%29.png)
+![](../../../.gitbook/assets/imagen%20%281%29.png)
 
-![](../../../.gitbook/assets/imagen%20%2853%29.png)
+![](../../../.gitbook/assets/imagen%20%2847%29.png)
 
 Just remember to modify this value to your liking.
 

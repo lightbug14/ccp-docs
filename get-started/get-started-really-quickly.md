@@ -47,7 +47,7 @@ Select the default one that comes with the package \(it's fine\).
 
 Add this component to the root object \(_character_\). This will also add a _CharacterBrain_ component.
 
-![](../.gitbook/assets/imagen%20%2834%29.png)
+![](../.gitbook/assets/imagen%20%2811%29.png)
 
 \(Now you are in "Implementation" territory\)
 
@@ -57,7 +57,7 @@ The _CharacterStateController_ component requires a "current state". Add the _No
 
 Then drag the new component to the "current state" field.
 
-![](../.gitbook/assets/imagen%20%2832%29.png)
+![](../.gitbook/assets/imagen%20%2810%29%20%281%29.png)
 
 ### 6. Choose a "materials properties" asset
 
@@ -67,7 +67,7 @@ In the _CharacterStateController_ component, select the default _material proper
 
 Without inputs actions nothing is going to happen. Go to the CharacterBrain component and add the default input data asset available in the project.
 
-![](../.gitbook/assets/imagen%20%2836%29.png)
+![](../.gitbook/assets/imagen%20%2812%29%20%281%29.png)
 
 Now you should be able to move the character around. Nothing is configured in detail yet, you will need to do that in your own time.
 

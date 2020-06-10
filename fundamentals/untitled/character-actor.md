@@ -179,11 +179,11 @@ The character actor has an internal event that's called every time a collision h
 
 The character will receive impacts only from rigidbodies with a special tag, the _contact rigidbodies tag_. This tag can be set in the _tag and layers_ profile. 
 
-![The default contact rigidbody tag \(&quot;Main Profile&quot; asset\).](../../.gitbook/assets/imagen%20%2850%29.png)
+![The default contact rigidbody tag \(&quot;Main Profile&quot; asset\).](../../.gitbook/assets/imagen%20%2818%29%20%281%29.png)
 
 Make sure to have this tag registered in your project:
 
-![](../../.gitbook/assets/imagen%20%2840%29.png)
+![](../../.gitbook/assets/imagen%20%2816%29.png)
 
 
 
