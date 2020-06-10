@@ -25,6 +25,6 @@ Then select the preset, double click it:
  That's it!
 
 {% hint style="info" %}
-Even though these settings are necessary to configure in order to play the demo scenes, most of these settings are not mandatory for the normal operation of this package. They were built based on the demo assets.
+Even though this need to be done in order to play the demo scenes, most of these settings are not mandatory for the normal operation of this package. They were built based on the demo assets.
 {% endhint %}
 

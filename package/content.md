@@ -1,16 +1,18 @@
 # Content
 
-_Character Controller Pro_ is organized in three big parts:
+_Character Controller Pro_ is organized in three hierarchical parts:
 
 ### Core
 
-The main part of the package, it does the heavy lifting regarding collision detection, character information, movement, etc. If you want to extend the package or maybe you don't like the current implementation, you should use the core, it will give all the necessary tools to create your character on top.
+Contains the the main components associated with the "character controller". These components are responsible for  making the character move properly in the scene.
 
 ### Implementation
 
-Consist of a bunch of components that implement the functionality of the _Core_. These components cover many aspects and intend to create a "character ecosystem" around the _Core_. This part of the package can be customize and/or extended if needed.
+Consists of a bunch of components that implement the functionality of the _Core_. These components cover many aspects and intend to create a "character system" around the _Core_. This part of the package can be customize, deleted and/or extended if needed.
 
 ### Demo
 
-Basically all the assets used for the making of the demo scenes, from materials and sprites, to pure data containers.
+Contains all the assets used for the making of the demo scenes \(character abilities, UI components, meshes, sprites, scriptable objects, etc\).
+
+**IMPORTANT:** Most of the logic and gameplay components belong to the Demo. These components do not represent the **technical features** of the asset \(e.g. animation support, collision events, etc\).
 
