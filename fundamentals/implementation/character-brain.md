@@ -1,5 +1,11 @@
 # Character brain
 
+{% hint style="warning" %}
+Most of the Brain functionalities are quite similar to the Unity's new input system. You will notice that the names are quite similar, the way to orginize the actions, the asset creation. That's no coincidence, the main goal with this is to delegate all the input related tasks to the new input system \(which does this is a better way\). The focus will be on the components on top of the system, not the system itself.
+
+So, if you see these components in CCP releases is because the new input system is still not fully capable of doing exactly what CCP does \(for now\).
+{% endhint %}
+
 The character brain is a component responsible to handle all the character actions. These actions can be triggered either from a human player or the AI.
 
 ![Representation of the Human, the AI and the brain.](../../.gitbook/assets/characterbrain.png)
@@ -25,12 +31,16 @@ CCP's Implementation supports three types of actions
 | Vector2Action | A 2D Value from, basically a combination of two axis. |
 
 {% hint style="info" %}
-Advantage: We can update these actions as we want, by reading inputs from a device \(Human\) or simply by making them up \(AI\).
+Note that the BoolAction value is true or false \(a bool\). If you need to know if that action was started or cancelled \(e.g. was the jump button pressed?\), you need to get the **Started** or **Cancelled** state respectively.
+
+**Value** is not equal to **Phase** \(only for bool actions\)
+
+From previous versions of CCP, the phases were part of the actions values, causing some issues \(e.g. creating a started and canceled action at the same time\).
 {% endhint %}
 
 
 
-### Adding/Removing actions
+### Character actions
 
 These actions are predefined and grouped together inside a struct. Each one represents a particular input.
 
@@ -49,13 +59,21 @@ public struct CharacterActions
 }
 ```
 
+{% hint style="info" %}
+You can visualize the actions values in runtime in the inspector \(Human or AI\).
+{% endhint %}
+
+![](../../.gitbook/assets/imagen%20%2815%29.png)
+
+### Adding/Removing actions
+
 If you need to add/remove actions from the struct, normally you would need to modify the code itself. This can be somehow annoying sometimes, especially if you miss something along the way. 
 
-Luckily there is an easy way to achieve the same, a _**CharacterActionsAsset**_. This asset has some lists of actions \(bool, float and vector2\), you just need to populate those with your personal data. After that's done, just click the Create actions button and automagically the CharacterActions struct will be updated 🙂 .
+Luckily there is an easy way to achieve the same result, by using a _**CharacterActionsAsset**_. This asset has some lists of actions \(bool, float and vector2\), you just need to populate those with your personal data. After that's done just click the **Create actions** button and automagically the CharacterActions struct will be updated 🙂 .
 
-![Default Character Actions asset.](../../.gitbook/assets/imagen%20%2815%29.png)
+![Default Character Actions asset.](../../.gitbook/assets/imagen%20%2826%29.png)
 
-The CCP release comes with a **Default Character Actions** asset, just to keep the original data there.
+CCP comes with a **Default Character Actions** asset, just to keep the original data there \(you can create your own assets of course\).
 
 {% hint style="danger" %}
 Have in mind that adding/removing actions might affect the scripts from the Demo content. These scripts are using the default CCP actions.
@@ -76,7 +94,7 @@ Vector2 inputAxes = CharacterActions.movement.value;
 ```
 
 {% hint style="info" %}
-Notice that these actions are not necessarily Human actions, that is, they are not linked to input devices whatsoever. The AI can produce the same type of actions as the human, so, the state is totally agnostic of the actions source.
+Note that these actions are not necessarily Human actions, that is, they are not linked to input devices whatsoever. The AI can produce the same type of actions as the human, so, the state is totally agnostic of the actions source.
 {% endhint %}
 
 
@@ -121,7 +139,7 @@ On previous releases, these AI behaviours were embeded into the brain component 
 
 .
 
-![Example: AI behaviour using a sequence behaviour \(Demo content\).](../../.gitbook/assets/imagen%20%2826%29.png)
+![Example: AI behaviour using a sequence behaviour \(Demo content\).](../../.gitbook/assets/imagen%20%2827%29.png)
 
 ## 
 
