@@ -1,5 +1,11 @@
 # Introduction
 
+{% hint style="warning" %}
+**IMPORTANT**
+
+This documentation is being actively converted from version **1.0.5** to version **1.1.0**
+{% endhint %}
+
 Hi! I'm Lightbug, welcome to the **Character Controller Pro** Documentation. This document contains \(hopefully\) all the material you need to understand the basics of this asset.
 
 ![](.gitbook/assets/keyimage_cover.png)

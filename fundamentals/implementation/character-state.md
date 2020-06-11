@@ -2,9 +2,9 @@
 
 ## State behaviour
 
-A state is the main piece of code that the state machine executes. Every state presents its own behaviour, and can be implemented through its abstracts and virtual methods. The state controller will call them when they are needed, so don't worry about the execution order.
+A state represents the frame by frame logic. Every state presents its own behaviour, and can be implemented through its abstracts and virtual methods. The state controller will call them when they are needed, so don't worry about the execution order.
 
-You need to override the method you want to define a specific behaviour. For instance, if you want to create your own exit behaviour you can do something like this:
+In order to define the state behaviour you'll need to override some specific methods from the _CharacterState_ component. For instance, if you want to create your own exit behaviour \(run when leaving a state\) you can do something like this:
 
 ```csharp
 // YourCustomState.cs
@@ -32,7 +32,7 @@ These transitions are called Exit transition and Enter transition.
 
 #### Why do transitions using this approach? 
 
-Well, sometimes the information needed to decide if a transition is successful or not is shared between two or more states, but sometimes it doesn't. Since we can't be sure that one state has the total control over one particular transition, dividing the condition test sounds like the right thing to do.
+Sometimes the information needed to decide if a transition is successful or not is shared between two or more states, but sometimes it doesn't. Since we can't be sure that one state has the total control over one particular transition, dividing the condition test sounds like the right thing to do.
 
 > ### Example
 >
@@ -42,86 +42,35 @@ Well, sometimes the information needed to decide if a transition is successful o
 >
 > The _**JetPack**_ state must check if everything is ok, before allowing the transition to happen. For instance, if the character jet pack doesn't have any fuel, this should not be active. In the transition code, inside the _JetPack_ state we can make sure that the fuel is enough.
 
+So, in order to allow a transition from a _**state A**_ **to a** _**state B**_  you'll need to implement the _**CheckExitTransition**_ **method in** _**State A**_ ****and the _**CheckEnterTransition**_ **method in** _**State B**_.
 
+### Adding candidates to the queue
 
-The best way to understand transitions is by looking at the _CharacterStateController_ script. Specifically at the _CheckForTransitions_ method:
+Inside _CheckExitTransition_ you would normally select a target state. The thing is, there may be more than one potential state \(candidate\) at the same time. This is why there is a queue of states.
 
-```csharp
-bool CheckForTransitions()
-{ 
-    CharacterState nextState = currentState.CheckExitTransition();
-    if( nextState == null )
-        return false;
-
-    bool success = nextState.CheckEnterTransition( currentState );
-    if( !success )
-        return false;
-
-    previousState = currentState;
-    currentState = nextState;
-
-    return true;
-}
-```
-
-Something to notice about this is that the _CheckExitTransition_ is evaluated in the current state, and the _CheckEnterTransition_ is evaluated in the next state. 
-
-So, in order to allow a transition from a _state A_ to a _state B_ we need to implement the _CheckExitTransition_ in _State A_ and the _CheckEnterTransition_ methods in _State B_.
-
-By default these are the virtual definitions of both states \(_CharacterState.cs_\):
+For instance, if conditionA is valid, then the StateA is added as a candidate. If conditionB is valid, then both StateB and StateC are added as candidates.
 
 ```csharp
-public virtual CharacterState CheckExitTransition()
+public override void CheckExitTransition()
 {
-    return null;
+    if( conditionA )
+    {
+        CharacterStateController.EnqueueTransition<StateA>();
+    }
+    else if( conditionB )
+    {
+         CharacterStateController.EnqueueTransition<StateB>();
+         CharacterStateController.EnqueueTransition<StateC>();       
+    }
 }
- 
-public virtual bool CheckEnterTransition( CharacterState fromState )
-{
-    return true;
-}
-```
-
-These are virtual methods, this means that if we don't implement them they are going to run in the base class. In other words, nothing is going to happen, no transitions at all. This is something you probably don't want, unless your character needs only one state, which is unlikely.
-
-### Exit transition
-
-_CheckExitTransition_ returns a target state \(_CharacterState_ type\), in this case it would be _State B._ Notice that the default value \(virtual method in the base class\) is null. This basically means that the transition is failed.
-
-In order to get this state we need to use a character state controller method called _GetState_. For example:
-
-```csharp
-CharacterState stateB = CharacterStateController.GetState( "StateB" );
-```
-
-Now we can override the _CheckExitTransition_ method in _StateA_, for example:
-
-```csharp
-// StateA.cs
-public override CharacterState CheckExitTransition()
-{
-    // StateA -> StateB
-    if( conditionStateA )
-        return CharacterStateController.GetState( "StateB" );
-}
+    
 ```
 
 ### Enter transition
 
-_CheckEnterTransition_ returns a bool, this is because the target state needs to approve or not the transition at the end. Notice that the default value \(virtual method in the base class\) is true, that is, the transition is always successful.
+_CheckEnterTransition_ will be evaluated for each possible candidate. It returns a bool, basically confirming \(yes or no, true or false\) if the transition is succesful or not. 
 
-By overriding this method we can impose another condition from within _State B_.
-
-```csharp
-// StateB.cs
-public override bool CheckEnterTransition( CharacterState fromState )
-{
-    // Was the transition originated in StateA?
-    bool fromStateA = string.Compare( fromState.Name , "StateA" );
-    
-    // If it was, check if the StateB conditions are true.
-    if( fromStateA )
-        return conditionStateB;
-}
-```
+{% hint style="info" %}
+Note that the default value \(virtual method in the base class\) is **true**, that is, the transition is always successful.
+{% endhint %}
 

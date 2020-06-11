@@ -1,10 +1,8 @@
 # Character state controller
 
-The _CharacterStateController_ is the main component of the _Implementation_. Basically this is the main interface to the _CharacterActor_ component.
+The _CharacterStateController_ is the main component of the _Implementation_. This component derives from the _CharacterActorBehaviour_, which means it defines the logic of the character.
 
-As the name implies, this component is responsible for control all the important aspects of the states. There are a few things that can happen inside a state logic, such as action detection \(from a input device or an AI behaviour\), material interaction, movement, rotation, and so on. So, it is important to handle all these aspects in an orderly manner.
-
-Apart from handling the state logic, this component also hold all the important data the states are going to share between each other.
+As the name implies, this component is responsible for the control all the logic states involved. This type of component can be also referred to as a finite state machine \(or FSM\).
 
 ## Finite State Machine
 
@@ -64,36 +62,77 @@ Once the _InputMovementReference_ vector has been defined, it only remains to mu
 The _InputMovementReference_ vector is updated before the states main loop. All the character states can have access to this vector, and perform its own calculations to determine the velocity.
 {% endhint %}
 
-## Materials
+## Animation
 
-A material consists of pure data \(_ScriptableObjects_ in this case\) that contains properties for different materials. These materials are defined in the context of the _CharacterStateController_, shareable by all the states.
+### Animator
 
-These materials can be used to affect the resulting character movement. The type of material affecting the character will depend on the grounded state, the material properties, and finally the movement properties of the character state.
+The _Animator_ is the main animation component. The _CharacterStateController_ will search for this component from the root object \(the character\) to the last child \(recursively\). 
 
-For instance, in the _NormalMovement_ state, the material parameters are used to modify the velocity sent to the _CharacterActor_.
+{% hint style="info" %}
+**What happens if you decide to ignore the Animator component?**
 
-A material can be a **volume** or a **surface**:
+Nothing, everything \(from the character logic perspective\) is going to work just fine. This means that, if you are not happy with the CCP approach to animation, you are free to do whatever you want.
+{% endhint %}
 
-|  |  |
-| :--- | :--- |
-| Volume | All the space around the character \(not grounded parameters\). This space can be made of air, water, jelly, and so on. |
-| Surface | A solid on which the character can stand on \(grounded parameters\). A surface can be ice, mud, grass, etc. |
+The _Animator_ can be accessed from within the CharacterState at any time. 
 
-There are parameters that can be configured for both volumes and surfaces. These parameters are related to the amount of grounded control, not grounded control, gravity and speed modifiers.
+```csharp
+CharacterStateController.Animator.SetTrigger( myTrigger );
+```
 
-### Default materials
+This \(in comparison with previous releases of CCP\) will give you a ton of freedom when defining all the gameplay mechanics of your character.
 
-Any material without a proper tag on it will be considered as a \`\`default material''.
+### Animator controller
 
-![](../../.gitbook/assets/imagen%20%288%29%20%281%29.png)
+Mecanim \(the system behind the Animator controller logic\) can be really good and intuitive for some tasks \(especially if you are not a coder\), but sometimes can be a living nightmare 🤬. In any case, it's the default animation system in Unity, so it's expected to be supported by this asset.
 
-### Tagged materials
+Due to a number of technical issues with Mecanim \(related to transitions times\), CCP uses a **multi-AnimatorControllers** approach, especifically one per state. 
 
-A material element can be defined by using a _tag_. Then, it can be configured in the scriptable object.
+This means that every time a new state is loaded into the state controller, the associated _AnimatorController_ asset is assigned \(on the fly\) to the _Animator_ component.
 
-![](../../.gitbook/assets/imagen%20%284%29%20%281%29.png)
+### Animator messages
 
+Some of the features provided for the _Animator_ can be used only from within special Unity's messages, following an specific execution order:
 
+* **OnAnimatorIK** is used to modify the individual **IK**.
+* **OnAnimatorMove** is used to extract the **root motion** data.
 
-## 
+The main issue here is that, in order to use these functionalities you need to add a component to the object with the _Animator_ component. The state controller takes care of this, by connecting \(via an **AnimatorLink** component\) the _Animator_ messages with the FSM \(thus, implementing those functionalities for you 😉 \).
+
+### IK
+
+As mentioned before, the FSM takes care of the execution order. So, in order to modify an IK in any way, you would only need to implement the UpdateIK method from the CharacterState component.
+
+> Example:
+>
+>
+>
+> ```csharp
+> public override void UpdateIK( int layerIndex )
+> {     
+>      // Write your IK code here...
+> }
+> ```
+
+### Root Motion
+
+Root motion is a huge topic, some love it, some hate it. 
+
+**Wait, you don't know what root motion is?**
+
+[https://docs.unity3d.com/Manual/RootMotion.html](https://docs.unity3d.com/Manual/RootMotion.html)
+
+The truth is, it's just a tool. Many controllers out there are built on top of this concept, CCP on the other hand just give you the option to enable it.
+
+Enabling root motion is super easy \(from within any state\):
+
+```csharp
+CharacterStateController.UseRootMotion = true;
+```
+
+After that the movement will be controlled by the animation motion data.
+
+{% hint style="info" %}
+If you want to see **root motion** in action, i would recommend to check the **LadderClimbing** or **LedgeHanging** states from the **Demo**.
+{% endhint %}
 

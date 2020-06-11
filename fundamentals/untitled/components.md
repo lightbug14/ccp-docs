@@ -4,7 +4,7 @@ The core consist of the following main components:
 
 ### Character body
 
-This component contains all the information related to the character body, such as body size, shape, physics supported, mass, etc.
+This component contains all the information related to the character body, such as body size, shape, physics supported, etc.
 
 ### Character actor
 

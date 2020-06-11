@@ -4,7 +4,7 @@ The update process can be explained parting from the concept of a _**Scene**_.
 
 ## Scene
 
-In the eyes of CCP, a scene works just like a regular Unity's scene. Instead of game objects there are **actors** moving around and/or interacting with each other. 
+A scene works just like a regular Unity's scene. Instead of game objects there are **actors** moving around and/or interacting with each other. 
 
 There are two types of actors:
 
@@ -15,9 +15,7 @@ There are two types of actors:
 
 ### Scene Controller
 
-A _scene controller_ is responsible for updating the position and rotation of all the actors in the scene. It is also responsible for guaranteeing a nice interpolated movement, especially for characters affected by dynamic platforms.
-
-![](../../.gitbook/assets/scenecontroller.png)
+A _scene controller_ is responsible for **updating the position and rotation of all the actors in the scene**. It is also responsible for guaranteeing a nice interpolated movement, especially for characters affected by dynamic platforms.
 
 A way to control the interpolation process is required because of the way that _MovePosition_ and _MoveRotation_ work \(For more information about these methods check the [Unity's scripting reference](https://docs.unity3d.com/ScriptReference/Rigidbody2D.MovePosition.html)\).
 

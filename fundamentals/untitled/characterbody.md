@@ -1,13 +1,5 @@
 # Character body
 
-## Components required
-
-The character uses a 2D/3D _Rigidbody_ and a 2D/3D _CapsuleCollider_ in order to detect collision, generate contacts, do movement, etc. Since the 2D and 3D world have their own specific components, a single component has been created in order to encapsulate both the _Rigidbody_ and the _Collider_, thus creating a level of abstraction.
-
-![](../../.gitbook/assets/characterbodytree.png)
-
-
-
 ## Properties
 
 ### Foot position
@@ -16,11 +8,9 @@ The foot position is considered as the origin, a point of reference for everythi
 
 ### Orientation
 
-The character is modeled as an upright capsule. This means that the capsule height vector\footnote{Vector defined from the bottom sphere to the top sphere} and the up vector of the character transform will have always the same direction vector.
+The character is modeled as an upright capsule.
 
 ![](../../.gitbook/assets/capsuleupright.png)
-
-This capsule is not visible, any real character will need a graphics element with a renderer to show the mesh or sprite on screen.
 
 ### Size
 
@@ -56,7 +46,7 @@ Even though the collider will be scaled just fine, the internal "physics size'' 
 
 #### What if i want to scale my character?
 
-Well, in that case you should scale the graphics object, not the character itself. After that, the body size should be modified to fit the graphics.
+Well, in that case you should scale the graphics object, not the character itself \(root object\). After that, the body size should be modified to fit the graphics.
 
 {% hint style="warning" %}
 The character _localScale_ should always be $$< 1, 1 , 1 >$$.
@@ -64,7 +54,7 @@ The character _localScale_ should always be $$< 1, 1 , 1 >$$.
 
 ### Collision shape
 
-Even though this is a dynamic character controller, the _CharacterActor_ is still doing physics queries to detect collisions. Because of this an effective collision shape was defined \(different from the character body shape\) using the width, height and skin width \(See figure \ref{fig:Tuto\_character\_SW}\).
+Even though this is a dynamic character controller, the _CharacterActor_ is still doing physics queries to detect collisions. Because of this an effective collision shape was defined \(different from the character body shape\) using the width, height and skin width.
 
 ![The collision shape of the character.](../../.gitbook/assets/collisionshape.png)
 

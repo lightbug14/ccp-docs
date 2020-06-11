@@ -16,14 +16,11 @@
   * [Update process](fundamentals/untitled/update-process.md)
   * [Character body](fundamentals/untitled/characterbody.md)
   * [Character actor](fundamentals/untitled/character-actor.md)
-  * [Character graphics](fundamentals/untitled/character-graphics.md)
   * [Implementing the core](fundamentals/untitled/implementing-the-core.md)
 * [Implementation](fundamentals/implementation/README.md)
   * [Character state controller](fundamentals/implementation/character-state-controller.md)
   * [Character state](fundamentals/implementation/character-state.md)
   * [Character brain](fundamentals/implementation/character-brain.md)
-  * [Character animation](fundamentals/implementation/character-animation.md)
-  * [Character particles](fundamentals/implementation/character-particles.md)
   * [Kinematic actors](fundamentals/implementation/untitled-2.md)
 
 ## Get started

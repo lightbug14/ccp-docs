@@ -1,6 +1,6 @@
 # Hierarchy
 
-Referring back to the [Character graphics](../../../fundamentals/untitled/character-graphics.md) section, this is the recommended hierarchy structure for any CCP character:
+Referring back to the [Character graphics]() section, this is the recommended hierarchy structure for any CCP character:
 
 ![](../../../.gitbook/assets/character_hierarchy.png)
 

@@ -1,57 +1,104 @@
 # Character actor
 
-The _CharacterActor_ component follows a few simple rules that needs to be understood in order to use it. These rules are related to teleportation, size, position and rotation. All the actions required from the _CharacterActor_ have a deferred nature, this means that they are not executed immediately. All the changes are applied when the _CharacterActor_ needs to.
+The _CharacterActor_ component can be also referred as a Character-oriented rigidbody. Most of the time you will be changing the position, the rotation and/or the velocity of the **RigidbodyComponent** component \(see the API reference for more detail\).
 
-![CharacterActor internal actions.](../../.gitbook/assets/core_internal.png)
+The job of the CharacterActor is to **ensure that all the changes are being applied correctly \(**based on a set of predefined "rules"\).
 
-The main properties to look for are shown in the next image. The _CharacterActor_ offers a few public methods and properties that allow you to define these properties.
+{% hint style="warning" %}
+The character **does not represent a "vainilla" dynamic rigidbody**. Even though it uses most of the rigidbodies physics and tools, there are some properties whose values cannot be modified.
+{% endhint %}
 
-![](../../.gitbook/assets/core_flow.png)
+## Character Actor Behaviour
 
-The following sections explain how all these individual elements work internally.
+This component defines the logic of the character. Before the actor do its magic, the character actor behaviour is updated \(following the FixedUpdate\). **Without a behaviour the character is useless.**
 
-## Teleportation
+{% hint style="info" %}
+The entire [implementation ](../implementation/)of the asset is derived from this behaviour. See the next section for more details.
+{% endhint %}
 
-If the character needs to change instantly its position and/or rotation \(ignoring the collision detection algorithm\) then the Teleportation method should be used.
+## 
 
 ## Size
 
 Internally the size of the character is stored in a Vector2 variable called _bodySize_. The x component represents the width and the y component represents the height. The initial size will be assigned based on the capsule collider parameters and some internal constants.
 
-The size can be set externally by a script, by passing any possible value as the desired size. Since the character may or may not fit in a given space, the size must be internally checked beforehand by the _CharacterActor_, thus defining the final character size.
-
-## Orientation
-
-The orientation is completely managed by the _CharacterActor_ component. Any external change to the character rotation will be overwritten. There are two ways to describe a normal character rotation:
-
-|  |  |
-| :--- | :--- |
-| Gravity  | The current gravity direction will define the character up vector as its opposite. |
-| Yaw  | This is the rotation motion around the local _up_ axis |
-
-The character is capable of changing its rotation values by using the gravity information. This is possible by using the gravity direction and graviy modes from the CharacterActor component. For example, in the next figure the character is align itself using the gravity vector.
-
-![](../../.gitbook/assets/gravity.png)
-
-On the other hand, **the character cannot do yaw rotation at all**, instead it has a _forward direction_ vector, which can be defined and used for the user at will. This vector will be properly rotated internally by the _CharacterActor_ \(gravity shifting scenarios and dynamic ground motion\).
-
-![](../../.gitbook/assets/lookingdir.png)
-
-It is important to mention that **the forward direction vector will always be projected onto the plane formed by the character up direction**. If a random vector is defined as forward direction, this will be projected onto this plane.
+The size can be set externally by a script, by passing any possible value as the desired size. Since the character may or may not fit in a given space, the size is internally checked beforehand by the _CharacterActor_. If the test is valid, then the size is modified.
 
 ## Position
 
-The change in position related to a _InputVelocity_ field. The necessary displacement is calculated based on the current input velocity value. This movement will take into account collision detection. The _InputVelocity_ vector needs to be set externally by a script.
+The position of the character \(rigidbody component\) can be changed instantly at any time. 
+
+Additionally, you can "teleport" the character to a new destination as well. **What's the difference?** The teleport process will also trigger the OnTeleport event.
+
+Needless to say that teleportation of any kind does not take into account colliison detection. If you need to move the character in a realistic way, you need to change its velocity.
+
+## Rotation
+
+The rotation of the character is a very delicated and tricky topic. It is handled in a very specific way, depending on the physics involved, and the vertical alignment direction. 
+
+### Physics
+
+#### 3D
+
+For a 3D character, the rotation can be anything, you are free to set the value you want. The returned value \(a Quaternion\) will represent the character rotation. 
+
+{% hint style="info" %}
+In previous versions \(1.0.x\) the character yaw rotation was fixed.
+{% endhint %}
+
+#### 2D
+
+For a 2D character, the forward direction **need to be facing towards Vector3.forward or Vector3.back \(a.k.a - Vector3.forward\)**. Otherwise, the collider 2D area will be less than the original intended area.
+
+{% hint style="info" %}
+You can test this by yourself, create a CapsuleCollider2D and rotate it along the y axis.
+{% endhint %}
+
+This is of course unacceptable. However, you don't need not to worry about this issue, you can assign the rotation value \(Quaternion\) that you want, and the _CharacterActor_ component will be smart enough to make sure everything works nicely.
+
+### Vertical alignment
+
+This feature just modifies the character up direction, based on the current vertical alignment direction.
+
+{% hint style="info" %}
+You can disable this vertical alignment feature in the inspector.
+{% endhint %}
+
+{% hint style="success" %}
+Example: Planet gravity
+
+If you use the _gravityCenter_ field from the vertical alignment feature, you can ensure the up direction of the character will always be - gravity \(see the image below\).
+
+ ![](../../.gitbook/assets/gravity.png)
+{% endhint %}
+
+
+
+## Velocity
+
+The actor is responsible for modifying its current velocity \(from the rigidbody\), in order to move the character properly \(grounded or not, stable or unstable\).
+
+The necessary displacement is calculated based on the current velocity value.
+
+```csharp
+CharacterActor.Velocity = someValue;
+```
 
 The movement algorithm is based on the classic _Collide & Slide_ algorithm. Although is not necessary to do a bunch of collision test in order to prevent the character to pass through other colliders \(since this is a rigidbody based character controller\), these test are still performed anyway. This is because the character gathers information from the environment and also can predict its movement before hand, which is really useful.
 
 ### Grounded state
 
-The movement can be classified in _Grounded_ and _Not Grounded_, depending on the current grounded state. Both type of motion have its differences, the not grounded movement only performs the basic collide and slide action, while the grounded movement does the same but also includes all the available features \(step detection, edge detection, edge compensation, etc\).
+The movement can be classified in _Grounded_ and _Not Grounded_, depending on the current grounded state. Both have its differences:
 
-_**Grounded**_ **to** _**Not Grounded**_ ****To make the transition you must force the not grounded state externally. If you are using gravity in your script remember to apply a positive vertical velocity \(towards the character up vector\), otherwise the character will return to the grounded state the next frame.
+_**Grounded**_ **to** _**Not Grounded**_ ****A character will leave the grounded state if the grounding test is negative, or if it is forced to leave that state \(ForceNotGrounded method\).
 
-_**Not Grounded**_ **to** _**Grounded**_ ****In this case you must apply a negative vertical velocity \(towards the character up vector\).
+```csharp
+CharacterActor.ForceNotGrounded();
+```
+
+If you are using gravity in your script remember to apply a positive vertical velocity \(towards the character up vector\), otherwise the character will return to the grounded state the next frame.
+
+_**Not Grounded**_ **to** _**Grounded**_ ****In this case, you must apply a negative vertical velocity \(towards the character up vector\). If the collision test is valid \(detects a valid ground\) then the state becomes grounded.
 
 ### Stability
 
@@ -61,51 +108,49 @@ A character is stable when it is grounded and the _stable slope angle_ \(see the
 stable = IsGrounded && ( stableSlopeAngle <= slopeLimit ); 
 ```
 
-This angle should not be confused with the _slope contact angle_, obtained directly from the collision test. They both are not the same:
+This angle should not be confused with the _slope contact angle_, obtained directly from the collision test \(See the image below, green means stable, red means unstable\).
 
 ![](../../.gitbook/assets/contactvsstable.png)
 
-The concept of stability is used internally by the _CharacterActor_ to detect steps, edges, do ground probing, and so on. By itself it will not produce any type of movement, but it can be used for creating custom movement behaviours. For example, in the package implementation, a grounded + unstable character will slide down from the slope it is currently standing on. Referring back to the previous figure, the character will not fall since the stable slope angle \(from the stable normal\) is allowed.
+The concept of stability is very important for the _CharacterActor_ component \(for detecting steps, edges, do ground probing, and so on\). By itself it will not produce any type of movement, but it can be used for creating custom movement logic. 
 
 ### Velocity Projection
 
-The _InputVelocity_ vector provides the information needed to move the character from point A to point B. However, this vector is not used directly to calculate the actual displacement, since it may not follow the _CharacterActor_ internal movement rules. This can be a problem only when the character is grounded.
-
-In order to use a valid displacement vector, the input velocity must be projected onto the current slope plane. The _CharacterActor_ will project the input velocity vector, **maintaining its magnitude**.
+The _Velocity_ vector provides the information needed to move the character from point A to point B. However, this vector is not used directly to calculate the actual displacement, since it may not follow the _CharacterActor_ internal movement rules. This can be a problem only when the character is grounded.
 
 ![](../../.gitbook/assets/velocityproj.png)
 
 {% hint style="warning" %}
-**Important:** the displacement vector is prjected onto a certain plane keeping its initial magnitude. This basically means that the character will always move at its input velocity magnitude, regardless of the slope angle.
+**Important:** The displacement vector is projected onto the ground plane keeping its initial magnitude. This basically means that the character will always move at its initial velocity magnitude, regardless of the slope angle.
 {% endhint %}
 
 ### Slopes handling
 
-The character can walk onto any stable slope. Prior to the movement calculation a displacement vector is created \(based on the input velocity\) and subsequently modified in the process. The collide and slide algorithm will iterate over and over until the displacement magnitude is less that the minimum movement amount constant, or the number of iterations performed exceeds the maximum number of slide iterations.
+The character can walk onto any stable slope. Prior to the movement calculation, a displacement vector is created \(based on the velocity\) and subsequently modified in the process.
 
-If the encountered slope is allowed the character will walk onto it, modifying the displacement vector. if not the slope will be considered as an invisible wall.
+If the encountered slope is allowed the character will walk onto it, modifying the displacement vector. if not, the slope will be considered as an invisible wall.
 
 ![](../../.gitbook/assets/slopes.png)
 
 ![](../../.gitbook/assets/slopes_3d.png) ![](../../.gitbook/assets/slopes_3d_allowed.png) 
 
-### Steps handling
+### Ground probing
 
-#### Step Up 
+This stage is responsible for putting the character feets on the ground \(if there is one\). The final result will depend on the current surface height and angle \(stability\).
 
-The character is able to walk over steps of any height \(although it may look weird in some situations\). The basic rules used to trigger the step up functionality are simple. During the collide and slide stage, if the character hits a wall \(close to 90 degrees ± a tolerance\) or if hits an edge, it will perform a "step up''. After the process, if the ground surface is unstable the step up action will be ignored \(reverting the changes\), and the step will be considered an invisible wall \(same as an unallowed slope\), recalculating the displacement vector.
+There are two important values related to the ground probing:
 
-To determine the stability of the new potential surface an edge detector is used . This allows to measure the upper and lower normal. Depending on the situation the chosen normal will be one or the other. The edge detection is independent from the orientation.
+* Step offset: Any stable surface below this height will be walkable by the character.
+* Step down: Used to clamp the character to the ground
 
-#### Step Down
+From here, we can confirm four cases:
 
-The step down algorithm \(also known as ground clamping or ground snapping\) will force the character to the ground if the ground probing distance is less than the _StepDownDistance_. This is useful to prevent the character to be launched off a slope or step.
+1. Step up: The new ground is **stable** and **higher** than the old one \(within the **step offset** range\).
+2. Step down: The new ground is **stable** and **lower** than the old one \(within the **step down** range\)
+3. Step back: The new ground is **unstable**.
+4. Not grounded: There is **no ground** \(distance **greater** than the **step down** value\).
 
-The **ground probing distance** is distance between the character foot position and the closest ground point measured.
-
-![](../../.gitbook/assets/steps_edge.png)![](../../.gitbook/assets/steps_wall.png) 
-
-### Edge Compensation
+#### Edge Compensation
 
 Normally, when a character is standing on an edge it collision shape will make contact with it.
 
@@ -119,13 +164,13 @@ This feature works only on edges, for slopes you will get the same results as be
 
 ![](../../.gitbook/assets/ledgeon_slopes.png)
 
-The _edge compensation_ feature brings the advantages of the box for edgesand the capsule for slopes.
+The _edge compensation_ feature brings the advantages of a box \(on edges\) and a capsule \(for slopes\).
 
-### Dynamic Ground
+#### Dynamic Ground
 
-If the character is standing on a valid dynamic ground and this object is moved or rotated, the character will move/rotate along with it, always following its own orientation rules. This is shown in next figure \(see how the character maintains its rotation while it moves with the platform\).
+If the character is standing on a valid dynamic ground, and this object is moved and/or rotated, the character will move and/or rotate along with it \(always following its own orientation rules\). This is shown in next figure \(see how the character maintains its rotation while it moves with the platform\).
 
-![A 2D representation of a character standing on top of a kinematic platform \(dynamic ground\) that moves from point A to point B.](../../.gitbook/assets/dynamic.png)
+![](../../.gitbook/assets/dynamic.png)
 
 ## Collision information
 
@@ -139,13 +184,31 @@ For more information about the collision information see the API reference.
 
 A collision event is just a delegate event that is called whenever a particular situation happened \(in this case related exclusively to collisions\). When a specific condition is met, the related event will be called by the _CharacterActor_, therefore calling any method subscribed to it.
 
-The package include a number of collision events \(Core and Implementation as well\), if you want to look at them please refer to the API reference. All the events names start with the word "On".
+The package include a number of collision events, if you want to look at them please refer to the API reference. All the events names start with the word "On" \(normal convention\).
 
+{% hint style="info" %}
 If you want to see all these events in action, or simply see a code example please check the `CharacterDebug.cs`script. It contains a few methods subscribed to all of the available events. You will notice that every delegate event has its own signature, this is because they are passing information along when the event is called.
-
-For example when the _OnHeadHit_ event is called a copy of the _CollisionInfo_ structure is passed as an argument, so you can get the information from the collision itself \(for example the _contactNormal_\).
+{% endhint %}
 
 ## Rigidbodies interaction
+
+### External velocity
+
+The _CharacterActor_ does read and modify the rigidbody velocity \(among other things\) in order to produce its results. This can be an issue, especially if we aren't setting the velocity value frame by frame \(e.g. a force/acceleration\). So, every internal "adjustment" need to be ignored after the simulation.
+
+In summary, after the physics simulation is done, the velocity will be like it was before the simulation. 
+
+```csharp
+Velocity = preSimulationVelocity;
+```
+
+This leads to another interesting result, which is the lack of interaction between rigidbodies and the character \(due to the physics simulation\). Luckily there is a way to add any **external velocity** \(that comes from the physics simulation\) to the character. **Activate the add external velocity bool in the inspector.**
+
+```csharp
+Velocity = preSimulationVelocity + externalVelocity;
+```
+
+If you want to have full control, customizing the interactions exactly as you want , you can use the contact information \(from the character\) and modify the velocity.
 
 ### Push
 
@@ -158,32 +221,14 @@ The character will push more easily lighter rigidbodies than heavier ones.
 Since the velocity of the rigidbody is managed by scripts, in order to increase \(or decrease\) the push force you need to increase \(or decrease\) the character **rigidbody mass**. Just like in real life, when you collide with some object it will be moved depending on both its mass and your own mass.
 
 {% hint style="warning" %}
-It is important to assign the corresponding rigidbodies layers to the Dynamic LayerMask \(tags and layers asset\) in order to allow proper interactions.
+It is important to assign the corresponding rigidbodies layers to the Dynamic LayerMask \(tags and layers asset\) in order to allow proper interactions. Otherwise the rigidbody will be treated as a wall \(infinite mass\).
 {% endhint %}
 
 ### Weight
 
-If the character is standing over a dynamic rigidbody this will automatically apply a force to it \(at the contact point\) proportional to the rigidbody mass.
+If the character is standing over a dynamic rigidbody this will automatically \(if enabled\) apply a force to it at the contact point, proportional to the rigidbody mass.
 
 ![](../../.gitbook/assets/rb-weight.gif)
-
-### Collision response
-
-If another dynamic rigidbody hits the character, this will receive a _contact velocity_ due to the collision. Since the velocity is fully scripted, the script involved in the movement will need to know when and how the collision happened in order to react to it. 
-
-![](../../.gitbook/assets/rb-collision.gif)
-
-{% hint style="info" %}
-The character actor has an internal event that's called every time a collision happens, passing the _contact velocity_ as an argument.
-{% endhint %}
-
-The character will receive impacts only from rigidbodies with a special tag, the _contact rigidbodies tag_. This tag can be set in the _tag and layers_ profile. 
-
-![The default contact rigidbody tag \(&quot;Main Profile&quot; asset\).](../../.gitbook/assets/imagen%20%2818%29%20%281%29.png)
-
-Make sure to have this tag registered in your project:
-
-![](../../.gitbook/assets/imagen%20%2816%29.png)
 
 
 
