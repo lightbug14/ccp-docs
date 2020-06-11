@@ -2,92 +2,90 @@
 
 The character brain is a component responsible to handle all the character actions. These actions can be triggered either from a human player or the AI.
 
-All the available actions are predefined in a structure and updated by the _CharacterBrain_ component at runtime. This approach create a level of abstraction between the inputs \(GetKey, GetButton, etc.\) and the character actions themselves \(jump, move forward, etc.\).
-
 ![Representation of the Human, the AI and the brain.](../../.gitbook/assets/characterbrain.png)
+
+If you are familiar with the Unity's "new" input system you probably already know what an action is. An action is just the link between the input device and the gameplay logic code. 
+
+All the available actions are predefined in a structure, and updated by the _CharacterBrain_ component at runtime. This approach create a level of abstraction between the inputs \(GetKey, GetButton, etc.\) and the character actions themselves \(jump, move forward, etc.\).
+
+## 
 
 To select one mode or the other simply click on the buttons in the inspector. It should look like this:
 
-![Brain modes in the inspector.](../../.gitbook/assets/brainmodes.png)
-
 ## Actions
 
-An action is just a struct that mimics an input source. This source can be a button, an axis or axes.
+### Types
 
-|  |  |
+CCP's Implementation supports three types of actions
+
+| Action type | Description |
 | :--- | :--- |
-| ButtonAction | A toggle, this action can be pressed, held or released. |
-| AxisAction | A 1D Value from -1 to 1 \(similar to `GetAxis`from Unity\) |
-| AxesCompositeAction | A 2D Value from, basically a combination of two axis. |
+| BoolAction | A toggle, this action can be pressed or not pressed. |
+| FloatAction | A 1D Value from -1 to 1 \(similar to `GetAxis`from Unity\) |
+| Vector2Action | A 2D Value from, basically a combination of two axis. |
 
 {% hint style="info" %}
 Advantage: We can update these actions as we want, by reading inputs from a device \(Human\) or simply by making them up \(AI\).
 {% endhint %}
 
+
+
+### Adding/Removing actions
+
 These actions are predefined and grouped together inside a struct. Each one represents a particular input.
 
 ```csharp
-public struct CharacterActionsInfo
+public struct CharacterActions 
 {
-    public AxesCompositeAction inputAxes;
-    public ButtonAction run;  
-    public ButtonAction jump;  
-    public ButtonAction crouch;  
-    public ButtonAction dash;  
-    public ButtonAction jetPack;
+	// Bool actions
+	public BoolAction @jump;
+	public BoolAction @run;
+	public BoolAction @interact;
+	public BoolAction @jetPack;
+	public BoolAction @dash;
+	public BoolAction @crouch;
     
-    //...
-    
+  //...
 }
 ```
 
-{% hint style="warning" %}
-if you need to add or remove actions please make a backup.
+If you need to add/remove actions from the struct, normally you would need to modify the code itself. This can be somehow annoying sometimes, especially if you miss something along the way. 
+
+Luckily there is an easy way to achieve the same, a _**CharacterActionsAsset**_. This asset has some lists of actions \(bool, float and vector2\), you just need to populate those with your personal data. After that's done, just click the Create actions button and automagically the CharacterActions struct will be updated 🙂 .
+
+![Default Character Actions asset.](../../.gitbook/assets/imagen%20%2815%29.png)
+
+The CCP release comes with a **Default Character Actions** asset, just to keep the original data there.
+
+{% hint style="danger" %}
+Have in mind that adding/removing actions might affect the scripts from the Demo content. These scripts are using the default CCP actions.
 {% endhint %}
 
-The character brain component contains a copy of this struct:
-
-```csharp
-CharacterActionsInfo characterActions = new CharacterActionsInfo();
-```
-
-All the actions will be updated in the Update cycle. The process will vary depending on the brain type selected. 
-
-```csharp
-void Update()
-{
-    if( isAI )
-        UpdateAIBrain();
-    else
-        UpdateHumanBrain();	
-}
-```
-
- 
-
-### Reading the character actions
+### Reading actions
 
 By default a _CharacterState_ has a _CharacterBrain_ property, which gets the _CharacterBrain_ component asotiated with the character. We can read the actions values anytime we want. For example, we can read if the jump button was pressed down by doing:
 
 ```csharp
-bool wasPressed = CharacterBrain.CharacterActions.jump.isPressed;
+bool wasPressed = CharacterActions.jump.Started;
 ```
 
- Or we can get the inputAxes value:
+ Or we can get the movement axes \(Vector2\) value:
 
 ```csharp
-Vector2 inputAxes = CharacterBrain.CharacterActions.inputAxes.axesValue;
+Vector2 inputAxes = CharacterActions.movement.value;
 ```
 
 {% hint style="info" %}
 Notice that these actions are not necessarily Human actions, that is, they are not linked to input devices whatsoever. The AI can produce the same type of actions as the human, so, the state is totally agnostic of the actions source.
-
-For more information please read the [Character brain](character-brain.md) section.
 {% endhint %}
+
+
 
 \_\_
 
 ## Brain types
+
+![Brain modes in the inspector.](../../.gitbook/assets/brainmodes.png)
 
 ### Human brain
 
@@ -111,12 +109,19 @@ These modes can be selected in the brain using the _Human Input Type_ field.
 
 ### AI brain
 
-In an AI brain the actions are determined by a script, based on the current behaviour type. There are two types of AI behaviours:
+An AI brain defines the actions via script, plain and simple. If you want to change your Human character for an AI character, just click the AI button in the inspector. After that choose an _AIBehaviour_ component for the brain.
 
-|  |  |
-| :--- | :--- |
-| Sequence behaviour | Set of predefined actions stored as a _ScriptableObject_. Basically this behaviour tries to imitate a human player with scripted actions. The AI character will not be \`\`smart'' in any way. |
-| Follow behaviour | This behaviour does a path calculation between the character an a target. **In order to use this behaviour a** _**NavMesh**_ **must be generated previously**. |
+#### AI Behaviour
+
+An AI behaviour is just an implementation of a particular AI logic, using a monobehaviour. 
+
+{% hint style="info" %}
+On previous releases, these AI behaviours were embeded into the brain component \(not extensibles at all\). Now these components are external Monobehaviours you can easily create and customize
+{% endhint %}
+
+.
+
+![Example: AI behaviour using a sequence behaviour \(Demo content\).](../../.gitbook/assets/imagen%20%2826%29.png)
 
 ## 
 
