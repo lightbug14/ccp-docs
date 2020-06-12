@@ -16,7 +16,6 @@
   * [Update process](fundamentals/untitled/update-process.md)
   * [Character body](fundamentals/untitled/characterbody.md)
   * [Character actor](fundamentals/untitled/character-actor.md)
-  * [Implementing the core](fundamentals/untitled/implementing-the-core.md)
 * [Implementation](fundamentals/implementation/README.md)
   * [Character state controller](fundamentals/implementation/character-state-controller.md)
   * [Character state](fundamentals/implementation/character-state.md)

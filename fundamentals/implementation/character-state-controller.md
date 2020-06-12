@@ -12,9 +12,9 @@ A simple and crude representation of the structure of a state machine is shown i
 
 ![A representation of the state machine.](../../.gitbook/assets/fsm.png)
 
-The main loop cycle of the _CharacterStateController_ component is shown in the next figure:
+The main loop cycle of the _CharacterStateController_ component \(simplified version\) is shown in the next figure:
 
-![Main loop of the state controller.](../../.gitbook/assets/fsm_loop.png)
+![Main loop of the state controller \(simplified\).](../../.gitbook/assets/fsm_loop.png)
 
 ## Movement direction
 

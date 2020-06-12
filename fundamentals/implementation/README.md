@@ -1,12 +1,13 @@
 # Implementation
 
-The _Implementation_ consist of set of scripts that implement and use the functionalities of the _Core_. Basically starting from a low level concept \(the core\) to a high level concept \(a character system with game components\).
+The _Implementation_ consists of set of scripts that implement and use the functionalities of the _Core_ \(espeacially the _CharacterActor_\).
 
-This part of the package contains some components that will help you right away, handling movement, environment settings, animation, particles, moving/rotating platforms, camera controllers, AI behaviours, and so on. The main goal of this part is to define rules for character, starting from a low level concept \(the core\) to a high level concept \(a character system with game components\).
+![](../../.gitbook/assets/imagen%20%2828%29.png)
 
-This implementation can me modified to fit a particular game style \(for example an RTS game, a 2D platformer, a top-down shooter, etc.\). It has been created as a general purpose implementation.
+These are some of the terms the implementation uses:
 
-![](../../.gitbook/assets/imple_core.png)
-
-
+* StateController: the State machine used to handling each state.
+* State: where the logic is written.
+* Brain: This component handles everything related to actions.
+* Action: an interface between input device and gameplay logic.
 
