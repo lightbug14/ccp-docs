@@ -14,7 +14,7 @@ public class ExampleCharacterActorBehaviour : CharacterActorBehaviour
 {
     public override void UpdateBehaviour( float dt )
     {
-        // Update the CharacterActor values here...
+        // Put the logic here ...
     }
 }
 
@@ -25,6 +25,6 @@ The advantage of doing this is that all the logic es executed in specific moment
 {% endhint %}
 
 {% hint style="info" %}
-The CharacterStateController is a CharacterActorBehaviour
+The CharacterStateController is a CharacterActorBehaviour 😉 
 {% endhint %}
 
