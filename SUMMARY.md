@@ -42,37 +42,3 @@
   * [Create your own AI logic](how-to.../implementation/create-your-own-ai-logic.md)
   * [----](how-to.../implementation/undefined.md)
 
-## Get started
-
-* [Quick start guide](get-started/get-started-really-quickly.md)
-* [Adding the state machine](get-started/adding-the-state-machine.md)
-
-## Tutorials - Core <a id="tutorials"></a>
-
-* [Description](tutorials/introduction.md)
-* [Basic character](tutorials/core_tuto/README.md)
-  * [Creating a basic character](tutorials/core_tuto/untitled.md)
-  * [Creating a Character Controller script](tutorials/core_tuto/creating-a-character-controller.md)
-  * [Getting inputs](tutorials/core_tuto/getting-inputs.md)
-  * [Moving the character](tutorials/core_tuto/moving-the-character.md)
-  * [Gravity](tutorials/core_tuto/gravity.md)
-  * [Jump](tutorials/core_tuto/jump.md)
-  * [Rotation](tutorials/core_tuto/rotation.md)
-  * [Crouch](tutorials/core_tuto/crouch.md)
-  * [Final result](tutorials/core_tuto/final-result.md)
-
-## Tutorials - Implementation
-
-* [Character](tutorials-implementation/character/README.md)
-  * [Basic character 2.0](tutorials-implementation/character/untitled-1/README.md)
-    * [Adding the state controller](tutorials-implementation/character/untitled-1/adding-the-state-controller.md)
-    * [Creating a state](tutorials-implementation/character/untitled-1/the-normalmovement-state.md)
-    * [Implementating the state](tutorials-implementation/character/untitled-1/implementating-the-state.md)
-* [Graphics](tutorials-implementation/graphics-1/README.md)
-  * [Mesh-based character](tutorials-implementation/graphics-1/graphics/README.md)
-    * [Hierarchy](tutorials-implementation/graphics-1/graphics/hierarchy.md)
-    * [Rig and Animation settings](tutorials-implementation/graphics-1/graphics/rig-and-animation-settings.md)
-    * [Animator](tutorials-implementation/graphics-1/graphics/animator.md)
-    * [CharacterAnimation](tutorials-implementation/graphics-1/graphics/characteranimation.md)
-  * [Sprite-based character \(soon\)](tutorials-implementation/graphics-1/sprite-based-character-soon.md)
-

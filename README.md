@@ -32,5 +32,5 @@ As always I would recommend to **get the latest version of Character Controller 
 
 ## Is there an easy way to get started?
 
-There is a [quick guide](get-started/get-started-really-quickly.md) section available.
+There is a [quick guide]() section available.
 
