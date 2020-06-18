@@ -1,24 +1,34 @@
 # Add animation to a state
 
+## Creating the Animator controller
+
 Every state has a RuntimeAnimatorController field associated. This animator controller will be automatically loaded to the main Animator component everytime the state is entered.
 
 To add a custom animator controller first create one.
 
 ![](../../.gitbook/assets/imagen%20%2832%29.png)
 
-
-
 Then design the animation node based graph as you want, adding all the parameters you need.
 
 ![](../../.gitbook/assets/imagen%20%2829%29.png)
 
-## Getting/Setting parameters
+## Assigning the animator controller
 
-It works just like you would expect, get the Animator component and get/set the parameters you want. 
+The state animator controller \(mentioned before in the [Create a state](create-a-state.md) section\) will be automatically loaded to the Animator component, once the state is started. Assign your animator controller there.
 
-I like to set parameters after the main update function \(UpdateBehaviour\). So, i used PostUpdateBehaviour just for this. 
+![](../../.gitbook/assets/imagen%20%2843%29.png)
 
-This is from the NormalMovement state \(Demo\):
+## Using the Animator component
+
+Any state can access the Animator component by using the "Animator" public property from the state controller.
+
+```csharp
+Animator animator = CharacterStateController.Animator;
+```
+
+Once you got this reference you can do whatever you want, just like you would expect. 
+
+This is a code snippet from the NormalMovement state \(Demo\):
 
 ```csharp
 public override void PostUpdateBehaviour( float dt )
@@ -43,5 +53,5 @@ public override void PostUpdateBehaviour( float dt )
 }
 ```
 
-Obviously you can do this from anywhere.
+I like to set parameters after the main update function \(UpdateBehaviour\). So, i use _PostUpdateBehaviour_ just for this. Obviously you can do this from anywhere.
 
