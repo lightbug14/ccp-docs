@@ -12,9 +12,11 @@ Also really important to mention, **English is not my primary language, so bear 
 
 ## How to read this?
 
-It depends on how far you want to go with this package. If you got CCP only to use as it is, you can ignore the fundamentals and a good part of the tutorials. Just make sure to read the Introduction section.
+First, please make sure to read the first sections \(Content, Versions, Setup, etc\). 
 
-On the other hand, if you want to take full advange of the package please read the whole documentation.
+If you got CCP only to use as it is, you can ignore the main part of this documentation.
+
+On the other hand, if you want to take full advange of the package please read the whole documentation. The fundaments explains the basics of the main components, the character rules, scene setup, some of the features in more detail, and so on.
 
 ## Is this documentation old?
 
@@ -23,6 +25,8 @@ Not at all, this is the official latest version of the docs. This means that it 
 ## I have an older version of CCP, Am I doomed?
 
 As always I would recommend to **get the latest version of Character Controller Pro.** That said, don't worry about this "problem", in general most of the concepts, projects settings and tutorials are similar and probably will remain almost the same.
+
+The concepts are not that much complicated to get, once you understand the basics of the character, you are good to go. If you need help with the scripting, there is an API reference included in the package that will help you, regardless of the asset version \(offline\). 
 
 ## Is there an easy way to get started?
 
