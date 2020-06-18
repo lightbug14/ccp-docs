@@ -1,12 +1,10 @@
 # Versions and updates
 
-If you have been using Unity over the last years you probably know that updating a software is risky. Sometimes decisions must be made for the benefit of the asset \(even when the users are not so happy about it 🤬\).
+You should always update to the new version, unless the **risk** of doing so is high enough for your particular project \(in some cases it is best to keep using an old version asset\). Still, you should always \(if possible\) test a clone of your project with the new version.
 
-Of course there are certain levels of risk, that's why you should pay attention to the **version** you are updating to.
+The version number indicates the **type** of update. The versioning scheme used for CCP is the following:
 
-The versioning scheme used for CCP is the following:
-
-#### Major.Feature.Minor
+ Major.Feature.Minor
 
 <table>
   <thead>
@@ -23,8 +21,12 @@ The versioning scheme used for CCP is the following:
       </td>
       <td style="text-align:left">
         <p></p>
-        <p>Basically bug fixes, small changes, code improvements, etc. This update
-          is always recommended, no risk at all.</p>
+        <p>Basically <b>bug fixes</b>, code improvements, etc. This update is always
+          recommended, it should not give you any issues.</p>
+        <p></p>
+        <p>Risk:<b> Zero </b>&#x2705;</p>
+        <p></p>
+        <p>&quot;You won&apos;t notice any difference&quot;</p>
       </td>
     </tr>
     <tr>
@@ -34,8 +36,15 @@ The versioning scheme used for CCP is the following:
       </td>
       <td style="text-align:left">
         <p></p>
-        <p>New features, small updates, a new fancy component, etc. Beware! It might
-          break some things.</p>
+        <p><b>New </b>features and/or features <b>improvements</b>. When i say features
+          i mean technical features related with the Core and/or implementation content
+          (the Demo content might be included as well).</p>
+        <p>Obviously feature additions and improvements require some API modifications,
+          so this might cause some issues.</p>
+        <p></p>
+        <p>Risk: <b>Low to medium </b>&#x26A0;</p>
+        <p></p>
+        <p>&quot;You will get the same asset, but the new stuff will be very noticeable&quot;</p>
       </td>
     </tr>
     <tr>
@@ -45,8 +54,13 @@ The versioning scheme used for CCP is the following:
       </td>
       <td style="text-align:left">
         <p></p>
-        <p>This update will break almost everything for sure, this means a new fresh
-          start, new systems, new components, an overall change.</p>
+        <p>A major update is used as an opportunity to re-invent some of the main
+          features of the assets. By doing so it&apos;s expected to create all sorts
+          of components and API incompatibilities.</p>
+        <p></p>
+        <p>Risk: <b>Maximum </b>&#x2622;</p>
+        <p></p>
+        <p>&quot;A remake&quot;</p>
       </td>
     </tr>
   </tbody>

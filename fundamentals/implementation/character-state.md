@@ -2,7 +2,7 @@
 
 ## State behaviour
 
-A state represents the frame by frame logic. Every state presents its own behaviour, and can be implemented through its abstracts and virtual methods. The state controller will call them when they are needed, so don't worry about the execution order.
+A state is a component that defines the gameplay logic. Every state presents its own behaviour, and can be implemented through its abstracts and virtual methods. The state controller will call them when they are needed, so don't worry about the execution order.
 
 In order to define the state behaviour you'll need to override some specific methods from the _CharacterState_ component. For instance, if you want to create your own exit behaviour \(run when leaving a state\) you can do something like this:
 
@@ -13,6 +13,12 @@ public override void ExitBehaviour(float dt)
     // Your code ...
 }
 ```
+
+## Validation
+
+The state machine will find all the states 
+
+
 
 ## Transitions
 
