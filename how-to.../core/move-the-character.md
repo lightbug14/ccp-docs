@@ -13,7 +13,7 @@ CharacterActor.Position = someVector3;
 // Teleport
 CharacterActor.Teleport( someVector3 );
 
-// Position
+// Velocity
 CharacterActor.Velocity = someVector3;
 
 ```
