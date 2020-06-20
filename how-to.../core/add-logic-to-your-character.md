@@ -21,7 +21,7 @@ public class ExampleCharacterActorBehaviour : CharacterActorBehaviour
 ```
 
 {% hint style="info" %}
-The advantage of doing this is that all the logic es executed in specific moments \(defined by the _CharacterActor_\). Also most of the relevant components are protected members of the class, so you don't need to get extra references from the outside.
+The advantage of doing this is that all the logic is executed in specific moments \(defined by the _CharacterActor_\). Also most of the relevant components are protected members of the class, so you don't need to get extra references from the outside.
 {% endhint %}
 
 {% hint style="info" %}
