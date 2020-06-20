@@ -1,12 +1,16 @@
 # Create your own AI character
 
-When the character brain is set to AI, the actions stop being updated by the input handler \(input devices\). Now these actions **need to be defined by code**. 
+When the character brain is set to AI, the actions stop being updated by the input handler \(input devices\). Now these actions **need to be defined by code**. This is what AI is all about, simulating a machine "pressing buttons". 
 
 In order to set up an AI character from zero you need to:
 
 1. **Change the brain mode to "AI"** in the _CharacterBrain_ component.
 2. **Add an** _**CharacterAIBehaviour**_ component to the character \(wherever you want\).
 3. **Assign the** _**CharacterAIBehaviour**_ to the _CharacterBrain_.
+
+{% hint style="info" %}
+Human and AI uses the same components, there is no need to add a NavMeshAgent or something similar. Also you don't need a NavMesh, although you can use one if you want \(see the Follow behaviour\).
+{% endhint %}
 
 ## The AIBehaviour
 
