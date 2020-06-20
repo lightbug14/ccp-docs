@@ -53,5 +53,5 @@ public override void PostUpdateBehaviour( float dt )
 }
 ```
 
-I like to set parameters after the main update function \(UpdateBehaviour\). So, i use _PostUpdateBehaviour_ just for this. Obviously you can do this from anywhere.
+Personally, I like to set parameters after the main update function \(UpdateBehaviour\). So, i use _PostUpdateBehaviour_ just for this. Obviously you can do this from anywhere.
 

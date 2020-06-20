@@ -32,7 +32,6 @@
   * [Rotate the character](how-to.../core/rotate-the-character.md)
   * [Scale the character](how-to.../core/scale-the-character.md)
   * [Disable collisions \(Ghost character\)](how-to.../core/disable-collisions-ghost-character.md)
-  * [Rotate a 2D character](how-to.../core/rotate-a-2d-character.md)
   * [----](how-to.../core/undefined.md)
 * [Implementation](how-to.../implementation/README.md)
   * [Organize the character \(hierarchy\)](how-to.../implementation/organize-the-character-hierarchy.md)
