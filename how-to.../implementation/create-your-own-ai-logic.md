@@ -9,7 +9,7 @@ In order to set up an AI character from zero you need to:
 3. **Assign the** _**CharacterAIBehaviour**_ to the _CharacterBrain_.
 
 {% hint style="info" %}
-Human and AI uses the same components, there is no need to add a NavMeshAgent or something similar. Also you don't need a NavMesh, although you can use one if you want \(see the Follow behaviour\).
+Human and AI move around using the same components, there is no need to add a NavMeshAgent or something similar. Also you don't need a NavMesh for this to work, although you can use one if you want \(see the AI Follow behaviour\).
 {% endhint %}
 
 ## The AIBehaviour
