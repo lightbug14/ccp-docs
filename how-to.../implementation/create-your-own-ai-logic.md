@@ -1,4 +1,59 @@
-# Create your own AI logic
+# Create your own AI character
 
-WIP
+When the character brain is set to AI, the actions stop being updated by the input handler \(input devices\). Now these actions **need to be defined by code**. 
+
+In order to set up an AI character from zero you need to:
+
+1. **Change the brain mode to "AI"** in the _CharacterBrain_ component.
+2. **Add an** _**CharacterAIBehaviour**_ component to the character \(wherever you want\).
+3. **Assign the** _**CharacterAIBehaviour**_ to the _CharacterBrain_.
+
+## The AIBehaviour
+
+The brain will use the character actions from the current AI behaviour. Basically this behaviour task is to define this action frame by frame, as simple as that.
+
+To create an AI behaviour you need to derive your class from _CharacterAIBehaviour._ 
+
+```csharp
+public class YourAIBehaviour : CharacterAIBehaviour
+{
+    // virtual (optional)
+    public override void EnterBehaviour( float dt )
+    {
+    }
+    
+    // abstract (mandatory)
+    public override void UpdateBehaviour( float dt )
+    {
+    }
+    
+    // virtual (optional)
+    public override void ExitBehaviour( float dt )
+    {
+    }
+}
+```
+
+From there you can create your custom logic. For instance, to simulate the AI running forward \(forward movement by default\):
+
+```csharp
+public class RunForwardBehaviour : CharacterAIBehaviour
+{
+        
+    // abstract (mandatory)
+    public override void UpdateBehaviour( float dt )
+    {
+            // Run is a Bool action (e.g. a button)
+            characterActions.run.value = true;
+            
+            // Movement is a Vector2 action (e.g. WASD)
+            characterActions.movement.value = new Vector2( 0f , 1f );
+    }
+    
+}
+```
+
+{% hint style="info" %}
+You can check the character actions preview from the _CharacterBrain_ inspector.
+{% endhint %}
 
