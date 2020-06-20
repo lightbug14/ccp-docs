@@ -38,7 +38,7 @@
   * [Create a state](how-to.../implementation/create-a-state.md)
   * [Transition from one state to another](how-to.../implementation/transition-from-one-state-to-another.md)
   * [Use the character actions](how-to.../implementation/use-the-character-actions.md)
-  * [Create your own AI character](how-to.../implementation/create-your-own-ai-logic.md)
+  * [Create your own AI movement logic](how-to.../implementation/create-your-own-ai-logic.md)
   * [Add animation to a state](how-to.../implementation/add-animation-to-a-state.md)
   * [Use root motion](how-to.../implementation/use-root-motion.md)
   * [Modify an IK element](how-to.../implementation/modify-an-ik-element.md)

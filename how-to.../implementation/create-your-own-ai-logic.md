@@ -1,4 +1,4 @@
-# Create your own AI character
+# Create your own AI movement logic
 
 When the character brain is set to AI, the actions stop being updated by the input handler \(input devices\). Now these actions **need to be defined by code**. This is what AI is all about, simulating a machine "pressing buttons". 
 
