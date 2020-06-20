@@ -38,7 +38,7 @@ public class YourAIBehaviour : CharacterAIBehaviour
 }
 ```
 
-From there you can create your custom logic. For instance, to simulate the AI running forward \(forward movement by default\):
+From there you can create your own custom logic. For instance, to simulate the AI running forward:
 
 ```csharp
 public class RunForwardBehaviour : CharacterAIBehaviour
@@ -47,7 +47,7 @@ public class RunForwardBehaviour : CharacterAIBehaviour
     // abstract (mandatory)
     public override void UpdateBehaviour( float dt )
     {
-            // Run is a Bool action (e.g. a button)
+            // Run is a Bool action (e.g. a button or a key)
             characterActions.run.value = true;
             
             // Movement is a Vector2 action (e.g. WASD)
