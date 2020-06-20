@@ -30,6 +30,7 @@
   * [Add logic to your character](how-to.../core/add-logic-to-your-character.md)
   * [Move the character](how-to.../core/move-the-character.md)
   * [Rotate the character](how-to.../core/rotate-the-character.md)
+  * [Disable collisions \(Ghost character\)](how-to.../core/disable-collisions-ghost-character.md)
   * [----](how-to.../core/undefined.md)
 * [Implementation](how-to.../implementation/README.md)
   * [Organize the character \(hierarchy\)](how-to.../implementation/organize-the-character-hierarchy.md)
