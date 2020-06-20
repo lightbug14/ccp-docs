@@ -48,27 +48,6 @@ Another way is to simply add a prefab to the scene. Use the basic "Blank Charact
 
 ![&quot;Capsule Blank Character&quot; pregab](../../.gitbook/assets/imagen%20%2825%29.png)
 
-## Future
-
-If you are interested in creating your own input system, state controller \(or anything else you want, on top of the Core\) this is where you should stop reading. The character is now a very special Rigidbody with very special rules \(as explained in the [Core](../../fundamentals/untitled/) section\).
-
-```csharp
-using UnityEngine;
-using Lightbug.CharacterControllerPro.Core;
-
-public class ExampleCharacterActorBehaviour : CharacterActorBehaviour
-{
-    public override void UpdateBehaviour( float dt )
-    {
-        // Update the CharacterActor values here...
-    }
-}
-
-
-```
-
-
-
 
 
 ## 
