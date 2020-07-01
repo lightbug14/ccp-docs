@@ -1,4 +1,4 @@
-# Create the character GameObject.
+# Organize the character hierarchy.
 
 The main rule is: **CharacterBody and CharacterActor should always be in the root object \(the "character" object\).**
 

@@ -32,9 +32,8 @@
   * [Rotate the character](how-to.../core/rotate-the-character.md)
   * [Scale the character](how-to.../core/scale-the-character.md)
   * [Disable collisions \(Ghost character\)](how-to.../core/disable-collisions-ghost-character.md)
-  * [----](how-to.../core/undefined.md)
 * [Implementation](how-to.../implementation/README.md)
-  * [Create the character GameObject.](how-to.../implementation/organize-the-character-hierarchy.md)
+  * [Organize the character hierarchy.](how-to.../implementation/organize-the-character-hierarchy.md)
   * [Create a state](how-to.../implementation/create-a-state.md)
   * [Transition from one state to another](how-to.../implementation/transition-from-one-state-to-another.md)
   * [Use the character actions](how-to.../implementation/use-the-character-actions.md)
@@ -44,5 +43,4 @@
   * [Add animation to a state](how-to.../implementation/add-animation-to-a-state.md)
   * [Use root motion](how-to.../implementation/use-root-motion.md)
   * [Modify an IK element](how-to.../implementation/modify-an-ik-element.md)
-  * [----](how-to.../implementation/undefined.md)
 
