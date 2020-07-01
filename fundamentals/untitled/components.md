@@ -1,6 +1,6 @@
 # Components
 
-The core consist of the following main components:
+The core consist of the following components:
 
 ### Character body
 
@@ -9,10 +9,6 @@ This component contains all the information related to the character body, such 
 ### Character actor
 
 The main character component. It takes care of all the important actions \(movement, rotation, size, among other things\). It also holds all the collision information and is responsible for triggering events. Basically the entire package refer in one way or another to this component.
-
-### Character graphics
-
-This component is responsible for controlling the transform properties used by the character _graphics object_. Basically it represents the visual part of the character.
 
 ### Character debug
 
