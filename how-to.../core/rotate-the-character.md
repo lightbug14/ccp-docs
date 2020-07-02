@@ -68,7 +68,7 @@ In order to handle rotations **it is important to separate the graphics \(3D mes
 
 You need to add a _CharacterGraphics2DRotator_ to the mesh or sprite representing the graphics.
 
-![](../../.gitbook/assets/imagen%20%2848%29.png)
+![](../../.gitbook/assets/imagen%20%2851%29.png)
 
 You can choose between two modes:
 

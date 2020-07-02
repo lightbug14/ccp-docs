@@ -58,5 +58,5 @@ public class NewInputSystemHandler : InputHandler
 
 Remember that the _InputActionAsset_ asset should have the same character actions names. For example:
 
-![](../../.gitbook/assets/imagen%20%2844%29.png)
+![](../../.gitbook/assets/imagen%20%2848%29.png)
 
