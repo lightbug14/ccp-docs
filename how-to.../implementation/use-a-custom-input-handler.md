@@ -9,8 +9,8 @@ By default these are the available modes for human inputs:
 If you want to include a particular input system solution, you need to implement a custom input handler. This is something really easy to do:
 
 1. Create a custom class that derives from the _InputHandler_ abstract class.
-2. Implement the abstract methods
-3. Add the component created soemwhere in the scene
+2. Implement its abstract methods.
+3. Add the component created somewhere in the scene.
 4. Drag & drop the component into the input handler \(CharacterBrain\).
 
 ## Creating the class
