@@ -134,12 +134,10 @@ If the encountered slope is allowed the character will walk onto it, modifying t
 
 ### Ground probing
 
-This stage is responsible for putting the character on the ground \(if there is one\). The end result \(grounded or not, stable or not\) will depend on the ground surface.
+This stage is responsible for putting the character on the ground \(if there is one\). There are two important values to consider:
 
-There are two important values related to the ground probing:
-
-* Step offset: Any stable surface below this height will be walkable by the character.
-* Step down: When losing contact with the ground, if the distance between the character and the ground is less or equal to this distance, then the character will be automatically grounded.
+* **Step offset:** Any stable surface below this height will be walkable by the character.
+* **Step down:** When losing contact with the ground, if the distance between the character and the ground is less or equal to this distance, then the character will be automatically _grounded._ If there is no ground at all, then the character will be _not grounded_.
 
 ![Step up.](../../.gitbook/assets/bitmap.png)
 
