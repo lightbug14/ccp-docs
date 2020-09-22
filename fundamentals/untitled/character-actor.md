@@ -16,8 +16,6 @@ This component defines the logic of the character. Before the actor do its magic
 The entire [implementation ](../implementation/)of the asset is derived from this behaviour. See the next section for more details.
 {% endhint %}
 
-## 
-
 ## Size
 
 Internally the size of the character is stored in a Vector2 variable called _bodySize_. The x component represents the width and the y component represents the height. The initial size will be assigned based on the capsule collider parameters and some internal constants.
@@ -136,12 +134,16 @@ If the encountered slope is allowed the character will walk onto it, modifying t
 
 ### Ground probing
 
-This stage is responsible for putting the character feet on the ground \(if there is one\). The final result will depend on the current surface height and angle.
+This stage is responsible for putting the character on the ground \(if there is one\). The end result \(grounded or not, stable or not\) will depend on the ground surface.
 
 There are two important values related to the ground probing:
 
 * Step offset: Any stable surface below this height will be walkable by the character.
-* Step down: Used to clamp the character to the ground. This distance is used when the character goes from grounded to not grounded.
+* Step down: When losing contact with the ground, if the distance between the character and the ground is less or equal to this distance, then the character will be automatically grounded.
+
+![Step up.](../../.gitbook/assets/bitmap.png)
+
+![Step down.](../../.gitbook/assets/bitmap2.png)
 
 #### Edge Compensation
 
