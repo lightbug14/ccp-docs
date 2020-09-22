@@ -136,19 +136,12 @@ If the encountered slope is allowed the character will walk onto it, modifying t
 
 ### Ground probing
 
-This stage is responsible for putting the character feets on the ground \(if there is one\). The final result will depend on the current surface height and angle \(stability\).
+This stage is responsible for putting the character feet on the ground \(if there is one\). The final result will depend on the current surface height and angle.
 
 There are two important values related to the ground probing:
 
 * Step offset: Any stable surface below this height will be walkable by the character.
-* Step down: Used to clamp the character to the ground
-
-From here, we can confirm four cases:
-
-1. Step up: The new ground is **stable** and **higher** than the old one \(within the **step offset** range\).
-2. Step down: The new ground is **stable** and **lower** than the old one \(within the **step down** range\)
-3. Step back: The new ground is **unstable**.
-4. Not grounded: There is **no ground** \(distance **greater** than the **step down** value\).
+* Step down: Used to clamp the character to the ground. This distance is used when the character goes from grounded to not grounded.
 
 #### Edge Compensation
 
