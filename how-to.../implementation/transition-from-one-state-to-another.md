@@ -10,7 +10,7 @@ public override bool CheckExitTransition()
 {
      if( someCondition )
      {
-        // Let's check if state B is available
+        // Add StateB to the queue
         CharacterStateController.EnqueueTransition<StateB>(); 
      }     
 }
@@ -24,10 +24,11 @@ Let's say StateB can be entered only from StateA:
 // StateB.cs --------------------------        
 public override bool CheckEnterTransition( CharacterState fromState )
 {
-     bool condition = fromState == CharacterStateController.GetState<StateA>();
+     // True if fromState is StateA. False otherwise
+     if( fromState == CharacterStateController.GetState<StateA>() )
+          return true;
      
-     // True is the fromState is StateA. False otherwise
-     return condition;   
+     return false; 
 }
 ```
 
