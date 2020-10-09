@@ -14,12 +14,6 @@ public override void ExitBehaviour(float dt)
 }
 ```
 
-## Validation
-
-The state machine will find all the states 
-
-
-
 ## Transitions
 
 This is an important concept to understand. A transition is evaluated in two places: the "from state" and the "to state":
