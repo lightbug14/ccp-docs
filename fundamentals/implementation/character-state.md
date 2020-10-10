@@ -48,7 +48,7 @@ So, in order to allow a transition from a _**state A**_ **to a** _**state B**_  
 
 Inside _CheckExitTransition_ you would normally select a target state. The thing is, there may be more than one potential state \(candidate\) at the same time. This is why there is a queue of states.
 
-For instance, if conditionA is valid, then the StateA is added as a candidate. If conditionB is valid, then both StateB and StateC are added as candidates.
+#### Example:
 
 ```csharp
 public override void CheckExitTransition()
@@ -68,7 +68,22 @@ public override void CheckExitTransition()
 
 ### Enter transition
 
-_CheckEnterTransition_ will be evaluated for each possible candidate. It returns a bool, basically confirming \(yes or no, true or false\) if the transition is succesful or not. 
+_CheckEnterTransition_ will be evaluated for each possible candidate. It returns a bool variable, basically confirming \(yes or no, true or false\) if the transition was succesful or not. 
+
+#### Example:
+
+Only the _validState_ state will be accepted.
+
+```csharp
+public override bool CheckEnterTransition( CharacterState fromState )
+{
+    if( fromState == validState )
+        return true;
+    
+    return false;
+}
+    
+```
 
 {% hint style="info" %}
 Note that the default value \(virtual method in the base class\) is **true**, that is, the transition is always successful.
