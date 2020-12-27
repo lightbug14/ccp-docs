@@ -2,9 +2,9 @@
 
 ## Properties
 
-### Foot position
+### Foot position \(pivot\)
 
-The foot position is considered as the origin, a point of reference for everything. As is normally for character controllers, the origin is assumed to be the bottom most point of the character body. In this case is the bottom point of the capsule.
+The foot position is considered as the origin, a point of reference for everything \(pivot\). As is normally for character controllers, the origin is assumed to be the bottom most point of the character body. In this case is the bottom point of the capsule.
 
 ### Orientation
 
@@ -33,28 +33,18 @@ The Width and Height values are represented with the _body size_ \(a _Vector2_\)
 ![](../../.gitbook/assets/capsulebodydimensions.png)
 
 {% hint style="info" %}
-In play mode the collider offset will be automatically adjusted.
+In play mode the collider bottom offset will be automatically adjusted, depending on the current state \(state vs unstable\).
 {% endhint %}
 
 ### Scale
 
-This is an important topic, the _CharacterBody_ component defines the character size using an absolute value based on a _Vector2_ field. The _CharacterActor_ component reads this value in order to perform all the necessary physics queries \(mainly for collision detection\).
-
-#### So, What happens if the _localScale_ is not _Vector3.one_? 
-
-Even though the collider will be scaled just fine, the internal "physics size'' will not. So, **it is not recommend to scale the character using the** _**Transform**_ **component**.
-
-#### What if i want to scale my character?
-
-Well, in that case you should scale the graphics object, not the character itself \(root object\). After that, the body size should be modified to fit the graphics.
+Even though the collider will be scaled just fine, the internal "physics size'' \(responsible for physics queries\) will not. So, **it is NOT recommend to scale the character using the** _**Transform**_ **component**.
 
 {% hint style="warning" %}
 The character _localScale_ should always be $$< 1, 1 , 1 >$$.
 {% endhint %}
 
-### Collision shape
+#### What if i want to scale my character?
 
-Even though this is a dynamic character controller, the _CharacterActor_ is still doing physics queries to detect collisions. Because of this an effective collision shape was defined \(different from the character body shape\) using the width, height and skin width.
-
-![The collision shape of the character.](../../.gitbook/assets/collisionshape.png)
+Well, in that case you should scale the graphics object, not the character itself \(root object\). After that, the body size should be modified to fit the graphics.
 

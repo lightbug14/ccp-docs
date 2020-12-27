@@ -66,73 +66,34 @@ The _InputMovementReference_ vector is updated before the states main loop. All 
 
 ### Animator
 
-The _Animator_ is the main animation component. The _CharacterStateController_ will search for this component from the root object \(the character\) to the last child \(recursively\). 
-
-{% hint style="info" %}
-**What happens if you decide to ignore the Animator component?**
-
-Nothing, everything \(from the character logic perspective\) is going to work just fine. This means that, if you are not happy with the CCP approach to animation, you are free to do whatever you want.
-{% endhint %}
-
-The _Animator_ can be accessed from within the CharacterState at any time. 
+The _CharacterStateController_ automatically searches for the Animator component at the beginning. You can access this component by using a public property. For example:
 
 ```csharp
 CharacterStateController.Animator.SetTrigger( myTrigger );
 ```
 
-This \(in comparison with previous releases of CCP\) will give you a ton of freedom when defining all the gameplay mechanics of your character.
-
 ### Animator controller
 
 Mecanim \(the system behind the Animator controller logic\) can be really good and intuitive for some tasks \(especially if you are not a coder\), but sometimes can be a living nightmare 🤬. In any case, it's the default animation system in Unity, so it's expected to be supported by this asset.
 
-Due to a number of technical issues with Mecanim \(related to transitions times\), CCP uses a **multi-AnimatorControllers** approach, especifically one per state. 
+Due to a number of technical issues with Mecanim \(related to transitions times\), CCP was uses a **multi-AnimatorControllers** approach, specifically one per state. This means that every time a new state is loaded into the state controller, the associated _AnimatorController_ asset can be re-assigned \(on the fly\) to the _Animator_ component.
 
-This means that every time a new state is loaded into the state controller, the associated _AnimatorController_ asset is assigned \(on the fly\) to the _Animator_ component.
+In order to do that the target state must enable the "override animator controller" setting in the inspector.
+
+![](../../.gitbook/assets/imagen%20%2858%29.png)
 
 ### Animator messages
 
-Some of the features provided for the _Animator_ can be used only from within special Unity's messages, following an specific execution order:
+Some of the features provided by the _Animator_ can be used only by calling some special Unity's messages. These messages often are:
 
-* **OnAnimatorIK** is used to modify the individual **IK**.
+* **OnAnimatorIK** is used to modify the individual **IK element**.
 * **OnAnimatorMove** is used to extract the **root motion** data.
 
 The main issue here is that, in order to use these functionalities you need to add a component to the object with the _Animator_ component. The state controller takes care of this, by connecting \(via an **AnimatorLink** component\) the _Animator_ messages with the FSM \(thus, implementing those functionalities for you 😉 \).
 
-### IK
-
-As mentioned before, the FSM takes care of the execution order. So, in order to modify an IK in any way, you would only need to implement the UpdateIK method from the CharacterState component.
-
-> Example:
->
->
->
-> ```csharp
-> public override void UpdateIK( int layerIndex )
-> {     
->      // Write your IK code here...
-> }
-> ```
-
-### Root Motion
-
-Root motion is a huge topic, some love it, some hate it. 
-
-**Wait, you don't know what root motion is?**
-
-[https://docs.unity3d.com/Manual/RootMotion.html](https://docs.unity3d.com/Manual/RootMotion.html)
-
-The truth is, it's just a tool. Many controllers out there are built on top of this concept, CCP on the other hand just give you the option to enable it.
-
-Enabling root motion is super easy \(from within any state\):
-
-```csharp
-CharacterStateController.UseRootMotion = true;
-```
-
-After that the movement will be controlled by the animation motion data.
-
 {% hint style="info" %}
-If you want to see **root motion** in action, i would recommend to check the **LadderClimbing** or **LedgeHanging** states from the **Demo**.
+There is no need to add this **AnimatorLink**, the CharacterStateController does this for you.
 {% endhint %}
+
+
 

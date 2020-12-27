@@ -4,7 +4,7 @@
 
 A state is a component that defines the gameplay logic. Every state presents its own behaviour, and can be implemented through its abstracts and virtual methods. The state controller will call them when they are needed, so don't worry about the execution order.
 
-In order to define the state behaviour you'll need to override some specific methods from the _CharacterState_ component. For instance, if you want to create your own exit behaviour \(run when leaving a state\) you can do something like this:
+In order to define the state behaviour you'll need to override some specific methods from the _CharacterState_ component. For instance, if you want to create your own "exit behaviour" \(executed when leaving a state\) you can do something like this:
 
 ```csharp
 // YourCustomState.cs
@@ -30,7 +30,7 @@ These transitions are called Exit transition and Enter transition.
 | Exit transition | This is the part of the transition that is evaluated first, when trying to exit the current state \(hence its name\). |
 | Enter transition | This is the part of the transition that is evaluated secondly, when trying to enter the next state \(hence its name\). |
 
-#### Why do transitions using this approach? 
+#### Why do transitions use this approach? 
 
 Sometimes the information needed to decide if a transition is successful or not is shared between two or more states, but sometimes it doesn't. Since we can't be sure that one state has the total control over one particular transition, dividing the condition test sounds like the right thing to do.
 

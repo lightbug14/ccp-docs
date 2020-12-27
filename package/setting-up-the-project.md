@@ -1,18 +1,19 @@
 # Setting up the project
 
+Some assets do not work as expected after importing them into the project, sometimes some settings need to be modified. **Character Controller Pro does not requires anything from you or your project settings in order to work**. However, the problem here are the demo scenes, which use tags and specific input settings.
+
 ### Importing the package
 
 Hit the import button! Once the package has been imported your project view should look like this:
 
 ![Project hierarchy right after importing the asset.](../.gitbook/assets/project_hierarchy.png)
 
-The first thing to do is to open the folder _OPEN ME_. In there you will find all the necessary material to put this package to work.
+Also, a big welcome screen should appear right after. This screen contains some useful links and more importantly, the setup instructions.
 
-{% hint style="warning" %}
-The demo scenes work with some predefined project settings. It's important to configure your project with these **exact** settings.
-{% endhint %}
+Luckily for you there are presets included in the package that will help you to configure your project by doing two or three clicks.
 
-Luckily for you there are presets included in the package that will help you to configure your project. These settings are related to _Layers_ , _Tags_ and _Inputs_. 
+1. Load the preset associated with the input manager settings.
+2. Load the preset associated with the tags and layers settings.
 
 For example, for the Input settings, go to the InputManager:
 
@@ -23,8 +24,4 @@ Then select the preset, double click it:
 ![](../.gitbook/assets/imagen%20%2816%29%20%281%29.png)
 
  That's it!
-
-{% hint style="info" %}
-Even though this need to be done in order to play the demo scenes, most of these settings are not mandatory for the normal operation of this package. They were built based on the demo assets.
-{% endhint %}
 

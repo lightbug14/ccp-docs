@@ -10,13 +10,9 @@ The character brain is a component responsible to handle all the character actio
 
 ![Representation of the Human, the AI and the brain.](../../.gitbook/assets/characterbrain.png)
 
-If you are familiar with the Unity's "new" input system you probably already know what an action is. An action is just the link between the input device and the gameplay logic code. 
+If you are familiar with the Unity's "new" input system you probably know what an action is. An action is just a link between the input device and the gameplay logic code.
 
-All the available actions are predefined in a structure, and updated by the _CharacterBrain_ component at runtime. This approach create a level of abstraction between the inputs \(GetKey, GetButton, etc.\) and the character actions themselves \(jump, move forward, etc.\).
-
-## 
-
-To select one mode or the other simply click on the buttons in the inspector. It should look like this:
+All the available actions are predefined in a structure and updated by the _CharacterBrain_ component at runtime. This approach create a level of abstraction between the inputs \(GetKey, GetButton, etc.\) and the character actions themselves \(jump, move forward, etc.\).
 
 ## Actions
 
@@ -31,14 +27,8 @@ CCP's Implementation supports three types of actions
 | Vector2Action | A 2D Value from, basically a combination of two axis. |
 
 {% hint style="info" %}
-Note that the BoolAction value is true or false \(a bool\). If you need to know if that action was started or cancelled \(e.g. was the jump button pressed?\), you need to get the **Started** or **Cancelled** state respectively.
-
-**Value** is not equal to **Phase** \(only for bool actions\)
-
-From previous versions of CCP, the phases were part of the actions values, causing some issues \(e.g. creating a started and canceled action at the same time\).
+Note that the BoolAction value is true or false \(a bool\). If you need to know if that action was "started" or "canceled" \(e.g. was the jump button pressed?\), you need to get the **Started** or **Canceled** property respectively.
 {% endhint %}
-
-
 
 ### Character actions
 

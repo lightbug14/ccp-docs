@@ -1,7 +1,5 @@
 # Introduction
 
-Hi! I'm Lightbug, welcome to the **Character Controller Pro** Documentation. This document contains \(hopefully\) all the material you need to understand the basics of this asset.
-
 ![](.gitbook/assets/keyimage_cover.png)
 
 {% hint style="info" %}
@@ -10,13 +8,22 @@ _**Note:**_ This document explains the basics of _Character Controller Pro_ the 
 Also really important to mention, **English is not my primary language, so bear with me**, **I’m doing my best** 🙂 .
 {% endhint %}
 
+## What is this?
+
+This is a guide that explains how the asset works. It has all the information the user need to know in order to set up, use and/or extend the asset. 
+
+* This document is **NOT** a reference to the code -&gt; Read the API reference.
+* This document **DOES NOT** explain what a particular field \(from a component\) does -&gt; Read the tooltips associated with a particular field.
+
 ## How to read this?
 
-First, please make sure to read the first sections \(Content, Versions, Setup, etc\). 
+This documentation is divided in three parts:
 
-If you got CCP only to use as it is, you can ignore the main part of this documentation.
+1. "The package" explains how to do the setup, use and update the package.
+2. "Fundamentals" takes care of those theorical aspects of the asset.
+3. "How to..." is much more oriented to specific tasks, quick tips and mini tutorials.
 
-On the other hand, if you want to take full advange of the package please read the whole documentation. The fundaments explains the basics of the main components, the character rules, scene setup, some of the features in more detail, and so on.
+if you want to take full advange of the package please read the whole documentation. The fundaments explains the basics of the main components, the character rules, scene setup, some of the features in more detail, and so on.
 
 ## Is this documentation old?
 
@@ -24,9 +31,9 @@ Not at all, this is the official latest version of the docs. This means that it 
 
 ## I have an older version of CCP, Am I doomed?
 
-As always I would recommend to **get the latest version of Character Controller Pro.** That said, don't worry about this "problem", in general most of the concepts, projects settings and tutorials are similar and probably will remain almost the same.
+I always recommend to **get the latest version of Character Controller Pro.** That said, don't worry about this "problem", in general most of the concepts, projects settings and tutorials are similar and probably will remain almost the same.
 
-The concepts are not that much complicated to get, once you understand the basics of the character, you are good to go. If you need help with the scripting, there is an API reference included in the package that will help you, regardless of the asset version \(offline\). 
+The concepts are not that much complicated to get, once you understand the basics of the character, you are good to go.
 
 ## Is there an easy way to get started?
 

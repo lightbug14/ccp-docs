@@ -1,27 +1,29 @@
-# Disable collisions \(Ghost character\)
+# Disable collisions between A and B
 
-Any normal rigidbody will ignore collisions \(visually\) by:
+Any regular rigidbody A will ignore collisions \(visually\) with any collider B if:
 
-1. Making the rigidbody kinematic.
-2. Disabling its collider.
+* A and/or B are kinematic rigidbodies.
+* A and/or B colliders are disabled.
+* A and B ignore each other \(collision matrix\).
 
-The CharacterActor has these properties availables. This will make the character a "ghost" 👻 .
-
-{% hint style="info" %}
-The LadderClimbing and LedgeHanging states \(from the Demo\) use a kinematic character to prevent the body shape to collide with the geometry.
-{% endhint %}
-
-## Enabling Kinematic body
+## Setting the rigidbody to kinematic
 
 ```csharp
 CharacterActor.IsKinematic = true;
+
+// Or
+CharacterActor.RigidbodyComponent.IsKinematic = true;
 ```
 
-## Disabling Collider component
+## Disabling the collider component
 
 ```csharp
 CharacterActor.ColliderComponent.enabled = false;
 ```
+
+## Configuring the collision matrix
+
+Another way to make a ghost character is to change the collision matrix from the Physics \(Physics2D\). As mentioned in [this section](../../fundamentals/untitled/character-actor/collision-properties.md#obstacles), thecharacter actor uses the collision matrix provided by the physics engine. 
 
 
 

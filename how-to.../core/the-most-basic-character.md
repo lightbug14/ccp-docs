@@ -1,64 +1,42 @@
 # Create a basic character
 
-**GOAL:** Add a functional character to the scene. This character will not move or do anything , but at least it will be the starting point for you to do anything with it.
+Putting a character inside the scene can be achieved by:
 
-{% hint style="warning" %}
-I will assume you have already set the project properly. If not, please go to the [setting up the project](../../package/setting-up-the-project.md) section first.
-{% endhint %}
+1. Creating a character from zero \(starting from an empty object\)...or
+2. Instantiating a prefab. 
 
 ## Creating the character
 
 ### 1. The character Gameobject
 
-Add a new GameObject in the scene and give it a name. Make sure the local scale \(as mentioned in the fundamentals section\) is$$<1,1,1>$$.
+Add a new GameObject in the scene and give it a name. Make sure its local scale is$$<1,1,1>$$.
 
-{% hint style="info" %}
-There is no need to add a **Collider** and/or **Rigidbody** to the object. The CharacterBody and CharacterActor will do this for you.
-{% endhint %}
+### 2. Add the components
 
-### 2. Add the CharacterBody
+A character consist of two important components:
 
-Add a character body component to the character:
-
-![](../../.gitbook/assets/imagen%20%286%29.png)
-
-### 3. Add the CharacterActor
-
-Next, add a CharacterActor component.
-
-{% hint style="info" %}
-By adding a _CharacterActor_ component a _CharacterBody_ component will be added automatically if there is not one yet. This is because the _CharacterActor_ requires a _CharacterBody_ component.
-{% endhint %}
+1. CharacterBody
+2. CharacterActor
 
 ![](../../.gitbook/assets/imagen%20%283%29.png)
 
-Make sure to add a **TagsAndLayers** profile to the _CharacterActor_. This profile is used by the component to filter collisions and compare tags.
-
-You can find one of these in the Demo.
-
-![](../../.gitbook/assets/imagen%20%2812%29.png)
+{% hint style="info" %}
+There is no need to add a **Collider** and/or **Rigidbody** to the object. The CharacterBody and CharacterActor will do this for you \(**ColliderComponent** and **RigidbodyComponent** components will be added in Awake\).
+{% endhint %}
 
 {% hint style="success" %}
-Done! 😃 This is the more boring invisble character you can create, It does absolutely nothing. In order to give it some life you need to implement some logic \(a "behaviour"\).
+Done! 😃 
+
+This is the more boring invisble character you can create, **it does absolutely nothing**. In order to give it some life you need to implement some logic in another component.
 {% endhint %}
+
+### 3. Setting up the components
+
+Finally, you need to configure these two components \(body and actor\) in order to customize your character. These components contain tooltips, please read them if you want to know in more depth what their fields do.
 
 ## Using a prefab
 
-Another way is to simply add a prefab to the scene. Use the basic "Blank Character" \(invisible\) or the "Capsule Blank Character" \(using a Capsule 3D Mesh\).
+Another way is to simply add a prefab into the scene. You can use the basic "Blank Character" \(invisible\) or the "Capsule Blank Character" \(using a Capsule 3D Mesh\).
 
 ![&quot;Capsule Blank Character&quot; pregab](../../.gitbook/assets/imagen%20%2825%29.png)
-
-
-
-## 
-
-
-
-
-
-
-
-
-
-
 

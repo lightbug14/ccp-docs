@@ -1,8 +1,8 @@
 # Use root motion
 
-With root motion you can switch between animation-based movement and script-based movement.
+By using root motion you can switch from script-based movement to animation-based movement. For more information about what root motion is please visit [this link](https://docs.unrealengine.com/en-US/AnimatingObjects/SkeletalMeshAnimation/RootMotion/index.html).
 
-Root motion can be enabled/disabled anytime by calling the _useRootMotion_ property from the _CharacterStateController_.
+Root motion can be enabled/disabled at anytime by calling the _**useRootMotion**_ property from the _CharacterStateController_.
 
 ```csharp
 CharacterStateController.UseRootMotion = true;

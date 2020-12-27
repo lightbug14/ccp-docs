@@ -16,7 +16,7 @@ Then design the animation node based graph as you want, adding all the parameter
 
 The state animator controller \(mentioned before in the [Create a state](create-a-state.md) section\) will be automatically loaded to the Animator component, once the state is started. Assign your animator controller there.
 
-![](../../.gitbook/assets/imagen%20%2843%29.png)
+![](../../.gitbook/assets/imagen%20%2858%29.png)
 
 ## Using the Animator component
 
@@ -53,5 +53,5 @@ public override void PostUpdateBehaviour( float dt )
 }
 ```
 
-Personally, I like to set parameters after the main update function \(UpdateBehaviour\). So, i use _PostUpdateBehaviour_ just for this. Obviously you can do this from anywhere.
+Personally, I like to set parameters after the main update function \(UpdateBehaviour\). So, i use _PostUpdateBehaviour_ just for this \(most of the time\).
 

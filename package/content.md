@@ -4,11 +4,11 @@ _Character Controller Pro_ is organized in three hierarchical parts:
 
 ### Core
 
-Contains the the main components associated with the "character controller". These components are responsible for  making the character move properly in the scene.
+Contains the the main components associated with the "character controller". These components are responsible for  making the character move/rotate/scale properly in the scene.
 
 ### Implementation
 
-Consists of a bunch of components that implement the functionality of the _Core_. These components cover many aspects and intend to create a "character system" around the _Core_. This part of the package can be customize, deleted and/or extended if needed.
+Consists of a bunch of components that implement the functionality of the _Core_. These components cover many aspects and intend to create some sort of "character system" around the _Core_. This part of the package can be customize, deleted and/or extended if needed.
 
 ### Demo
 
