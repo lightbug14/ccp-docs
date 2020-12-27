@@ -1,13 +1,13 @@
 # Implementation
 
-The _Implementation_ consists of set of scripts that implement and use the functionalities of the _Core_ \(espeacially the _CharacterActor_\).
+The _Implementation_ is a complete separate part of the asset that depends on the _Core_. Its main goal is to provide character-oriented systems that can be useful for the user.
 
-![](../../.gitbook/assets/imagen%20%2828%29.png)
+These are some of the terms the implementation uses a lot:
 
-These are some of the terms the implementation uses:
-
-* StateController: the State machine used to handling each state.
-* State: where the logic is stored.
-* Brain: This component handles everything related to actions.
-* Action: an interface between input device and gameplay logic.
+|  |  |
+| :--- | :--- |
+| StateController | A finite state machine \(FSM\) used to handling each state. |
+| State | Where the logic is stored. |
+| Brain | This component handles everything related to actions |
+| Action | An interface that represents a virtual input signal. |
 
