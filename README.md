@@ -10,7 +10,7 @@ Also really important to mention, **English is not my primary language, so bear 
 
 ## What is this?
 
-This is a guide that explains how the asset works. It has all the information the user need to know in order to set up, use and/or extend the asset. 
+This is a complete guide that explains \(hopefully\) how the asset works. It has all the information the user need to know in order to set up, use and/or extend the asset. 
 
 * This document is **NOT** a reference to the code -&gt; Read the API reference.
 * This document **DOES NOT** explain what a particular field \(from a component\) does -&gt; Read the tooltips associated with a particular field.

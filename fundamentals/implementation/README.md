@@ -7,7 +7,7 @@ The _Implementation_ consists of set of scripts that implement and use the funct
 These are some of the terms the implementation uses:
 
 * StateController: the State machine used to handling each state.
-* State: where the logic is written.
+* State: where the logic is stored.
 * Brain: This component handles everything related to actions.
 * Action: an interface between input device and gameplay logic.
 
