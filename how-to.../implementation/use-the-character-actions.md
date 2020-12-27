@@ -20,13 +20,13 @@ CharacterActions actions = CharacterStateController.CharacterBrain.CharacterActi
 Just access the public member you want from the CharacterAction struct
 
 ```csharp
-// Bool action ---> E.g. a jump button
+// Bool action ---> E.g. Jump (button)
 bool jumpValue = CharacterActions.jump.value;
 
-// Float action ---> E.g. Horizontal AD keys (axis)
+// Float action ---> E.g. Horizontal (AD keys)
 float horizontalValue = CharacterActions.horizontal.value;
 
-// Vector2 action ---> E.g. WASD (Horizontal + Vertical)
+// Vector2 action ---> E.g. Movement (WASD keys)
 Vector2 movementValue = CharacterActions.movement.value;
 ```
 
