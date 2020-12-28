@@ -1,8 +1,8 @@
 # Add animation to a state
 
-## Creating the Animator controller
+A state can have its own animator controller. For more information, please read [this section](../../fundamentals/implementation/character-state-controller.md#runtime-animator-controller).
 
-Every state has a RuntimeAnimatorController field associated. This animator controller will be automatically loaded to the main Animator component everytime the state is entered.
+## Creating the Animator controller
 
 To add a custom animator controller first create one.
 
@@ -14,7 +14,7 @@ Then design the animation node based graph as you want, adding all the parameter
 
 ## Assigning the animator controller
 
-The state animator controller \(mentioned before in the [Create a state](create-a-state.md) section\) will be automatically loaded to the Animator component, once the state is started. Assign your animator controller there.
+When the state is started, this animator controller will be automatically loaded into the Animator component. Assign your animator controller here:
 
 ![](../../.gitbook/assets/imagen%20%2858%29.png)
 
@@ -53,5 +53,5 @@ public override void PostUpdateBehaviour( float dt )
 }
 ```
 
-Personally, I like to set parameters after the main update function \(UpdateBehaviour\). So, i use _PostUpdateBehaviour_ just for this \(most of the time\).
+Personally, I like to set parameters after the main update function \(`UpdateBehaviour`\). In this case i'm using `PostUpdateBehaviour`.
 

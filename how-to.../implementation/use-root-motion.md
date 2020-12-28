@@ -13,6 +13,6 @@ After that, the animator controller will determine the position and rotation of 
 {% hint style="info" %}
 There is no "correct" way of doing movement, choose whatever approach fits your needs best.
 
-For instance, the NormalMovement offers a script-based movement \(root motion disabled\). The LadderClimbing and LedgeHanging states offer an animation-based movement \(root motion enabled\).
+For instance, NormalMovement offers a script-based movement \(root motion disabled\). LadderClimbing and LedgeHanging offer an animation-based movement approach \(root motion enabled\).
 {% endhint %}
 
