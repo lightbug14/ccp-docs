@@ -4,7 +4,7 @@ Some assets do not work as expected after importing them into the project, somet
 
 ### Importing the package
 
-Hit the import button! Once the package has been imported your project view should look like this:
+Once the package has been imported your project view should look like this:
 
 ![Project hierarchy right after importing the asset.](../.gitbook/assets/project_hierarchy.png)
 
