@@ -10,7 +10,7 @@ The core components associated with the character controller do not require to b
 | :--- | :--- |
 | Character | This object represents the physics of the character \(collider and rigidbody\). This object will also have two very important components, the CharacterBody and the CharacterActor, **these components will provide a Rigidbody and Collider component for you**. |
 | Graphics | This is an object in between the main physics object \(Character\) and the animated character \(e.g. Animator\). It becomes very useful when there is a need to modify the graphics \(and model\) without affecting the character \(parent\). |
-| Animated mesh/sprite | Here, under "Graphics" is where you should put your character. |
+| Animated mesh/sprite | Here, under "Graphics" is where you should put the character visual elements, such as 3D meshes, humanoids, sprites, etc. |
 
 All the demo characters follow this hierarchy, there are even graphics-related component that were designed with this structure in mind \(e.g. CharacterGraphicsRootController needs to be applied to "Graphics"\).
 
