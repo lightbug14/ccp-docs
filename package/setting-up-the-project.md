@@ -1,27 +1,38 @@
 # Setting up the project
 
-Some assets do not work as expected after importing them into the project, sometimes some settings need to be modified. **Character Controller Pro does not requires anything from you or your project settings in order to work**. However, the problem here are the demo scenes, which use tags and specific input settings.
+The main content of **Character Controller Pro does NOT require customized project settings, it is not hard-coded in any way or form**. However, if you need to test the demo scenes that comes with the asset you'll find a problem. This is why you need to set up the project first.
+
+{% hint style="warning" %}
+Setting the project is not the same as adding a full character in the scene.
+{% endhint %}
 
 ### Importing the package
 
 Once the package has been imported, your project view should look like this:
 
-![Project hierarchy right after importing the asset.](../.gitbook/assets/project_hierarchy.png)
+![Project hierarchy.](../.gitbook/assets/project_hierarchy.png)
 
-Also, a big welcome screen should appear right after. This screen contains some useful links and more importantly, the setup instructions.
+{% hint style="danger" %}
+If you open a scene from the asset and click play you might get several errors and warnings. This is because the demo content requires a few customize settings from the project \(**tags** and **inputs**\).
+{% endhint %}
 
-Luckily for you there are presets included in the package that will help you to configure your project by doing two or three clicks.
+A big welcome screen should appear right after clicking the import button. This screen contains some useful links and more importantly, the setup instructions:
 
-1. Load the preset associated with the input manager settings.
-2. Load the preset associated with the tags and layers settings.
+![](../.gitbook/assets/imagen%20%2865%29.png)
 
-For example, for the Input settings, go to the InputManager:
+Luckily for you there are **presets** included in the package that will help you to configure your project by doing two or three clicks. For more information please see [this](https://docs.unity3d.com/Manual/Presets.html) link.
+
+For example, in order to apply the input settings that come with the CCP:
+
+Go to the InputManager, open the preset window \(top right, see the image\)
 
 ![](../.gitbook/assets/imagen%20%284%29.png)
 
-Then select the preset, double click it:
+Then select the preset by double clicking it:
+
+
 
 ![](../.gitbook/assets/imagen%20%2816%29%20%281%29.png)
 
- That's it!
+Do, the same with the tags presets.
 
