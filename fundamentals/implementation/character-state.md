@@ -1,10 +1,23 @@
 # Character state
 
+A state is a component that defines the gameplay logic associated with the CharacterActor component. 
+
+## State vs Monobehaviour
+
+States work in the same way monobehaviours work:
+
+1. They process some task over and over again in a frame by frame basis \(the behaviour\).
+2. They are updated by a controller of some kind \(the state controller\).
+
+The big advantage of putting code inside a state, rather than using a monobehaviour,  is:
+
+1. The controller communicates better between other states, allowing you to create transitions between them.
+2. Since they are part of a FSM, only one of them will be running at a time.
+3. The controller is designed with a few components in mind \(other states, animator, actions, character actor, etc.\).
+
 ## State behaviour
 
-A state is a component that defines the gameplay logic. Every state presents its own behaviour, and can be implemented through its abstracts and virtual methods. The state controller will call them when they are needed, so don't worry about the execution order.
-
-In order to define the state behaviour you'll need to override some specific methods from the _CharacterState_ component. For instance, if you want to create your own "exit behaviour" \(executed when leaving a state\) you can do something like this:
+Every state presents its own behaviour, and can be implemented through its abstracts and virtual methods. In order to define the state behaviour you'll need to override some specific methods from the _CharacterState_ component. For instance, if you want to create your own "exit behaviour" \(executed when leaving a state\) you can do something like this:
 
 ```csharp
 // YourCustomState.cs
@@ -32,7 +45,7 @@ These transitions are called Exit transition and Enter transition.
 
 #### Why do transitions use this approach? 
 
-Sometimes the information needed to decide if a transition is successful or not is shared between two or more states, but sometimes it doesn't. Since we can't be sure that one state has the total control over one particular transition, dividing the condition test sounds like the right thing to do.
+Sometimes the information required to accept a transition is shared between two or more states. Since we can't be sure that one state has the total control over one particular transition, dividing the condition across states seems logical.
 
 > ### Example
 >
@@ -40,9 +53,7 @@ Sometimes the information needed to decide if a transition is successful or not 
 >
 > In the _**Normal**_ **state**, to activate the jet pack only a specific button press is needed. This state doesn't have any information about the _JetPack_ state whatsoever \(and it shouldn't\). For the _JetPack_ state is another story. 
 >
-> The _**JetPack**_ state must check if everything is ok, before allowing the transition to happen. For instance, if the character jet pack doesn't have any fuel, this should not be active. In the transition code, inside the _JetPack_ state we can make sure that the fuel is enough.
-
-So, in order to allow a transition from a _**state A**_ **to a** _**state B**_  you'll need to implement the _**CheckExitTransition**_ **method in** _**State A**_ ****and the _**CheckEnterTransition**_ **method in** _**State B**_.
+> The _**JetPack**_ state must check if everything is ok, before allowing the transition to happen. For instance, if the character jet pack doesn't have any fuel, this should not be active. In the transition code, inside the _JetPack_ state we can make sure of that before accepting the transition.
 
 ### Adding candidates to the queue
 
