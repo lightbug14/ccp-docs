@@ -1,23 +1,22 @@
 # Use the character actions
 
-## Getting the values
+## Getting the action struct
 
-The current character actions values can be obtained from the CharacterBrain component. The character state controller includes a property that does this for you, it is called "CharacterActions".
+The CharacterActions struct can be obtained from the CharacterBrain component. 
 
 ```csharp
-// This
+CharacterActions actions = characterBrain.CharacterActions;
+```
+
+If you are working from inside a state you can call the CharacterActions property \(not the class\):
+
+```csharp
 CharacterActions actions = CharacterActions;
-
-// is the same as this
-CharacterActions actions = CharacterBrain.CharacterActions;
-
-// or this
-CharacterActions actions = CharacterStateController.CharacterBrain.CharacterActions;
 ```
 
 ## Reading the actions
 
-Just access the public member you want from the CharacterAction struct
+Just access the public member you want from the CharacterAction struct.
 
 ```csharp
 // Bool action ---> E.g. Jump (button)
@@ -32,9 +31,9 @@ Vector2 movementValue = CharacterActions.movement.value;
 
 ### Bool actions
 
-Float and Vector2 actions are most of the time related to analog values. Their value is what's important. On the other hand, with bool actions it is often needed to know the state of the action, or "phase" \(not only the value\).
+Float and Vector2 actions are most of the time related to analog values. Their value is what's important. On the other hand, with bool actions it is often more important the "phase" of the action.
 
-For a button the phases are started \(similar to the classic "GetButtonDown"\) or canceled \(or "GetButtonUp"\).
+For a button, the phases are started \(similar to the classic "GetButtonDown"\) and canceled \("GetButtonUp"\).
 
 ```csharp
 // Bool action ---> E.g. a jump button 
@@ -44,7 +43,7 @@ bool wasJumpReleased = CharacterActions.jump.Canceled;
 
 ### Vector2 actions
 
-Nothing more to add regarding Vector2 actions. If you are using the old InputManager \(the default input system used by the demo scenes, not the only one\) you can create a Vector2 action from the project settings, even though these type of actions are not supported.
+If you are using the old InputManager \(the default input system used by the demo scenes\) you can create a Vector2 action from the project settings, even though these type of actions are not supported.
 
 The Vector2 action is just a mix between two float actions. 
 
@@ -58,8 +57,6 @@ To define a Vector2 action you need to create two input axis:
 For instance, the "movement" action is defined like this:
 
 ![](../../.gitbook/assets/imagen%20%2840%29.png)
-
-
 
 
 

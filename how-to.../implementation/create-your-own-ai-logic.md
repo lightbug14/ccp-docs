@@ -12,7 +12,7 @@ In order to set up an AI character from zero you need to:
 Human and AI move around using the same components, there is no need to add a NavMeshAgent or something similar. Also you don't need a NavMesh for this to work, although you can use one if you want \(see the AI Follow behaviour\).
 {% endhint %}
 
-## The AIBehaviour
+## The AI behaviour
 
 The brain will use the character actions from the current AI behaviour. Basically this behaviour task is to define this action frame by frame, as simple as that.
 
