@@ -69,15 +69,9 @@ This doesn't mean i won't help you if you don't have the latest release.
 
 ## How to update
 
-To update the package \(regardless of the version\) **is recommended to delete the** _**Character Controller Pro**_ **folder in its entirely**, then import the updated version. 
+To update the package \(regardless of the version\) is recommended to **delete the** _**Character Controller Pro**_ **folder** and then import the new version. 
 
 {% hint style="warning" %}
 Remember always to put your own work outside this folder.
 {% endhint %}
-
-{% hint style="warning" %}
-It would be great if you make a backup of your CCP related data first. Sometimes changing a variable or class name can ruin your data. You have been warned!
-{% endhint %}
-
-
 
