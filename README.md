@@ -1,11 +1,5 @@
 # Introduction
 
-{% hint style="danger" %}
-This documentation is currently being updated from version 1.1.5 to **1.2.0**. 
-
-Version 1.2.0 should be available really soon \(pending review\).
-{% endhint %}
-
 ![](.gitbook/assets/keyimage_cover.png)
 
 ## What is this?
