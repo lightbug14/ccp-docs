@@ -47,9 +47,9 @@ If the character is standing on a **valid dynamic ground**, and this object is m
 
 ![](../../../.gitbook/assets/dynamic.png)
 
-CCP supports:
+A valid ground can be a:
 
-* RigidbodyComponent grounds \(objects that use this component\).
+* RigidbodyComponent ground.
 * Vanilla rigidbodies \(regular Rigidbody/Rigidbody2D components without RigidbodyComponent\).
 
 For more information about what a valid dynamic ground please check the supportDynamicGround field and its related tooltips.
