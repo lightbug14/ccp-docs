@@ -58,9 +58,9 @@ public class NewInputSystemHandler : InputHandler
 
 Remember that the _InputActionAsset_ asset must have the same character actions names. For example:
 
-![](../../.gitbook/assets/imagen%20%2854%29.png)
+![](../../.gitbook/assets/imagen%20%2866%29.png)
 
-Here you can download some examples:
+Here you can download all the input action assets required by the demo:
 
 {% file src="../../.gitbook/assets/characteractions.rar" %}
 
