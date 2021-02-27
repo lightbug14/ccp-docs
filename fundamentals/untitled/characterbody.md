@@ -2,9 +2,9 @@
 
 ## Properties
 
-### Foot position \(pivot\)
+### Foot position \(origin\)
 
-The foot position is considered as the origin, a point of reference for everything \(pivot\). As is normally for character controllers, the origin is assumed to be the bottom most point of the character body. In this case is the bottom point of the capsule.
+The foot position is considered as the origin, a point of reference for everything. As is normally for character controllers, the origin is assumed to be the bottom most point of the character body. In this case is the bottom point of the capsule.
 
 ### Orientation
 

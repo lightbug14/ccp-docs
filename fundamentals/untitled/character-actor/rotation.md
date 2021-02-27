@@ -4,7 +4,9 @@ The rotation of the character is handled in a very specific way, depending on th
 
 ## Pivot
 
-As mentioned in the [Character body](../characterbody.md) section, the pivot of the character is the actual rotation pivot.
+As mentioned in the [Character body](../characterbody.md) section, the origin of the character is the bottom most point of the capsule. However, the rotation pivot changes depending on the current grounded state.
+
+![](../../../.gitbook/assets/imagen%20%2867%29.png)
 
 ## 2D vs 3D
 
