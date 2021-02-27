@@ -28,5 +28,17 @@ In simpler words, the API is the only interface between CCP internal code and yo
 
 ![](../.gitbook/assets/imagen%20%2817%29%20%281%29.png)
 
-### 
+## Assembly definition file
+
+The entire asset is self-contained inside an assembly definition file \(_.asmdef_\). For more information about assembly definition files please check [Unity's documentation](https://docs.unity3d.com/2019.1/Documentation/Manual/ScriptCompilationAssemblyDefinitionFiles.html).
+
+![](../.gitbook/assets/imagen%20%2868%29.png)
+
+
+
+One very important thing to consider is that the asset \(internally\) does not interact with external scripts \(e.g. your custom scripts\). **If you are using a custom assembly definition file**, and you need to reference Character Controller Pro, just indicate the reference as shown in the following image:
+
+![](../.gitbook/assets/imagen%20%2867%29.png)
+
+
 
