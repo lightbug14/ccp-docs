@@ -36,7 +36,7 @@ The entire asset is self-contained inside an assembly definition file \(_.asmdef
 
 
 
-One very important thing to consider is that the asset \(internally\) does not interact with external scripts \(e.g. your custom scripts\). **If you are using a custom assembly definition file**, and you need to reference Character Controller Pro, just indicate the reference as shown in the following image:
+One very important thing to consider is that the asset \(internally\) does not interact with external scripts \(e.g. your custom scripts\). **If you are using a custom assembly definition file** and you need to reference Character Controller Pro, just indicate the reference as shown in the following image:
 
 ![](../.gitbook/assets/imagen%20%2867%29.png)
 
