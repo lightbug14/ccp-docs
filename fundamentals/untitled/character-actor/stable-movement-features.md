@@ -43,16 +43,21 @@ This feature only works on edges, for slopes you will get the same results as be
 
 ### Dynamic Ground
 
-If the character is standing on a **valid dynamic ground**, and this object is moved and/or rotated, then the character will move and/or rotate along with it \(the up direction will always be maintained\). 
+If the current ground the character is standing on moves/rotates, then the character will move and/or rotate with it \(only yaw rotation allowed\).
 
 ![](../../../.gitbook/assets/dynamic.png)
 
-A valid ground can be a:
 
-* RigidbodyComponent ground.
-* Vanilla rigidbodies \(regular Rigidbody/Rigidbody2D components without RigidbodyComponent\).
 
-For more information about what a valid dynamic ground please check the supportDynamicGround field and its related tooltips.
+A valid dynamic ground must:
+
+1. Be updated during the physics simulation. This also means that animated objects need to use the **AnimatePhysics** UpdateMode \(_Animator_ component\).
+
+So, a valid dynamic can be:
+
+* **Kinematic rigidbody** that moves/rotates using **MovePosition**/**MoveRotation**.
+* **Kinematic rigidbody** that moves/rotates based on an **animation clip**.
+* **Dynamic rigidbody** that moves/rotates using linear **velocity, angular velocity, forces, torque,** etc.
 
 ## Rigidbody interactions
 
