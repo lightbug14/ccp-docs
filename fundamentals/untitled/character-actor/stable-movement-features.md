@@ -49,7 +49,7 @@ If the current ground the character is standing on moves/rotates, then the chara
 
 
 
-A valid dynamic ground **must be updated during the physics simulation**. Here are some examples:
+A valid dynamic ground **must be updated during the physics simulation**. Here are some valid examples:
 
 * **Kinematic rigidbody** that moves/rotates using **MovePosition**/**MoveRotation**.
 * **Kinematic/Dynamic rigidbody** that moves/rotates based on an **animation clip**. The update mode must be _AnimatePhysics_ \(_Animator_ component\)**.**
