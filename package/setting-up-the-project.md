@@ -6,7 +6,7 @@ The main content of **Character Controller Pro does NOT require customized proje
 Setting the project is not the same as adding a full character in the scene.
 {% endhint %}
 
-### Importing the package
+## Importing the package
 
 Once the package has been imported, your project view should look like this:
 
