@@ -36,3 +36,12 @@ Then select the preset by double clicking it:
 
 Do, the same with the tags presets.
 
+## Known issues \(Editor\)
+
+This section contains known issues that escape the asset scope. **They are all related to the Unity editor** in some way.
+
+| Issue | Description | Editor version | Fix |
+| :--- | :--- | :--- | :--- |
+| Animation being ignored | The Animator does not recognize the NormalMovement runtime animation controller, even though it is correctly set up. This happens the **first time** the asset is imported. | 2020.x.y | Restart the project |
+| Invisible animation state inspector | The state \(mecanim\) inspector doesn't show when you click over the state. | 2020.1.x | Follow this [link ](https://answers.unity.com/questions/1736606/animation-state-of-controller-not-showing-in-inspe.html?childToView=1737595#answer-1737595)instructions. |
+
