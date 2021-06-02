@@ -41,11 +41,9 @@ public class NewInputSystemHandler : InputHandler
 
 ### Missing references \(asmdef file\)
 
-So, after importing creating the class Unity is not able to compile your project, it seems there are some missing references associated with the new input system package 🤔 . 
+There is a chance that after adding this class to your project you will get some compile errors. This is happening because the file \(containing the code\) is located inside CCP's main folder. CCP's asmdef file \(read [this section](../../package/using-the-package.md#assembly-definition-file)\) does not include references to any external packages \(Unity's input system, Cinemachine, etc.\), this is why you need to either:
 
-This is happening because the file \(containing the code\) is located inside CCP's main folder. CCP's asmdef file \(read [this section](../../package/using-the-package.md#assembly-definition-file)\) does not include a reference to external packages \(Unity's input system, Cinemachine, etc.\), this is why you need to either:
-
-1. Put the input handler file outside CCP's main folder \(e.g. _"Assets/YourStuff/InputSystemHandler.cs"_\) ... or
+1. Put the input handler file **outside CCP's main folder** \(e.g. _"Assets/YourStuff/InputSystemHandler.cs"_\) ... or
 2. Add to CCP's asmdef file a reference to the new input system package.
 
 ## InputAction assets
