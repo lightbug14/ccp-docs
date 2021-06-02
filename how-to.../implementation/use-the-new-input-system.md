@@ -1,25 +1,8 @@
 # Use the new input system
 
-## Input system actions vs Character actions?
+## Input handler
 
-This is probably one of the most asked questions about this asset. I totally love the new input system, it's a great system with many great things and improvements over the old one. Unfortunately the new system **cannot replace the CharacterActions completely** \(for now\). The reasons are:
-
-1. It does not allow to change the actions values via code.
-2. It does not allow to present and change the actions values using the iinspector.
-3. In theory, "i" numbers of AI Characters should be handled by "i" different devices. Which becomes quite difficult to do.
-
-So, instead of putting all the weight over the input system, it is best to use it as a custom input handler \(custom implementation\). The new input system can be adapted to the CCP actions system without significant problems. There are some clear disadvantages, though.
-
-1. The actions are obtained using polling. This is not "bad" \(personally, i prefer this over events\) but you won't be able to use C\# events.
-2. The actions are obtained through the InputActionAsset \(using FindAction\).
-
-Other than that, you will enjoy all the good features of the new system. 
-
-## Code
-
-{% hint style="info" %}
-At the moment the asset by itself does not include an input handler based on the new input system. This is due to packages dependence, since the new input system need to the downloaded and installed using the package manager.
-{% endhint %}
+### Code
 
 This is a simple implementation of the Unity's "new" input system:
 
@@ -56,6 +39,17 @@ public class NewInputSystemHandler : InputHandler
 }
 ```
 
+### Missing references \(asmdef file\)
+
+So, after importing creating the class Unity is not able to compile your project, it seems there are some missing references associated with the new input system package 🤔 . 
+
+This is happening because the file \(containing the code\) is located inside CCP's main folder. CCP's asmdef file \(read [this section](../../package/using-the-package.md#assembly-definition-file)\) does not include a reference to external packages \(Unity's input system, Cinemachine, etc.\), this is why you need to either:
+
+1. Put the input handler file outside CCP's main folder \(e.g. _"Assets/YourStuff/InputSystemHandler.cs"_\) ... or
+2. Add to CCP's asmdef file a reference to the new input system package.
+
+## InputAction assets
+
 Remember that the _InputActionAsset_ asset must have the same character actions names. For example:
 
 ![](../../.gitbook/assets/imagen%20%2866%29.png)
@@ -65,4 +59,6 @@ Here you can download all the input action assets required by the demo:
 {% file src="../../.gitbook/assets/characteractions.rar" %}
 
 {% file src="../../.gitbook/assets/cameraactions.rar" %}
+
+
 
