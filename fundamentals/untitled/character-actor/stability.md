@@ -11,6 +11,10 @@ This property indicates if there is ground below the character, simple as that. 
 
 The main property associated with the ground state is called **IsGrounded**. There are much more properties associated with the current ground \(see the API reference for more info\).
 
+{% hint style="warning" %}
+Due to how the character projects its own velocity, **it is not possible to leave the grounded state by applying a vertical velocity**.
+{% endhint %}
+
 ## Stability
 
 The internal logic of the character controller works differently depending on the current stability state. That is, if the character is stable it uses most of the features from the controller \(velocity projection, step up, step down, edge compensation, and so on\). If it is not, then all the features are disabled.
