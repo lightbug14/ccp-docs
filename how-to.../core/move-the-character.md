@@ -20,17 +20,17 @@ CharacterActor.Velocity = someVector3;
 
 ## Position
 
-The first two methods moves the character from point A to B, without considering collision detection. Just like you would expect when changing a Rigidbody position.
+This property modifies the rigidbody position. Interpolation of the body will stop, meaning that \(visually speaking\) there will be an instant change from position A to position B.
 
 ## Teleport
 
 The difference between changing the rigidbody position and using the Teleport method is that the latter triggers the **OnTeleport event**, which can be very useful in some cases \(for example to notify other objects about this action\).
 
 {% hint style="info" %}
-Teleport is used in the demo scenes in order to notify the camera to stop lerping out the movement, and change the position and rotation from one frame to the next.
+Teleport is used in the demo scenes in order to notify the camera to stop lerping out the movement and change the position/rotation values.
 {% endhint %}
 
 ## Velocity
 
-Nothing complex here, this field is the rigidbody velocity. So, just like a normal rigidbody, the character will move from point A to B based on the velocity applied to it. If you want to know more about how velocity is handled please read the [Velocity](../../fundamentals/untitled/character-actor/velocity.md) section.
+This field corresponds to the rigidbody velocity. So, just like a normal rigidbody, the character will move from point A to B based on the velocity applied to it. If you want to know more about how velocity is handled please read the [Velocity](../../fundamentals/untitled/character-actor/velocity.md) section.
 
