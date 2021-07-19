@@ -4,38 +4,89 @@
 
 ### Code
 
-This is a simple implementation of the Unity's "new" input system:
+This is an implementation of Unity's "new" input system:
 
 ```csharp
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Lightbug.CharacterControllerPro.Implementation;
 
-public class NewInputSystemHandler : InputHandler
+public class InputSystemBehaviour : InputHandler
 {
     [SerializeField]
-    InputActionAsset characterActionsAsset = null;
+    InputActionAsset inputActionsAsset = null;
 
-    void Awake()
-    {
-        characterActionsAsset.Enable();
-    }
+    [SerializeField]
+    string gameplayActionMap = "Gameplay";
 
-    public override float GetFloat( string actionName )
-    {       
-        return characterActionsAsset.FindAction( actionName ).ReadValue<float>();     
+    [SerializeField]
+    bool filterByControlScheme = false;
+
+    [SerializeField]
+    string controlSchemeName = "Keyboard Mouse";
+
+
+    Dictionary<string , InputAction> inputActionsDictionary = new Dictionary<string, InputAction>();
+
+    protected virtual void Awake()
+    {        
+        if( inputActionsAsset == null )
+        {
+            Debug.Log("No input actions asset found!");
+            return;
+        }
+
+        inputActionsAsset.Enable();
+
+        if( filterByControlScheme )
+        {
+            string bindingGroup = inputActionsAsset.controlSchemes.First( x => x.name == controlSchemeName ).bindingGroup;
+            inputActionsAsset.bindingMask = InputBinding.MaskByGroup( bindingGroup );
+        }
+
+        var rawInputActions = inputActionsAsset.FindActionMap( gameplayActionMap ).actions;
+
+        for( int i = 0 ; i < rawInputActions.Count ; i++ )
+        {
+            inputActionsDictionary.Add( rawInputActions[i].name , rawInputActions[i] );
+        }
+
     }
 
     public override bool GetBool( string actionName )
     { 
-        return characterActionsAsset.FindAction( actionName ).ReadValue<float>() >= InputSystem.settings.defaultButtonPressPoint;  
+        InputAction inputAction;
+
+        if( !inputActionsDictionary.TryGetValue( actionName , out inputAction ) )
+            return false;
+
+        return inputActionsDictionary[actionName].ReadValue<float>() >= InputSystem.settings.defaultButtonPressPoint;
     }
+
+    public override float GetFloat( string actionName )
+    {       
+        InputAction inputAction;
+
+        if( !inputActionsDictionary.TryGetValue( actionName , out inputAction ) )
+            return 0f;
+        
+        return inputAction.ReadValue<float>();
+    }
+
+    
 
     public override Vector2 GetVector2( string actionName )
     {
-        return characterActionsAsset.FindAction( actionName ).ReadValue<Vector2>(); 
+        InputAction inputAction;
+
+        if( !inputActionsDictionary.TryGetValue( actionName , out inputAction ) )
+            return Vector2.zero;
+        
+        return inputActionsDictionary[actionName].ReadValue<Vector2>(); 
     }
-    
+
 }
 ```
 
