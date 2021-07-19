@@ -4,7 +4,15 @@
 
 ### Code
 
-This is an implementation of Unity's "new" input system:
+This is an implementation of Unity's "new" input system
+
+{% hint style="info" %}
+Note that this is better implementation compared to the previous one \(from version 1.3.5\). This version brings some extra features and improvements.
+
+* Actions are **stored inside a container** and read from there when needed \(better for performance\).
+* Actions can be filtered by **action map** \(optional\).
+* Binds can be filtered by **control scheme** \(optional\).
+{% endhint %}
 
 ```csharp
 using System.Collections;
@@ -12,11 +20,17 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Utilities;
+using Lightbug.CharacterControllerPro.Implementation;
 
-public class InputSystemBehaviour : InputHandler
+
+public class InputSystemHandler : InputHandler
 {
     [SerializeField]
     InputActionAsset inputActionsAsset = null;
+
+    [SerializeField]
+    bool filterByActionMap = false;
 
     [SerializeField]
     string gameplayActionMap = "Gameplay";
@@ -28,10 +42,11 @@ public class InputSystemBehaviour : InputHandler
     string controlSchemeName = "Keyboard Mouse";
 
 
-    Dictionary<string , InputAction> inputActionsDictionary = new Dictionary<string, InputAction>();
+    Dictionary< string , InputAction> inputActionsDictionary = new Dictionary<string, InputAction>();
 
     protected virtual void Awake()
-    {        
+    {
+        
         if( inputActionsAsset == null )
         {
             Debug.Log("No input actions asset found!");
@@ -46,7 +61,33 @@ public class InputSystemBehaviour : InputHandler
             inputActionsAsset.bindingMask = InputBinding.MaskByGroup( bindingGroup );
         }
 
-        var rawInputActions = inputActionsAsset.FindActionMap( gameplayActionMap ).actions;
+        ReadOnlyArray<InputAction> rawInputActions = new ReadOnlyArray<InputAction>();
+        
+        if( filterByActionMap )
+        {
+            rawInputActions = inputActionsAsset.FindActionMap( gameplayActionMap ).actions;
+
+            for( int i = 0 ; i < rawInputActions.Count ; i++ )
+                inputActionsDictionary.Add( rawInputActions[i].name , rawInputActions[i] );
+        
+        }
+        else
+        {
+            for( int i = 0 ; i < inputActionsAsset.actionMaps.Count ; i++ )
+            {
+                InputActionMap actionMap = inputActionsAsset.actionMaps[i];
+
+                for( int j = 0 ; j < actionMap.actions.Count ; j++ )
+                {
+                    InputAction action = actionMap.actions[j];
+                    inputActionsDictionary.Add( action.name , action );
+                }
+
+            }
+
+            
+        }
+        
 
         for( int i = 0 ; i < rawInputActions.Count ; i++ )
         {
@@ -88,6 +129,8 @@ public class InputSystemBehaviour : InputHandler
     }
 
 }
+
+
 ```
 
 ### Missing references \(asmdef file\)
