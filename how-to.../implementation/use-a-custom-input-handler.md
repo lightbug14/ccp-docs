@@ -6,7 +6,7 @@ By default these are the available modes for human inputs:
 * UI
 * Custom
 
-If you want to include a particular input system solution, then you will need to:
+If you want to implement a particular input system solution, then you will need to:
 
 1. Create a custom class that derives from the _InputHandler_ abstract class.
 2. Implement its abstract methods using the input system API.
