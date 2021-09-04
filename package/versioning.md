@@ -1,16 +1,20 @@
 # Versions and updates
 
-You should always update to the new version, unless the **risk** of doing so is high enough for your particular project \(in some cases it is best to keep using an old version\).
+You should always update to a newer version of the package, unless the **risk** of doing so is high enough for your particular project \(in some cases it is best to keep using an old version\).
 
-The version number indicates the **type** of update, but also the **risk** involve. The versioning scheme used for CCP is the following:
+## Versioning scheme
 
-#### Major.Feature.Minor
+The version number indicates the **risk** involved when updating the asset. By "risk" i mean things that can cause issues all of kind, such as console errors, API incompatibilities, new features replacing older ones, deprecation of some specific functionalities, an overall design change, etc.
+
+This is the versioning scheme used:
+
+####                                                                    Major.Feature.Minor
 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left"></th>
-      <th style="text-align:left"></th>
+      <th style="text-align:left">Update</th>
+      <th style="text-align:left">Description</th>
     </tr>
   </thead>
   <tbody>
@@ -21,10 +25,15 @@ The version number indicates the **type** of update, but also the **risk** invol
       </td>
       <td style="text-align:left">
         <p></p>
-        <p>Basically bug fixes<b>,</b> code improvements, etc. This update is <b>always recommended</b>,
-          it should not give you any issues.</p>
+        <p>Basically bug fixes<b>,</b> code improvements, etc. Sometimes, new minor
+          features will be introduced, as long as they don&apos;t interfiere with
+          the rest of the package.</p>
         <p></p>
-        <p>Risk:<b> Zero </b>&#x2705;</p>
+        <p>This update is <b>always recommended</b>, it should not give you any issues.
+          That being said, it is also recommended to check the release notes before
+          attempting to update the package.</p>
+        <p></p>
+        <p>Risk: <b>Zero </b>&#x2705;</p>
       </td>
     </tr>
     <tr>
@@ -34,10 +43,12 @@ The version number indicates the **type** of update, but also the **risk** invol
       </td>
       <td style="text-align:left">
         <p></p>
-        <p><b>New </b>features and/or features <b>improvements</b>. When i say features
-          i mean technical features related with the Core and/or implementation content
-          (the Demo content might be included as well). Obviously feature additions
-          and improvements require some API modifications, so <b>this might cause some issues</b>.</p>
+        <p>This update <b>usually </b>involves one or more new relevant features,
+          thus the name.</p>
+        <p>Sometimes improving an existing feature may require an overall re-design
+          of the code, such changes could end up causing API incompatibilities. If
+          that&apos;s the case, the update will be labeled as a &quot;feature&quot;
+          update, even though there will be no new features available.</p>
         <p></p>
         <p>Risk: <b>Low to medium </b>&#x26A0;</p>
       </td>
@@ -49,9 +60,12 @@ The version number indicates the **type** of update, but also the **risk** invol
       </td>
       <td style="text-align:left">
         <p></p>
-        <p>A major update is used as an opportunity to re-invent some of the main
-          features of the assets (if necessary, of course). By doing so it&apos;s
-          expected to create some sorts of components and API incompatibilities.</p>
+        <p>A major update is used as an opportunity to re-design the core of the
+          asset. By doing so it&apos;s expected to create some sorts of components
+          and API incompatibilities.</p>
+        <p></p>
+        <p>This type of update could involve a new upgrade (a.k.a new asset package).
+          By doing so, you will have access to the old package every time you want.</p>
         <p></p>
         <p>Risk: <b>Maximum </b>&#x2622;</p>
       </td>
@@ -59,13 +73,13 @@ The version number indicates the **type** of update, but also the **risk** invol
   </tbody>
 </table>
 
+{% hint style="danger" %}
+The demo content is not represented by the scheme presented above. This basically means this content might change a lot from version to version, or not.
+{% endhint %}
+
 ## Support
 
-Let me make this clear: **I will always put all my effort in the latest version of the package**. In my own eyes that's the best this package can get, and i will always recommend you to get that version.  
-
-{% hint style="info" %}
-This doesn't mean i won't help you if you don't have the latest release. 
-{% endhint %}
+Let me make this clear: **I will always put all my effort in the latest version of the package**. In my own eyes, that's the best this package can get, and i will always recommend you to get that version.  This obviously doesn't mean you won't receive support if you are using an older version.
 
 ## How to update
 

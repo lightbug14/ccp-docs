@@ -38,6 +38,8 @@
   * [Disable collisions between A and B](how-to.../core/disable-collisions-ghost-character.md)
   * [Use the character information \(with examples\)](how-to.../core/use-the-character-information.md)
   * [Detect a character using a "detector"](how-to.../core/detect-a-character-using-a-detector.md)
+  * [Add a static one way platform](how-to.../core/add-a-static-one-way-platform.md)
+  * [Add a dynamic one way platform](how-to.../core/add-a-dynamic-one-way-platform.md)
 * [Implementation](how-to.../implementation/README.md)
   * [Organize the character hierarchy](how-to.../implementation/organize-the-character-hierarchy.md)
   * [Add and configure the state machine](how-to.../implementation/add-and-configure-the-state-machine.md)
