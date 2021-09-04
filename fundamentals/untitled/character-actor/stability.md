@@ -5,11 +5,11 @@ This character controller state can be defined at any time as a mix between two 
 * Ground state \(grounded, not grounded\).
 * Stability \(stable, unstable\).
 
-## Ground state
+## Grounded state
 
 This property indicates if there is ground below the character, simple as that. This property alone does not influence the actor internal logic at all, that's something the stability does.
 
-The main property associated with the ground state is called **IsGrounded**. There are much more properties associated with the current ground \(see the API reference for more info\).
+The main property associated with the grounded state is the **IsGrounded** public property. There are much more properties associated with the current ground \(see the API reference for more info\).
 
 {% hint style="warning" %}
 Due to how the character projects its own velocity, **it is not possible to leave the grounded state by applying a vertical velocity**.
@@ -17,7 +17,7 @@ Due to how the character projects its own velocity, **it is not possible to leav
 
 ## Stability
 
-The internal logic of the character controller works differently depending on the current stability state. That is, if the character is stable it uses most of the features from the controller \(velocity projection, step up, step down, edge compensation, and so on\). If it is not, then all the features are disabled.
+The internal logic of the character controller works differently depending on the current stability state. That is, if the character is stable then it uses most of the features from the controller \(velocity projection, step up, step down, edge compensation, and so on\). If it is not, then most of the features are disabled.
 
 ![](../../../.gitbook/assets/imagen%20%2857%29.png)
 
@@ -27,13 +27,13 @@ A character is _**stable**_ when it is grounded and the _**stable slope angle**_
 IsStable = IsGrounded && ( stableSlopeAngle <= slopeLimit ); 
 ```
 
-The stable slope angle is selected internally by the character actor based on a few conditions. 
-
-Look at the next image, one surface is unstable \(red\) and the other is stable \(green\). The stable normal is chosen as the one coming from the stable surface. This angle should not be confused with the _slope contact angle_, which is obtained directly from the collision test.
+The stable slope angle is selected internally by the character actor based on a few conditions. For example, take a look at the following image:
 
 ![](../../../.gitbook/assets/contactvsstable.png)
 
+There are two surfaces in which one of them is unstable \(red\) and the other one is stable \(green\). 
 
+The stable normal is chosen as the one coming from the stable surface. This normal determines the movement displacement direction. On the other hand, the contact normal corresponds to the normal obtained by the physics query \(e.g. CapsuleCast\).
 
 ## States
 
@@ -51,7 +51,7 @@ Getting a particular state is equivalent to get the two properties separately. F
 
 ```csharp
 //-----------------------------------------------------------------------------
-// Properties
+// Using properties
 
 if( CharacterActor.IsGrounded && !CharacterActor.IsStable)
 {
@@ -59,7 +59,7 @@ if( CharacterActor.IsGrounded && !CharacterActor.IsStable)
 }
 
 // ----------------------------------------------------------------------------
-// Character actor state
+// Using the CharacterActor state
 
 if( CharacterActor.CurrentState == CharacterActorState.UnstableGrounded )
 {
