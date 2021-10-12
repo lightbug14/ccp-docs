@@ -4,7 +4,7 @@
 
 ### 1. Assigning a Rotation
 
-Same as transform.rotation, you can set the _**Rotation**_ property using any Quaternion value you want.
+Same as transform.rotation, you can set the _**Rotation **_property using any Quaternion value you want.
 
 ```csharp
 CharacterActor.Rotation = SomeQuaternion;
@@ -24,9 +24,8 @@ By default a vertical direction **constraint** is applied to the character in or
 
 The 2D world is very different from the 3D world, especially regarding rotations. 
 
-In order to handle rotations **it is important to separate the graphics \(3D mesh or sprite\) from the actual character**. For more information about 2D rotation please see the  [Rotation](../../fundamentals/untitled/character-actor/rotation.md#2d-vs-3d) section.
+In order to handle rotations **it is important to separate the graphics (3D mesh or sprite) from the actual character**. For more information about 2D rotation please see the  [Rotation](../../fundamentals/untitled/character-actor/rotation.md#2d-vs-3d) section.
 
 CCP includes a _**CharacterGraphics2DRotator**_  component that does the job for you. Add this component to the mesh/sprite object.
 
-![](../../.gitbook/assets/imagen%20%2851%29.png)
-
+![](<../../.gitbook/assets/imagen (69).png>)

@@ -2,10 +2,10 @@
 
 ## What's this?
 
-A CharacterDetector is a component that's responsible for detecting characters \(CharacterActor components\). **This component uses the OnTriggerXXX callbacks**, meaning that any character can be detected in either two ways:
+A CharacterDetector is a component that's responsible for detecting characters (CharacterActor components). **This component uses the OnTriggerXXX callbacks**, meaning that any character can be detected in either two ways:
 
 1. Trigger vs Character's capsule collider
-2. Non-Trigger vs Character's ground trigger \(you'll need to enable it in the inspector\)
+2. Non-Trigger vs Character's ground trigger (you'll need to enable it in the inspector)
 
 ## Why use this?
 
@@ -50,4 +50,3 @@ public class JumpPad : CharacterDetector
     
 }
 ```
-

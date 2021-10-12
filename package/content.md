@@ -12,7 +12,6 @@ Consists of a bunch of components that implement the functionality of the _Core_
 
 ### Demo
 
-Contains all the assets used for the making of the demo scenes \(character abilities, UI components, meshes, sprites, scriptable objects, etc\).
+Contains all the assets used for the making of the demo scenes (character abilities, UI components, meshes, sprites, scriptable objects, etc).
 
-**IMPORTANT:** Most of the logic and gameplay components belong to the Demo. These components do not represent the **technical features** of the asset \(e.g. animation support, collision events, etc\).
-
+**IMPORTANT:** Most of the logic and gameplay components belong to the Demo. These components do not represent the **technical features** of the asset (e.g. animation support, collision events, etc).

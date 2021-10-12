@@ -4,9 +4,7 @@ The _CharacterActor_ component can be also referred as a "character-oriented rig
 
 The job of the CharacterActor is to **ensure that all the changes to the actor are being applied correctly based on a set of predefined "rules"**. The best way to explain this component is by exposing some of these rules and properties.
 
-## 
-
-
+##
 
 
 

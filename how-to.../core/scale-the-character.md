@@ -8,5 +8,4 @@ The scale is represented directly by the character body size, so you need to mod
 bool validSize = CharacterActor.SetBodySize( new Vector2( width , height ) );
 ```
 
-The character will automatically check if the new size is valid or not \(depending on the surrounding geometry\).
-
+The character will automatically check if the new size is valid or not (depending on the surrounding geometry).

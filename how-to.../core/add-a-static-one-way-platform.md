@@ -4,7 +4,7 @@
 
 In order to define a one way platform you need to create a dedicated layer mask:
 
-![](../../.gitbook/assets/imagen%20%2873%29.png)
+![](<../../.gitbook/assets/imagen (93).png>)
 
 ## 2. Create your platform
 
@@ -16,5 +16,4 @@ Assing the layer from step 1 to your platform object
 
 Here's an example of a static 3D one way platforms:
 
-![](../../.gitbook/assets/imagen%20%2871%29.png)
-
+![](<../../.gitbook/assets/imagen (95).png>)
