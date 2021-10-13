@@ -4,7 +4,7 @@
 
 ## What is this?
 
-This is a complete guide that explains (hopefully) how the asset works. It has all the information the user need to know in order to set up, use and/or extend the asset. 
+This is a complete guide that explains (hopefully) how the asset works. It has all the information the user needs to know in order to set up, use and/or extend the asset. 
 
 * This document is **NOT** a reference to the code -> Read the API reference.
 * This document **DOES NOT** explain what a particular field (from a component) does -> Read the tooltips associated with a particular field.
