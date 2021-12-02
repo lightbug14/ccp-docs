@@ -24,9 +24,11 @@ Update your input system package to version 1.2.0 or higher.&#x20;
 
 For more information please check the [changelog entry](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.2/changelog/CHANGELOG.html#fixed).&#x20;
 
+> _Fixed `action.ReadValue` and others returning invalid data when used from `FixedUpdate` or early update when running in play mode in the editor (_[_case 1368559_](https://issuetracker.unity3d.com/issues/enter-key-is-not-registered-when-using-waspressedthisframe-with-input-system-1-dot-1-1) __ [_case 1367556_](https://issuetracker.unity3d.com/issues/input-action-readvalue-always-returns-zero-when-called-from-fixedupdate) __ [_case 1372830_](https://issuetracker.unity3d.com/issues/querying-inputs-before-preupdate-dot-newinputupdate-returns-invalid-data-when-running-in-play-mode-in-editor)_)._
 
 
-If this version is not available by default in your package manager, try the following:
+
+If this version is not available for you, try the following:
 
 1. Open the package manager.
 2. Go to "Unity registry".
@@ -57,7 +59,7 @@ Follow this [link ](https://answers.unity.com/questions/1736606/animation-state-
 
 #### Description
 
-The Animator does not recognize the NormalMovement runtime animation controller (by default) even though it is correctly set up. This may happen the **first time** the asset is imported.
+The Animator does not recognize the NormalMovement runtime animation controller (by default) even though it has been set up correctly. This may happen the **first time** the asset is imported.
 
 #### Unity version
 
@@ -65,7 +67,7 @@ The Animator does not recognize the NormalMovement runtime animation controller 
 
 #### Fix
 
-Restart the project
+Restart the project.
 
 
 
