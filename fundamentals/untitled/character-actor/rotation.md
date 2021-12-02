@@ -23,7 +23,7 @@ You can test this by yourself, create a CapsuleCollider2D and rotate it along th
 This is of course unacceptable :frowning2:. With CCP you don't need to worry about this issue, you can assign the rotation value (Quaternion) that you want, and the _CharacterActor_ component will be smart enough to keep track of the rotation value. The result will affect a virtual (or "fake") forward direction that you can access using the property **Forward**.
 
 {% hint style="warning" %}
-Now that we can't rotate the character (the root) we need to represent somehow that for the graphics. This is where the **CharacterGraphics2DRotator **component comes handy.
+Now that we can't rotate the character (the root) we need to represent somehow that for the graphics. This is where the **CharacterGraphics2DRotator** component comes handy.
 {% endhint %}
 
 ## Orthonormal directions
@@ -38,8 +38,8 @@ By modifying one of them the entire rotation structure will be modified as well.
 
 ## Constraints
 
-This feature (if enabled) allows you to modify the character up direction based on some predefined value.
+This feature modifies automatically the character rotation (up direction) based on some predefined value.
 
 ![](<../../../.gitbook/assets/imagen (85).png>)
 
-Even though the character is freezing its own rotation by default (rigidbody constraint), there is still possible to modify the rotation without the user's consent. For instance, a root motion clip might apply some rotation value to the character if the animation is not properly created/configured. By using a constraint we are 100% sure this will never happen.
+Additionally, a reference can be specified (up direction reference) in order to define a dynamic constraint based on any object (e.g. planet center).

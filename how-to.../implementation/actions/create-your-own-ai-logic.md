@@ -1,12 +1,12 @@
 # Create your own AI movement logic
 
-When the character brain is set to AI, the actions stop being updated by the input handler (input devices). Now these actions **need to be defined by code**. This is what AI is all about, simulating a machine "pressing buttons". 
+When the character brain is set to AI, the actions stop being updated by the input handler (input devices). Now these actions **need to be defined by code**. This is what AI is all about, simulating a machine "pressing buttons".&#x20;
 
 In order to set up an AI character from zero you need to:
 
-1. **Change the brain mode to "AI"** in the _CharacterBrain _component.
-2. **Add an **_**CharacterAIBehaviour** _component to the character (wherever you want).
-3. **Assign the **_**CharacterAIBehaviour** _to the _CharacterBrain_.
+1. **Change the brain mode to "AI"** in the _CharacterBrain_ component.
+2. **Add an **_**CharacterAIBehaviour** _ component to the character (wherever you want).
+3. **Assign the **_**CharacterAIBehaviour** _ to the _CharacterBrain_.
 
 {% hint style="info" %}
 Human and AI move around using the same components, there is no need to add a NavMeshAgent or something similar. Also you don't need a NavMesh for this to work, although you can use one if you want (see the AI Follow behaviour).
@@ -16,7 +16,7 @@ Human and AI move around using the same components, there is no need to add a Na
 
 The brain will use the character actions from the current AI behaviour. Basically this behaviour task is to define this action frame by frame, as simple as that.
 
-To create an AI behaviour you need to derive your class from _CharacterAIBehaviour. _
+To create an AI behaviour you need to derive your class from _CharacterAIBehaviour._&#x20;
 
 ```csharp
 public class YourAIBehaviour : CharacterAIBehaviour
@@ -58,5 +58,5 @@ public class RunForwardBehaviour : CharacterAIBehaviour
 ```
 
 {% hint style="info" %}
-You can check the character actions preview from the _CharacterBrain _inspector.
+You can check the character actions preview from the _CharacterBrain_ inspector.
 {% endhint %}

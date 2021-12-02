@@ -2,7 +2,7 @@
 
 ## Directory
 
-The recommended way to use this package (and every package out there, really) is by working on a separated path (outside the _Character Controller Pro_ folder). 
+The recommended way to use this package (and every package out there, really) is by working on a separated path (outside the _Character Controller Pro_ folder).&#x20;
 
 ![](<../.gitbook/assets/imagen (21).png>)
 
@@ -24,13 +24,13 @@ All my assets are contained within the `Lightbug` namespace. In this case:
 
 ## API
 
-In simpler words, the API is the only interface between CCP internal code and you. Think of CCP as a black box with many buttons that don't mean anything at first. You need to press those buttons but you don't have any idea what they do :cold_sweat:. Luckily for you there is an online **API reference **(doxygen).
+In simpler words, the API is the only interface between CCP internal code and you. Think of CCP as a black box with many buttons that don't mean anything at first. You need to press those buttons but you don't have any idea what they do :cold\_sweat:. Luckily for you there is an online **API reference** (doxygen).
 
 ![](<../.gitbook/assets/imagen (23).png>)
 
 ## Assembly definition file
 
-The entire asset is self-contained inside an assembly definition file (_.asmdef _extension). For more information about assembly definition files please check [Unity's documentation](https://docs.unity3d.com/2019.1/Documentation/Manual/ScriptCompilationAssemblyDefinitionFiles.html).
+The entire asset is self-contained inside an assembly definition file (_.asmdef_ extension). For more information about assembly definition files please check [Unity's documentation](https://docs.unity3d.com/2019.1/Documentation/Manual/ScriptCompilationAssemblyDefinitionFiles.html).
 
 ![](<../.gitbook/assets/imagen (90).png>)
 

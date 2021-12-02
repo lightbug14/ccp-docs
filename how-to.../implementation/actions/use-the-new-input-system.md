@@ -142,7 +142,7 @@ There is a chance that after adding this class to your project you will get some
 
 ## InputAction assets
 
-Remember that the _InputActionAsset _asset must have the same character actions names. For example:
+Remember that the _InputActionAsset_ asset must have the same character actions names. For example:
 
 ![](<../../../.gitbook/assets/imagen (88).png>)
 

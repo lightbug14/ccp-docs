@@ -21,7 +21,7 @@ The internal logic of the character controller works differently depending on th
 
 ![](<../../../.gitbook/assets/imagen (79).png>)
 
-A character is _**stable **_when it is grounded and the _**stable slope angle**_ (see the API reference) is less than or equal to the _**slope limit**_ value.
+A character is _**stable**_ when it is grounded and the _**stable slope angle**_ (see the API reference) is less than or equal to the _**slope limit**_ value.
 
 ```csharp
 IsStable = IsGrounded && ( stableSlopeAngle <= slopeLimit ); 
@@ -31,7 +31,7 @@ The stable slope angle is selected internally by the character actor based on a 
 
 ![](../../../.gitbook/assets/contactVsStable.png)
 
-There are two surfaces in which one of them is unstable (red) and the other one is stable (green). 
+There are two surfaces in which one of them is unstable (red) and the other one is stable (green).&#x20;
 
 The stable normal is chosen as the one coming from the stable surface. This normal determines the movement displacement direction. On the other hand, the contact normal corresponds to the normal obtained by the physics query (e.g. CapsuleCast).
 

@@ -2,12 +2,13 @@
 
 * [Introduction](README.md)
 
-## The package <a href="package" id="package"></a>
+## The package <a href="#package" id="package"></a>
 
 * [Content](package/content.md)
 * [Versions and updates](package/versioning.md)
 * [Setting up the project](package/setting-up-the-project.md)
 * [Using the package](package/using-the-package.md)
+* [Known issues](package/known-issues.md)
 
 ## Fundamentals
 

@@ -3,7 +3,7 @@
 Putting a character inside the scene can be achieved by:
 
 1. Creating a character from zero (starting from an empty object)...or
-2. Instantiating a prefab. 
+2. Instantiating a prefab.&#x20;
 
 ## Creating the character
 
@@ -21,11 +21,11 @@ A character consist of two important components:
 ![](<../../.gitbook/assets/imagen (12).png>)
 
 {% hint style="info" %}
-There is no need to add a **Collider **and/or **Rigidbody **to the object. The CharacterBody and CharacterActor will do this for you (**ColliderComponent **and **RigidbodyComponent **components will be added in Awake).
+There is no need to add a **Collider** and/or **Rigidbody** to the object. The CharacterBody and CharacterActor will do this for you (**ColliderComponent** and **RigidbodyComponent** components will be added in Awake).
 {% endhint %}
 
 {% hint style="success" %}
-Done! :smiley: 
+Done! :smiley:&#x20;
 
 This is the more boring invisble character you can create, **it does absolutely nothing**. In order to give it some life you need to implement some logic in another component.
 {% endhint %}

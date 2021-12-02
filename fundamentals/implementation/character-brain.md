@@ -27,7 +27,7 @@ CCP's Implementation supports three types of actions
 | Vector2Action | A 2D Value from, basically a combination of two axis.    |
 
 {% hint style="info" %}
-Note that the BoolAction value is true or false (a bool). If you need to know if that action was "started" or "canceled" (e.g. was the jump button pressed?), you need to get the **Started **or **Canceled **property respectively.
+Note that the BoolAction value is true or false (a bool). If you need to know if that action was "started" or "canceled" (e.g. was the jump button pressed?), you need to get the **Started** or **Canceled** property respectively.
 {% endhint %}
 
 ### Character actions
@@ -57,9 +57,9 @@ You can visualize the actions values in runtime in the inspector (Human or AI).
 
 ### Adding/Removing actions
 
-If you need to add/remove actions from the struct, normally you would need to modify the code itself. This can be somehow annoying sometimes, especially if you miss something along the way. 
+If you need to add/remove actions from the struct, normally you would need to modify the code itself. This can be somehow annoying sometimes, especially if you miss something along the way.&#x20;
 
-Luckily there is an easy way to achieve the same result, by using a _**CharacterActionsAsset**_. This asset has some lists of actions (bool, float and vector2), you just need to populate those with your personal data. After that's done just click the **Create actions** button and automagically the CharacterActions struct will be updated :slight_smile: .
+Luckily there is an easy way to achieve the same result, by using a _**CharacterActionsAsset**_. This asset has some lists of actions (bool, float and vector2), you just need to populate those with your personal data. After that's done just click the **Create actions** button and automagically the CharacterActions struct will be updated :slight\_smile: .
 
 ![Default Character Actions asset.](<../../.gitbook/assets/imagen (56).png>)
 
@@ -77,7 +77,7 @@ By default a _CharacterState_ has a _CharacterBrain_ property, which gets the _C
 bool wasPressed = CharacterActions.jump.Started;
 ```
 
- Or we can get the movement axes (Vector2) value:
+&#x20;Or we can get the movement axes (Vector2) value:
 
 ```csharp
 Vector2 inputAxes = CharacterActions.movement.value;
@@ -101,7 +101,7 @@ Basically in a human brain the actions are updated using input devices (keyboard
 
 In order to update these actions an _input handler_ is needed. This is a simple abstract component that needs to the implemented in order to process inputs. It has the most common input functionalities, such as _GetButton_, _GetButtonDown_, _GetButtonUp_ and _GetAxis_. Each input handler should implement these methods in its own way.
 
-The package contains two default input handler components, one for the classic _Unity's Input Manager_ and another for the _Unity's UI_ system (used in mobile games). 
+The package contains two default input handler components, one for the classic _Unity's Input Manager_ and another for the _Unity's UI_ system (used in mobile games).&#x20;
 
 Additionally there is support for a custom input handler ("Custom"). This useful if you want to create your own handler.
 
@@ -112,16 +112,16 @@ These modes can be selected in the brain using the _Human Input Type_ field.
 |                     |                                                                                                                                                                                 |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Unity Input Manager | This input handler reads inputs from the Unity's Input manager. Make sure the actions names (input data) and the axes from the input manager match exactly.                     |
-| UI_Mobile           | This input handler reads all the mobile inputs components in the scene. This components are assigned to the UI elements responsible for converting UI Events into input values. |
+| UI\_Mobile          | This input handler reads all the mobile inputs components in the scene. This components are assigned to the UI elements responsible for converting UI Events into input values. |
 | Custom              | A custom implementation of an input handler.                                                                                                                                    |
 
 ### AI brain
 
-An AI brain defines the actions via script, plain and simple. If you want to change your Human character for an AI character, just click the AI button in the inspector. After that choose an _AIBehaviour _component for the brain.
+An AI brain defines the actions via script, plain and simple. If you want to change your Human character for an AI character, just click the AI button in the inspector. After that choose an _AIBehaviour_ component for the brain.
 
 #### AI Behaviour
 
-An AI behaviour is just an implementation of a particular AI logic, using a monobehaviour. 
+An AI behaviour is just an implementation of a particular AI logic, using a monobehaviour.&#x20;
 
 {% hint style="info" %}
 On previous releases, these AI behaviours were embeded into the brain component (not extensibles at all). Now these components are external Monobehaviours you can easily create and customize

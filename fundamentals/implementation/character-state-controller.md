@@ -12,7 +12,7 @@ A simple and crude representation of the structure of a state machine is shown i
 
 The main loop cycle of the _CharacterStateController_ component (simplified version) is shown in the next figure:
 
-![Main loop of the state controller (simplified).](../../.gitbook/assets/FSM_Loop.png)
+![Main loop of the state controller (simplified).](../../.gitbook/assets/FSM\_Loop.png)
 
 ## Movement direction
 
@@ -44,7 +44,7 @@ A _movement reference_ is defined as a set of orthonormal vectors (think of the 
 
 ### Input movement reference
 
-By multiplying the **input reference** with the **movement reference** it is possible to create sort of a mix between inputs and movement, hence the name. 
+By multiplying the **input reference** with the **movement reference** it is possible to create sort of a mix between inputs and movement, hence the name.&#x20;
 
 ![Input movement reference calculation.](../../.gitbook/assets/MovementRefDiagram.png)
 
@@ -62,7 +62,7 @@ The animation API is based upon the Animator component. The _CharacterStateContr
 
 By default the runtime animator controller used will be the one from the Animator component itself. This means that one big controller will need to contain all the animation state machine for all your states. if this doesn't sound too good for you, there is one alternative that might help.
 
-Mecanim (the system behind the Animator controller logic) can be really good and intuitive for some tasks (especially if you are not a coder), but sometimes can be a living nightmare :face_with_symbols_over_mouth:. CCP implements a **multi-controller **approach, this means that each state (CharacterState) component has a runtime animator controller field available. If a particular state is loaded into the FSM, then the associated runtime animator controller will be assigned (on the fly) to the _Animator_ component.
+Mecanim (the system behind the Animator controller logic) can be really good and intuitive for some tasks (especially if you are not a coder), but sometimes can be a living nightmare :face\_with\_symbols\_over\_mouth:. CCP implements a **multi-controller** approach, this means that each state (CharacterState) component has a runtime animator controller field available. If a particular state is loaded into the FSM, then the associated runtime animator controller will be assigned (on the fly) to the _Animator_ component.
 
 ![](<../../.gitbook/assets/imagen (86).png>)
 

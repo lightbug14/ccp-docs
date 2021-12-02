@@ -3,7 +3,7 @@
 The character can be moved in three ways.
 
 1. Changing the _**Position**._
-2. Using the _**Teleport **_function.
+2. Using the _**Teleport**_ function.
 3. Changing the _**Velocity**._
 
 ```csharp
