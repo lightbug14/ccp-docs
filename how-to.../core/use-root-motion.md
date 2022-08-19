@@ -8,10 +8,11 @@ Root motion can be enabled/disabled at any time by calling the _**useRootMotion*
 CharacterActor.UseRootMotion = true;
 ```
 
-After doing that, the animator controller will determine the position and rotation of the character.&#x20;
+![](<../../.gitbook/assets/image (1).png>)
 
-{% hint style="info" %}
-There is no "correct" way of doing movement, choose whatever approach fits your needs best.
+In Addition, it is possible to tweak the way position and rotation get updated by root motion. For example, you can mix animation-based movement with script-based rotation.
 
-For instance, NormalMovement offers a script-based movement (root motion disabled). LadderClimbing and LedgeHanging offer an animation-based movement approach (root motion enabled).
-{% endhint %}
+Do you want to apply root motion for planar movement but at the same time use script-based vertical movement (e.g. gravity, jumping, etc)? No problem, choose the _Set Planar Velocity_ option from the _Root Motion Velocity Type_ field.
+
+
+

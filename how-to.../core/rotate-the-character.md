@@ -1,31 +1,54 @@
 # Rotate the character
 
-## 3D Character
+## 3D Characters
 
-### 1. Assigning a Rotation
+### Assigning a Rotation
 
-Same as transform.rotation, you can set the _**Rotation**_ property using any Quaternion value you want.
+Same as transform.rotation, you can set the _**Rotation**_ property directly using any Quaternion value you want.
 
 ```csharp
 CharacterActor.Rotation = SomeQuaternion;
 ```
 
-Many times you would want to change a particular known direction instead of the whole Quaternion. For instance, it's very common to modify only the _forward direction_ of the character:
+### Setting a direction property
+
+Sometimes it is preferred to make a particular direction to point towards another one. In that case, you could modify any of the actor directions (properties):
 
 ```csharp
 CharacterActor.Forward = LookingDirection;
 ```
 
 {% hint style="warning" %}
-By default a vertical direction **constraint** is applied to the character in order to modify the up direction every frame. This means that any change to forward, right or up will be modified in orden to follow this constraint.
+By setting any of the direction properties there is no guarantee that the rotation applied will be the one you want. For instance, multiplying Forward by -1 does not mean a 180° Yaw rotation will be applied.
+
+For more precise control over the rotation process, please use `RotateYaw`, `RotatePitch` and/or `RotateRoll`.
 {% endhint %}
 
-## 2D Character
+### Using the actor public methods
 
-The 2D world is very different from the 3D world, especially regarding rotations.&#x20;
+If you want get a more precise result, you can use `RotateYaw`, `RotatePitch` and/or `RotateRoll`. These are all simple implementations based on `Quaternion.AngleAxis`.
 
-In order to handle rotations **it is important to separate the graphics (3D mesh or sprite) from the actual character**. For more information about 2D rotation please see the  [Rotation](../../fundamentals/untitled/character-actor/rotation.md#2d-vs-3d) section.
+<pre class="language-csharp"><code class="lang-csharp"><strong>// Rotate using the "up" direction as the axis until forward = targetVector
+</strong><strong>CharacterActor.RotateYaw(targetVector);
+</strong><strong>
+</strong><strong>// Rotate a given amount (degrees) using the "up" direction as the axis
+</strong><strong>CharacterActor.RotateYaw(amount);
+</strong><strong>
+</strong>// Rotate around a pivot a given amount (degrees) using the "up" direction as the axis
+CharacterActor.RotateYaw(amount, pivot);
+<strong>
+</strong>// Rotate a given amount (degrees) using the "right" direction as the axis
+<strong>CharacterActor.RotatePitch(amount);
+</strong><strong>
+</strong>// Rotate a given amount (degrees) using the "forward" direction as the axis
+<strong>CharacterActor.RotateYaw(amount);</strong></code></pre>
 
-CCP includes a _**CharacterGraphics2DRotator**_  component that does the job for you. Add this component to the mesh/sprite object.
+## 2D Characters
 
-![](<../../.gitbook/assets/imagen (69).png>)
+The 2D world is very different from the 3D world, especially regarding rotations. However, **all of the principles and functions mentioned above apply here as well.**&#x20;
+
+The big difference between 2D and 3D is that `transform.forward` must be either `Vector3.forward` or `Vector3.back`. Otherwise, the collider size will get reduced.
+
+{% hint style="info" %}
+The `Forward` direction (actor property) is directly represented by `transform.right`.
+{% endhint %}
