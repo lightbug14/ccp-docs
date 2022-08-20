@@ -58,11 +58,11 @@ To better clarify this concept see the figure. There are three cases: World, Cha
 
 By default the runtime animator controller used will be the one from the Animator component itself. This means that one big controller will need to contain all the animation state machine for all your states. if this doesn't sound too good for you, there is one alternative that might help.
 
-Mecanim (the system behind the Animator controller logic) can be really good and intuitive for some tasks, especially if you are not a coder, but sometimes can be a living nightmare :face\_with\_symbols\_over\_mouth:. CCP implements a **multi-controller** approach, this means that each state component could have its own runtime animator controller. When a particular state enters the FSM, if this runtime controller is not null, then it is assigned on the fly to the _Animator_ component.
+Mecanim (the system behind the Animator controller logic) can be really good and intuitive for some tasks, especially if you are not a coder, but sometimes can be a living nightmare :face\_with\_symbols\_over\_mouth:. CCP implements a **multi-controller** approach, this means that each state component is capable of overriding the Animator runtime controller.
 
 ![](<../../.gitbook/assets/imagen (86).png>)
 
 {% hint style="info" %}
-If you don't like this approach you can totally ignore it by not overriding the controller. This approach is 100% optional.
+If you don't like this approach you can totally ignore it. This approach is 100% optional.
 {% endhint %}
 

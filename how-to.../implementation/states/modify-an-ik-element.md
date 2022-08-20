@@ -7,13 +7,13 @@ Since the _Animator_ could be anywhere (within the hierarchy), you cannot just u
 For example:
 
 ```csharp
-public override void UpdateIK( int layerIndex )
+public override void UpdateIK(int layerIndex)
 {
     // Set the weight
-    CharacterStateController.Animator.SetIKPositionWeight( avatarIKGoal , positionWeight );
+    CharacterActor.Animator.SetIKPositionWeight(avatarIKGoal, positionWeight);
     
     // Set the position
-    CharacterStateController.Animator.SetIKPosition( avatarIKGoal , position);    
+    CharacterActor.Animator.SetIKPosition(avatarIKGoal, position);    
 
 }
 ```

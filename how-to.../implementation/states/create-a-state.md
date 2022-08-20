@@ -13,10 +13,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Lightbug.CharacterControllerPro.Implementation;
 
-
 public class YourCustomState : CharacterState
 {
-
     // Write your initialization code here
     protected override void Awake()
     {
@@ -26,24 +24,19 @@ public class YourCustomState : CharacterState
     // Write your transitions here
     public override void CheckExitTransition()
     {
-	  }
+    }
 
     // Write your transitions here
-	  public override bool CheckEnterTransition( CharacterState fromState )
+    public override bool CheckEnterTransition(CharacterState fromState)
     {
-        return base.CheckEnterTransition( fromState );
-	  }
+        return base.CheckEnterTransition(fromState);
+    }
 
     // Write your update code here
-	  public override void UpdateBehaviour( float dt )
-    {
-        
-	  }
-    
-    
+    public override void UpdateBehaviour(float dt)
+    {        
+    }
 }
 ```
-
-From the inspector:
 
 ![](<../../../.gitbook/assets/imagen (68).png>)
