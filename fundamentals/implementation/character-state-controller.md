@@ -1,6 +1,6 @@
 # Character state controller
 
-This component is essentially a "character-oriented" finite state machine (FSM) that also includes some other useful functionalities such as animation, actions and movement. It can be considered as a "high level character controller" (since the user will be referring to this component from now on).
+This component is essentially a "character-oriented" finite state machine (FSM) that also includes some other useful functionalities that will help you handle animation, actions and movement. This component can be considered as a "high level character controller".
 
 ## Finite State Machine
 
@@ -54,32 +54,15 @@ To better clarify this concept see the figure. There are three cases: World, Cha
 
 ## Animation
 
-### Animator
-
-The animation API is based upon the Animator component. The _CharacterStateController_ automatically searches for the Animator component in Awake and link it with itself (using the AnimatorLink component).
-
 ### Runtime animator controller
 
 By default the runtime animator controller used will be the one from the Animator component itself. This means that one big controller will need to contain all the animation state machine for all your states. if this doesn't sound too good for you, there is one alternative that might help.
 
-Mecanim (the system behind the Animator controller logic) can be really good and intuitive for some tasks (especially if you are not a coder), but sometimes can be a living nightmare :face\_with\_symbols\_over\_mouth:. CCP implements a **multi-controller** approach, this means that each state (CharacterState) component has a runtime animator controller field available. If a particular state is loaded into the FSM, then the associated runtime animator controller will be assigned (on the fly) to the _Animator_ component.
+Mecanim (the system behind the Animator controller logic) can be really good and intuitive for some tasks, especially if you are not a coder, but sometimes can be a living nightmare :face\_with\_symbols\_over\_mouth:. CCP implements a **multi-controller** approach, this means that each state component could have its own runtime animator controller. When a particular state enters the FSM, if this runtime controller is not null, then it is assigned on the fly to the _Animator_ component.
 
 ![](<../../.gitbook/assets/imagen (86).png>)
 
 {% hint style="info" %}
 If you don't like this approach you can totally ignore it by not overriding the controller. This approach is 100% optional.
-{% endhint %}
-
-### Animator messages
-
-Some of the features provided by the _Animator_ can be used only by calling some special Unity's messages. These messages often are:
-
-* **OnAnimatorIK** is used to modify the individual **IK element**.
-* **OnAnimatorMove** is used to extract the **root motion** data.
-
-The main issue here is that, in order to use these functionalities you need to add a component to the object with the _Animator_ component. The state controller takes care of this by connecting (via an **AnimatorLink** component) the _Animator_ messages with the FSM (thus, implementing those functionalities for you :wink: ).
-
-{% hint style="info" %}
-There is no need to add this **AnimatorLink**, the CharacterStateController does this for you.
 {% endhint %}
 

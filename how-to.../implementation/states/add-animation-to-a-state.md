@@ -1,6 +1,4 @@
-# Add animation to a state
-
-A state can have its own animator controller. For more information, please read [this section](../../../fundamentals/implementation/character-state-controller.md#runtime-animator-controller).
+# Handle animation
 
 ## Creating the Animator controller
 
@@ -8,49 +6,48 @@ To add a custom animator controller first create one.
 
 ![](<../../../.gitbook/assets/imagen (64).png>)
 
-Then design the animation node based graph as you want, adding all the parameters you need.
+Next, design the animation node based graph as you want.
 
 ![](<../../../.gitbook/assets/imagen (65).png>)
 
-## Assigning the animator controller
+## Overriding the current animator controller
 
-When the state is started, this animator controller will be automatically loaded into the Animator component. Assign your animator controller here:
+Any state has the ability to override the current runtime controller (Animator).&#x20;
+
+When the FSM transitions to a particular, if the runtime animator controller field is not null, the FSM will load this controller as THE Animator runtime controller.&#x20;
 
 ![](<../../../.gitbook/assets/imagen (86).png>)
 
 ## Using the Animator component
 
-Any state can access the Animator component by using the "Animator" public property from the state controller.
+Any state can access the Animator component by using the "Animator" public property from CharacterActor.
 
 ```csharp
-Animator animator = CharacterStateController.Animator;
+Animator animator = CharacterActor.Animator;
 ```
 
-Once you got this reference you can do whatever you want, just like you would expect. 
-
-This is a code snippet from the NormalMovement state (Demo):
+Once you got this reference you can do whatever you want. Here is a code snippet taken from the NormalMovement state (Demo):
 
 ```csharp
 public override void PostUpdateBehaviour( float dt )
 {       
-    if( CharacterStateController.Animator == null )
-        return;
-
-    if( CharacterStateController.Animator.runtimeAnimatorController == null )
-        return;
-
-    if( !CharacterStateController.Animator.gameObject.activeSelf )
+    if (!CharacterActor.IsAnimatorValid())
         return;
     
-    CharacterStateController.Animator.SetBool( groundedParameter , CharacterActor.IsGrounded );
-    CharacterStateController.Animator.SetBool( stableParameter , CharacterActor.IsStable );
-    CharacterStateController.Animator.SetFloat( verticalSpeedParameter , CharacterActor.LocalVelocity.y );
-    CharacterStateController.Animator.SetFloat( planarSpeedParameter , CharacterActor.PlanarVelocity.magnitude );
-    CharacterStateController.Animator.SetFloat( horizontalAxisParameter , CharacterActions.movement.value.x );
-    CharacterStateController.Animator.SetFloat( verticalAxisParameter , CharacterActions.movement.value.y );	
-    CharacterStateController.Animator.SetBool( isCrouchedParameter , isCrouched );        
+    CharacterActor.Animator.SetBool(groundedParameter , CharacterActor.IsGrounded);
+    CharacterActor.Animator.SetBool(stableParameter , CharacterActor.IsStable);
+    CharacterActor.Animator.SetFloat(verticalSpeedParameter , CharacterActor.LocalVelocity.y);
+    CharacterActor.Animator.SetFloat(planarSpeedParameter , CharacterActor.PlanarVelocity.magnitude);
+    CharacterActor.Animator.SetFloat(horizontalAxisParameter , CharacterActions.movement.value.x);
+    CharacterActor.Animator.SetFloat(verticalAxisParameter , CharacterActions.movement.value.y);	
+    CharacterActor.Animator.SetBool(isCrouchedParameter , isCrouched);        
     
 }
 ```
 
-Personally, I like to set parameters after the main update function (`UpdateBehaviour`). In this case i'm using `PostUpdateBehaviour`.
+{% hint style="info" %}
+It is recommended to set certain parameters during the PreCharacterSimulation and/or PostCharacterSimulation methods.
+
+The reason for this is because the actor might modify the body velocity along the way, so the values won't be updated by the time the frame is rendered.
+{% endhint %}
+

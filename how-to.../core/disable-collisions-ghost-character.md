@@ -23,5 +23,5 @@ CharacterActor.ColliderComponent.enabled = false;
 
 ## Configuring the collision matrix
 
-Another way to make a ghost character is to change the collision matrix from the Physics (Physics2D). As mentioned in [this section](../../fundamentals/untitled/character-actor/collision-properties.md#obstacles), thecharacter actor uses the collision matrix provided by the physics engine. 
+Another way to make a ghost character is to change the collision matrix from the Physics (Physics2D). As mentioned in [this section](broken-reference), thecharacter actor uses the collision matrix provided by the physics engine.&#x20;
 

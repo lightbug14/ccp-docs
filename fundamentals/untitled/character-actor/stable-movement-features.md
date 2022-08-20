@@ -37,7 +37,7 @@ This feature is responsible for putting the character on the ground (if there is
 
 Normally, when a character is standing **on an edge** it collision shape will make contact with it. What edge compensation does is to lift up the capsule, simulating a cylinder shape.&#x20;
 
-![](../../../.gitbook/assets/ledgeNormal.png)    ![](../../../.gitbook/assets/ledgeOn.png)&#x20;
+<img src="../../../.gitbook/assets/ledgeNormal.png" alt="" data-size="original">    <img src="../../../.gitbook/assets/ledgeOn.png" alt="" data-size="original">&#x20;
 
 This feature only works on edges, for slopes you will get the same results as before (with edge compensation disabled).
 
@@ -59,9 +59,9 @@ A valid dynamic ground **must be updated during the physics simulation**. Here a
 
 ### Weight
 
-If the character is standing on top of a dynamic rigidbody this will automatically apply a force to it at the contact point, proportional to the rigidbody mass.
+If the character is standing on top of a dynamic rigidbody, it will automatically apply a force downwards at the contact point, proportional to the rigidbody mass.
 
-![](<../../../.gitbook/assets/imagen (82).png>)
+![](<../../../.gitbook/assets/image (1).png>)
 
 ### Push
 

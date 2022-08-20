@@ -49,6 +49,8 @@ The 2D world is very different from the 3D world, especially regarding rotations
 
 The big difference between 2D and 3D is that `transform.forward` must be either `Vector3.forward` or `Vector3.back`. Otherwise, the collider size will get reduced.
 
+![](<../../.gitbook/assets/imagen (84).png>)
+
 {% hint style="info" %}
 The `Forward` direction (actor property) is directly represented by `transform.right`.
 {% endhint %}
