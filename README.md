@@ -10,7 +10,7 @@ This is the online documentation for _Character Controller Pro_.&#x20;
 
 This documentation is separated into three parts:
 
-* The _**The package**_ section contains everything related to how the asset package should be downloaded, imported and updated, as well as how to set up the asset.&#x20;
+* The _**The package**_ section describes how the asset package should be downloaded, imported and updated, as well as how to set up the asset.&#x20;
 * The _**Fundamentals**_ section explains how the all the features work from a theoretical point of view.
 * The _**How to...**_ section is meant to be a very modular quick start guide.
 
