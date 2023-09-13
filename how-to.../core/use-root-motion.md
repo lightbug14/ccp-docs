@@ -8,7 +8,7 @@ Root motion can be enabled/disabled at any time by calling the _**useRootMotion*
 CharacterActor.UseRootMotion = true;
 ```
 
-![](<../../.gitbook/assets/image (1) (1).png>)
+![](<../../.gitbook/assets/image (1) (1) (1).png>)
 
 In Addition, it is possible to tweak the way position and rotation get updated by root motion. For example, you can mix animation-based movement with script-based rotation.
 

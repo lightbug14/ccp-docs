@@ -61,7 +61,7 @@ A valid dynamic ground **must be updated during the physics simulation**. Here a
 
 If the character is standing on top of a dynamic rigidbody, it will automatically apply a force downwards at the contact point, proportional to the rigidbody mass.
 
-![](<../../../.gitbook/assets/image (1).png>)
+![](<../../../.gitbook/assets/image (1) (1).png>)
 
 ### Push
 

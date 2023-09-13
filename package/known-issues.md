@@ -37,7 +37,7 @@ If this version is not available for you, try the following:
 5. Then type version _**1.2.0**_ (although this is optional, the latest version will be added)
 6. Restart the editor (very important).
 
-![](../.gitbook/assets/image.png)
+![](<../.gitbook/assets/image (5).png>)
 
 ## Invisible animation state inspector
 
