@@ -69,15 +69,14 @@ By default, the brain allows the user to use two input handlers that come with t
 
 ![Available human input types.](../../.gitbook/assets/humanInputType.png)
 
-|                     |                                                                                                                                                                                 |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Unity Input Manager | This input handler reads inputs from the Unity's Input manager. Make sure the actions names (input data) and the axes from the input manager match exactly.                     |
-| UI\_Mobile          | This input handler reads all the mobile inputs components in the scene. This components are assigned to the UI elements responsible for converting UI Events into input values. |
-| Custom              | A custom implementation of an input handler.                                                                                                                                    |
+| Human input type    | Description                                                                                                                                                           |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Unity Input Manager | It reads input data directly from Unity's Input manager (old system).                                                                                                 |
+| UI\_Mobile          | It looks for all UI-based input components in the scene (`InputAxes` and `InputButton`). These components are responsible for converting UI events into input values. |
+| Custom              | An `InputHandler` custom implementation.                                                                                                                              |
 
 ### AI brain
 
 In this mode, the brain defines actions through code by using a `AIBehaviour`.&#x20;
 
 ![Example: AI behaviour using a sequence behaviour (Demo content).](<../../.gitbook/assets/imagen (57).png>)
-
