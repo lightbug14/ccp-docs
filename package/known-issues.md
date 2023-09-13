@@ -24,7 +24,7 @@ Update your input system package to version 1.2.0 or higher.&#x20;
 
 For more information please check the [changelog entry](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.2/changelog/CHANGELOG.html#fixed).&#x20;
 
-> _Fixed `action.ReadValue` and others returning invalid data when used from `FixedUpdate` or early update when running in play mode in the editor (_[_case 1368559_](https://issuetracker.unity3d.com/issues/enter-key-is-not-registered-when-using-waspressedthisframe-with-input-system-1-dot-1-1) __ [_case 1367556_](https://issuetracker.unity3d.com/issues/input-action-readvalue-always-returns-zero-when-called-from-fixedupdate) __ [_case 1372830_](https://issuetracker.unity3d.com/issues/querying-inputs-before-preupdate-dot-newinputupdate-returns-invalid-data-when-running-in-play-mode-in-editor)_)._
+> _Fixed `action.ReadValue` and others returning invalid data when used from `FixedUpdate` or early update when running in play mode in the editor (_[_case 1368559_](https://issuetracker.unity3d.com/issues/enter-key-is-not-registered-when-using-waspressedthisframe-with-input-system-1-dot-1-1) [_case 1367556_](https://issuetracker.unity3d.com/issues/input-action-readvalue-always-returns-zero-when-called-from-fixedupdate) [_case 1372830_](https://issuetracker.unity3d.com/issues/querying-inputs-before-preupdate-dot-newinputupdate-returns-invalid-data-when-running-in-play-mode-in-editor)_)._
 
 
 
@@ -33,7 +33,7 @@ If this version is not available for you, try the following:
 1. Open the package manager.
 2. Go to "Unity registry".
 3. Click the "+" icon, then "Add package by name".
-4. Type _ **com.unity.inputsystem**_
+4. Type _**com.unity.inputsystem**_
 5. Then type version _**1.2.0**_ (although this is optional, the latest version will be added)
 6. Restart the editor (very important).
 

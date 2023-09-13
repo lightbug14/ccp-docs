@@ -137,7 +137,11 @@ Keep in mind that the _InputActionAsset_ action names must match with the charac
 
 ## Downloads
 
-{% file src="../../../.gitbook/assets/CharacterActions.rar" %}
+{% file src="../../../.gitbook/assets/ccp-input-system-files.rar" %}
 
-{% file src="../../../.gitbook/assets/CameraActions.rar" %}
+This file includes:&#x20;
+
+* _InputSystemHandler.cs (code)_
+* _CharacterActions.inputactions_
+* _CameraActions.inputactions_
 

@@ -89,7 +89,7 @@ Note that these actions are not necessarily Human actions, that is, they are not
 
 
 
-__
+
 
 ## Brain types
 
