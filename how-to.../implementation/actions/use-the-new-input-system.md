@@ -2,17 +2,7 @@
 
 ## Input handler
 
-### Code
-
-This is an implementation of Unity's "new" input system
-
-{% hint style="info" %}
-Note that this is better implementation compared to the previous one (from version 1.3.5). This version brings some extra features and improvements.
-
-* Actions are **stored inside a container** and read from there when needed (better for performance).
-* Actions can be filtered by **action map** (optional).
-* Binds can be filtered by **control scheme** (optional).
-{% endhint %}
+As mentioned in previous sections, an input handler must be created specifically for Unity's new input system. The following code shows one way to do it.
 
 ```csharp
 using System.Collections;
@@ -133,20 +123,19 @@ public class InputSystemHandler : InputHandler
 
 ```
 
-### Missing references (asmdef file)
 
-There is a chance that after adding this class to your project you will get some compile errors. This is happening because the file (containing the code) is located inside CCP's main folder. CCP's asmdef file (read [this section](../../../package/using-the-package.md#assembly-definition-file)) does not include references to any external packages (Unity's input system, Cinemachine, etc.), this is why you need to either:
 
-1. Put the input handler file **outside CCP's main folder** (e.g. _"Assets/YourStuff/InputSystemHandler.cs"_) ... or
-2. Add to CCP's asmdef file a reference to the new input system package.
+{% hint style="warning" %}
+It is **recommended** to put the class file **outside CCP's main folder** in order to prevent missing reference errors. This happens because CCP's [asmdef file](../../../package/using-the-package.md#assembly-definition-file) does not include references to any external packages such as Unity's input system, Cinemachine, etc.
+{% endhint %}
 
 ## InputAction assets
 
-Remember that the _InputActionAsset_ asset must have the same character actions names. For example:
+Keep in mind that the _InputActionAsset_ action names must match with the character actions names, otherwise actions will not be registered by the input handler. For example:
 
 ![](<../../../.gitbook/assets/imagen (88).png>)
 
-Here you can download all the input action assets required by the demo:
+## Downloads
 
 {% file src="../../../.gitbook/assets/CharacterActions.rar" %}
 
